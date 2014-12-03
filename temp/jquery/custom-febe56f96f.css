@@ -1,0 +1,26 @@
+#top-bar > span.act:after {
+  background-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%20width=%2211px%22%20height=%2211px%22%20viewBox=%220%200%2011%2011%22%20enable-background=%22new%200%200%2011%2011%22%20xml:space=%22preserve%22%3E%3Cpolygon%20fill=%22%238d9095%22%20points=%2211.006,3.491%205.504,9.228%200,3.544%201.523,2%205.504,5.989%209.491,2%20%22/%3E%3C/svg%3E");
+ z-index:1000;
+}
+#top-bar > span:after {
+  background-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%20width=%2211px%22%20height=%2211px%22%20viewBox=%220%200%2011%2011%22%20enable-background=%22new%200%200%2011%2011%22%20xml:space=%22preserve%22%3E%3Cpolygon%20fill=%22%238d9095%22%20points=%2211.006,3.491%205.504,9.228%200,3.544%201.523,2%205.504,5.989%209.491,2%20%22/%3E%3C/svg%3E");
+  z-index:1000;
+}
+#top-bar {
+  
+  background:#181818 url('../../../../uploads/2014/09/top2.jpg') repeat center center;
+ 
+ 
+}
+#top-bar:before {
+  content: "";
+  display: table;
+}
+#top-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ancient-ie #top-bar {
+  zoom: 1;
+}
