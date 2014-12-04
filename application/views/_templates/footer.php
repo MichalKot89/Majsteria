@@ -1,4 +1,3 @@
-
     <div class="container">
     <div class="row">
     <div class="col-md-12 col-sm-12">
@@ -67,20 +66,23 @@
     <div class="row padding-bootom">
     <div class="col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4 col-one">
-    <h2>Who is Majsteria?</h2>
-    <p>As Australia's most visited building and renovation website, hipages.com.au is your platform for taking your building or renovation project from concept to completion.
-    <br><br>
-    We've been connecting Australians with local trade professionals and home services for over 10 years.</p>
-    </div>
-    
-    <div class="col-md-4 col-sm-4 col-one">
     <h2>Post a job! <span>it's free!</span></h2>
     <p>The easiest way to find trade professionals - Tell us what you need and we'll get you three quotes.
     <span class="org-sm">Freecall 1300 217 968</span><br>
     <span class="sm1">MON - FRI: 7AM - 11PM (AEST)<br>
     SAT - SUN: 8AM - 10PM (AEST)</span></p>
-    <button type="button" class="btn btn-default navbar-btn btn-blue">Get Quotes Now</button> 
-
+    </div>
+    
+    <div class="col-md-4 col-sm-4 col-one">
+    <h2>O Nas:</h2>
+    <p>Portal majsteria.pl to świetne miejsce gdzie każdy z Was, znajdzie dobrego fachowca lub firmę świadczącą usługi remontowe, budowlane czy renowacyjne, zaprojektują Ci zarówno wnętrze domu czy biura lub wykonają świetny projekt nowego ogrodu i tym podobne usługi. Obiektywny ranking specjalistów ułatwi Ci wybór wykonawcy, który ziści Twoją wizję... Serwis majsteria to nie tylko miejsce gdzie znajdziesz wymarzonego fachowca ale i wizję, pomysł na coś nowego o czym możliwe, że nawet nigdy nie słyszeliście. Ten portal łączy w sobie dwie bardzo ważne rzeczy: ma bazę pomysłów na usprawnienia Twojego domu, posesji, biura, itp…
+    <br>
+    Jak zarówno bazę z fachowcami, którzy będą w stanie to dla Ciebie wykonać… 
+    <br><br>
+    A to wszystko online bez wychodzenia z domu i żmudnego wydzwaniania po “złotych rączkach” poleconych przez znajomych. Portal majsteria.pl to największe źródło sprawdzonych profesjonalistów!
+    <br>
+    Nie zwlekaj już ani chwili !</p>
+    <button type="button" class="btn btn-default navbar-btn btn-blue">WYCEŃ KOSZTY</button>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
