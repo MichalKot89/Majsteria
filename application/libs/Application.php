@@ -110,7 +110,7 @@ class Application
     private function translateController($controller)
     {
         switch ($controller) {
-            case 'znajdz':
+            case subcategory_SEO:
                 return 'subcategory_view';
                 break;
             default:

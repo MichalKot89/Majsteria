@@ -39,10 +39,13 @@ class Controller
         $path = MODELS_PATH . strtolower($name) . '_model.php';
 
         if (file_exists($path)) {
-            require MODELS_PATH . strtolower($name) . '_model.php';
             // The "Model" has a capital letter as this is the second part of the model class name,
             // all models have names like "LoginModel"
             $modelName = $name . 'Model';
+            // Check if this class hasn't been declared before
+            if(!class_exists($modelName, false)) {
+                require MODELS_PATH . strtolower($name) . '_model.php';
+            }
             // return the new model object while passing the database connection to the model
             return new $modelName($this->db);
         }

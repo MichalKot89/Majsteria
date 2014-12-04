@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Class SubcategoryView
- * The subcategoryView controller. Here we create, read, update and delete (CRUD) example data.
+ * Class Subcategory_View
+ * The subcategory_View controller.
  */
 class Subcategory_View extends Controller
 {

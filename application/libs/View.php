@@ -101,4 +101,16 @@ class View
         // default return of not true
         return false;
     }
+
+    /**
+     * Returns array of subcategories for dropdowns and lists
+     * @return array of subcategories
+     */
+    private function getAllSubcategories()
+    {
+        $controller = 'subcategory_list';
+        require CONTROLLER_PATH . $controller . '.php';
+        $subcategory_view_controller = new Subcategory_List();
+        return $subcategory_view_controller->getAllSubcategories();
+    }
 }

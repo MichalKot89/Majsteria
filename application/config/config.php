@@ -25,6 +25,8 @@ ini_set("display_errors", 1);
 #define('URL', 'http://majsteri.vot.pl/');
 define('URL', 'http://localhost:8888/');
 
+define('subcategory_SEO', 'znajdz');
+
 /**
  * Configuration for: Folders
  * Here you define where your folders are. Unless you have renamed them, there's no need to change this.

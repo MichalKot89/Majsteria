@@ -104,8 +104,12 @@
     <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Dropdown link</a></li>
-    <li><a href="#">Dropdown link</a></li>
+
+<?php
+    foreach($this->getAllSubcategories() as $subcategory) {
+        echo '<li><a href="'.URL.subcategory_SEO.'/' . $subcategory->seo_url .'">' . $subcategory->name.'</a></li>';
+    } 
+?>
     </ul>
     </div>
     </div>
