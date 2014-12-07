@@ -420,20 +420,43 @@ class LoginModel
      */
     public function registerNewUser()
     {
+        // if user_name is not provided, try to generate one
+        if(empty($_POST['user_name']) && !empty($_POST['user_email'])) {
+            $company = !empty($_POST['company'])?$_POST['company']:NULL;
+            $first_name = !empty($_POST['first_name'])?$_POST['first_name']:NULL;
+            $last_name = !empty($_POST['last_name'])?$_POST['last_name']:NULL;
+            $user_name = $this->generateUniqueUserName($_POST['user_email'], $company, $first_name, $last_name);
+        }
+        else {
+            $user_name = !empty($_POST['user_name'])?$_POST['user_name']:NULL;
+        }
+
+        // if password is not provided, generate one
+        if(empty($_POST['user_password_new']) && empty($_POST['user_password_repeat'])) {
+            $user_password_new = $this->generateRandomPassword(8);
+            $user_password_repeat = $user_password_new;
+            $send_password = $user_password_new;
+        }
+        else {
+            $user_password_new = !empty($_POST['user_password_new'])?$_POST['user_password_new']:NULL;
+            $user_password_repeat = !empty($_POST['user_password_repeat'])?$_POST['user_password_repeat']:NULL;
+            $send_password = NULL;
+        }
+
         // perform all necessary form checks
         if (!$this->checkCaptcha()) {
             $_SESSION["feedback_negative"][] = FEEDBACK_CAPTCHA_WRONG;
-        } elseif (empty($_POST['user_name'])) {
+        } elseif (empty($user_name)) {
             $_SESSION["feedback_negative"][] = FEEDBACK_USERNAME_FIELD_EMPTY;
-        } elseif (empty($_POST['user_password_new']) OR empty($_POST['user_password_repeat'])) {
+        } elseif (empty($user_password_new) OR empty($user_password_repeat)) {
             $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_FIELD_EMPTY;
-        } elseif ($_POST['user_password_new'] !== $_POST['user_password_repeat']) {
+        } elseif ($user_password_new !== $user_password_repeat) {
             $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_REPEAT_WRONG;
-        } elseif (strlen($_POST['user_password_new']) < 6) {
+        } elseif (strlen($user_password_new) < 6) {
             $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_TOO_SHORT;
-        } elseif (strlen($_POST['user_name']) > 64 OR strlen($_POST['user_name']) < 2) {
+        } elseif (strlen($user_name) > 64 OR strlen($user_name) < 2) {
             $_SESSION["feedback_negative"][] = FEEDBACK_USERNAME_TOO_SHORT_OR_TOO_LONG;
-        } elseif (!preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name'])) {
+        } elseif (!preg_match('/^[a-z\d]{2,64}$/i', $user_name)) {
             $_SESSION["feedback_negative"][] = FEEDBACK_USERNAME_DOES_NOT_FIT_PATTERN;
         } elseif (empty($_POST['user_email'])) {
             $_SESSION["feedback_negative"][] = FEEDBACK_EMAIL_FIELD_EMPTY;
@@ -441,19 +464,19 @@ class LoginModel
             $_SESSION["feedback_negative"][] = FEEDBACK_EMAIL_TOO_LONG;
         } elseif (!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
             $_SESSION["feedback_negative"][] = FEEDBACK_EMAIL_DOES_NOT_FIT_PATTERN;
-        } elseif (!empty($_POST['user_name'])
-            AND strlen($_POST['user_name']) <= 64
-            AND strlen($_POST['user_name']) >= 2
-            AND preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name'])
+        } elseif (!empty($user_name)
+            AND strlen($user_name) <= 64
+            AND strlen($user_name) >= 2
+            AND preg_match('/^[a-z\d]{2,64}$/i', $user_name)
             AND !empty($_POST['user_email'])
             AND strlen($_POST['user_email']) <= 64
             AND filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)
-            AND !empty($_POST['user_password_new'])
-            AND !empty($_POST['user_password_repeat'])
-            AND ($_POST['user_password_new'] === $_POST['user_password_repeat'])) {
+            AND !empty($user_password_new)
+            AND !empty($user_password_repeat)
+            AND ($user_password_new === $user_password_repeat)) {
 
             // clean the input
-            $user_name = strip_tags($_POST['user_name']);
+            $user_name = strip_tags($user_name);
             $user_email = strip_tags($_POST['user_email']);
 
             // crypt the user's password with the PHP 5.5's password_hash() function, results in a 60 character
@@ -461,7 +484,7 @@ class LoginModel
             // by the password hashing compatibility library. the third parameter looks a little bit shitty, but that's
             // how those PHP 5.5 functions want the parameter: as an array with, currently only used with 'cost' => XX
             $hash_cost_factor = (defined('HASH_COST_FACTOR') ? HASH_COST_FACTOR : null);
-            $user_password_hash = password_hash($_POST['user_password_new'], PASSWORD_DEFAULT, array('cost' => $hash_cost_factor));
+            $user_password_hash = password_hash($user_password_new, PASSWORD_DEFAULT, array('cost' => $hash_cost_factor));
 
             // check if username already exists
             $query = $this->db->prepare("SELECT * FROM users WHERE user_name = :user_name");
@@ -513,7 +536,7 @@ class LoginModel
             $user_id = $result_user_row->user_id;
 
             // send verification email, if verification email sending failed: instantly delete the user
-            if ($this->sendVerificationEmail($user_id, $user_email, $user_activation_hash)) {
+            if ($this->sendVerificationEmail($user_id, $user_email, $user_activation_hash, $send_password)) {
                 $_SESSION["feedback_positive"][] = FEEDBACK_ACCOUNT_SUCCESSFULLY_CREATED;
                 return true;
             } else {
@@ -536,7 +559,7 @@ class LoginModel
      * @param string $user_activation_hash user's mail verification hash string
      * @return boolean gives back true if mail has been sent, gives back false if no mail could been sent
      */
-    private function sendVerificationEmail($user_id, $user_email, $user_activation_hash)
+    private function sendVerificationEmail($user_id, $user_email, $user_activation_hash, $password = NULL)
     {
         // create PHPMailer object (this is easily possible as we auto-load the according class(es) via composer)
         $mail = new PHPMailer;
@@ -567,7 +590,14 @@ class LoginModel
         $mail->FromName = EMAIL_VERIFICATION_FROM_NAME;
         $mail->AddAddress($user_email);
         $mail->Subject = EMAIL_VERIFICATION_SUBJECT;
-        $mail->Body = EMAIL_VERIFICATION_CONTENT . EMAIL_VERIFICATION_URL . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
+        $mail->IsHTML(true);
+        if($password == NULL) {
+            $mail->Body = THANKS_FOR_SIGNING_UP . '<br />' . EMAIL_VERIFICATION_CONTENT . EMAIL_VERIFICATION_URL . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
+        }
+        else {
+            $mail->Body = THANKS_FOR_SIGNING_UP . '<br />' . WE_GENERATED_RANDOM_PASSWORD_FOR_YOU . '<br />' . YOUR_PASSWORD_IS . $password . '<br /><br />';
+            $mail->Body .= EMAIL_VERIFICATION_CONTENT . EMAIL_VERIFICATION_URL . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
+        }
 
         // final sending and check
         if($mail->Send()) {
@@ -1378,4 +1408,57 @@ class LoginModel
     	return $new_username;
     }
 
+    /**
+     * Generate unique user_name from email appended with a number
+     * @param string $existing_name $facebook_user_data stuff from the facebook class
+     * @return string unique user_name not in database yet
+     */
+    public function generateUniqueUserName($email, $company = NULL, $first_name = NULL, $last_name = NULL)
+    {
+        if(!empty($company)) {
+            $existing_name = $company;
+        }
+        elseif(!empty($fist_name) AND !empty($last_name)) {
+            $existing_name = $first_name . $last_name;
+        }
+        elseif(!empty($first_name)) {
+            $existing_name = $first_name;
+        }
+        else {
+            $existing_name = strtok($email, '@');
+        }
+        //strip any dots, trailing numbers and white spaces
+        $existing_name = str_replace(".", "", $existing_name);
+        $existing_name = preg_replace('/\s*\d+$/', '', $existing_name);
+        $existing_name = str_replace("+", "", $existing_name);
+
+        // loop until we have a new username, adding an increasing number to the given string every time
+        $n = 0;
+        do {
+            $n = $n+1;
+            $new_username = $existing_name . $n;
+            $query = $this->db->prepare("SELECT user_id FROM users WHERE user_name = :name_with_number");
+            $query->execute(array(':name_with_number' => $new_username));
+             
+         } while ($query->rowCount() == 1);
+
+        return $new_username;
+    }
+
+    /**
+     * Generate random password of specified length
+     * @param int length
+     * @return string random 8 characters
+     */
+    public function generateRandomPassword($length)
+    {
+        $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < $length; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
+    }
 }

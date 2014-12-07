@@ -207,10 +207,14 @@ define("EMAIL_PASSWORD_RESET_SUBJECT", "Password reset for PROJECT XY");
 define("EMAIL_PASSWORD_RESET_CONTENT", "Please click on this link to reset your password: ");
 
 define("EMAIL_VERIFICATION_URL", URL . "login/verify");
-define("EMAIL_VERIFICATION_FROM_EMAIL", "no-reply@example.com");
-define("EMAIL_VERIFICATION_FROM_NAME", "My Project");
-define("EMAIL_VERIFICATION_SUBJECT", "Account activation for PROJECT XY");
-define("EMAIL_VERIFICATION_CONTENT", "Please click on this link to activate your account: ");
+define("EMAIL_VERIFICATION_FROM_EMAIL", "no-reply@majsteria.pl");
+define("EMAIL_VERIFICATION_FROM_NAME", "Majsteria.pl");
+define("EMAIL_VERIFICATION_SUBJECT", "Witaj w Majsterii!");
+define("EMAIL_VERIFICATION_CONTENT", "Aktywuj swoje konto klikając w poniższy link: ");
+
+define("THANKS_FOR_SIGNING_UP", "Dziękujemy za założenie konta na Majsteria.pl");
+define("WE_GENERATED_RANDOM_PASSWORD_FOR_YOU", "Dla Twojej wygody wygenerowaliśmy Ci losowe hasło. Możesz je zmienić w każdej chwili.");
+define("YOUR_PASSWORD_IS", "Twoje hasło to: ");
 
 /**
  * Configuration for: Error messages and notices
