@@ -27,6 +27,11 @@ class AdminModel
         $query->execute(array(':user_id' => $user_id));
 
         // fetch() is the PDO method that gets a single result
-        return !empty($query->fetch());
+        $count =  $query->rowCount();
+        if ($count == 1) {
+            return true;
+        }
+        // default return
+        return false;
     }
 }
