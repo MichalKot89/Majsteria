@@ -20,7 +20,7 @@ class ProjectModel
      */
     public function getAllProjects()
     {
-        $sql = "SELECT project_id, submit_date, user_id, when, descr, post_code, subcategory, subsubcategory FROM project";
+        $sql = "SELECT project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted FROM project";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -35,7 +35,7 @@ class ProjectModel
      */
     public function getProject($project_id)
     {
-        $sql = "SELECT project_id, submit_date, user_id, when, descr, post_code, subcategory, subsubcategory FROM project WHERE project_id = :project_id";
+        $sql = "SELECT project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted FROM project WHERE project_id = :project_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':project_id' => $project_id));
 
@@ -50,7 +50,7 @@ class ProjectModel
      */
     public function getProjectsByUser($user_id)
     {
-        $sql = "SELECT project_id, submit_date, user_id, when, descr, post_code, subcategory, subsubcategory FROM project WHERE user_id = :user_id";
+        $sql = "SELECT project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted FROM project WHERE user_id = :user_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));
 
@@ -62,13 +62,12 @@ class ProjectModel
      * Setter for a project (create)
      * @return bool feedback (was the project created properly ?)
      */
-    public function create($user_id, $when, $descr, $post_code, $subcategory, $subsubcategory = NULL)
+    public function create($user_id, $timeline, $descr, $post_code, $subcategory_id, $subsubcategory_id = NULL)
     {
-        $sql = "INSERT INTO project (project_id, submit_date, user_id, when, descr, post_code, subcategory, subsubcategory, active) 
-	  VALUES (NULL, NOW(), :user_id, :descr, :post_code, :subcategory, :subsubcategory, 0)";
+        $sql = "INSERT INTO project (project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted) 
+	  VALUES (NULL, NOW(), :user_id, :timeline, :descr, :post_code, :subcategory_id, :subsubcategory_id, 0, 0)";
         $query = $this->db->prepare($sql);
-        $query->execute(array(':user_id' => $user_id, ':when' => $when, ':descr' => $descr, ':post_code' => $post_code, 
-	  ':subcategory' => $subcategory, ':subsubcategory' => $subsubcategory));
+        $query->execute(array(':user_id' => $user_id, ':timeline' => $timeline, ':descr' => $descr, ':post_code' => $post_code, ':subcategory_id' => $subcategory_id, ':subsubcategory_id' => $subsubcategory_id));
 
         $count =  $query->rowCount();
         if ($count == 1) {
@@ -83,13 +82,13 @@ class ProjectModel
      * @param int $project_id id of the specific project
      * @return bool feedback (was the update successful ?)
      */
-    public function editSave($when, $descr, $post_code, $subcategory, $subsubcategory = NULL)
+    public function editSave($timeline, $descr, $post_code, $subcategory_id, $subsubcategory_id = NULL)
     {
 
-        $sql = "UPDATE project SET when = :when, descr = :descr, post_code = :post_code, subcategory = :subcategory, subsubcategory = :subsubcategory WHERE project_id = :project_id";
+        $sql = "UPDATE project SET timeline = :timeline, descr = :descr, post_code = :post_code, subcategory_id = :subcategory_id, subsubcategory_id = :subsubcategory_id WHERE project_id = :project_id";
         $query = $this->db->prepare($sql);
-        $query->execute(array(':project_id' => $project_id, ':when' => $when, ':descr' => $descr, ':post_code' => $post_code, ':subcategory' => $subcategory, 
-            ':subsubcategory' => $subsubcategory));
+        $query->execute(array(':project_id' => $project_id, ':timeline' => $timeline, ':descr' => $descr, ':post_code' => $post_code, ':subcategory_id' => $subcategory_id, 
+            ':subsubcategory_id' => $subsubcategory_id));
 
         $count =  $query->rowCount();
         if ($count == 1) {
@@ -116,7 +115,6 @@ class ProjectModel
         }
         // default return
         return false;
-    }
     }
 
     /**

@@ -71,13 +71,15 @@ class LoginModel
 
         // check if hash of provided password matches the hash in the database
         if (password_verify($_POST['user_password'], $result->user_password_hash)) {
-
+            
+            /* ALLOW LOGGING IN WITHOUT BEING ACTIVE
             if ($result->user_active != 1) {
                 $_SESSION["feedback_negative"][] = FEEDBACK_ACCOUNT_NOT_ACTIVATED_YET;
                 return false;
-            }
+            } */
 
             // login process, write the user data into session
+            /*
             Session::init();
             Session::set('user_logged_in', true);
             Session::set('user_id', $result->user_id);
@@ -89,6 +91,8 @@ class LoginModel
             Session::set('user_avatar_file', $this->getUserAvatarFilePath());
             // put Gravatar URL into session
             $this->setGravatarImageUrl($result->user_email, AVATAR_SIZE);
+            */
+            $this->initiateUserSession($result->user_id, $result->user_name, $result->user_email, $result->user_account_type, 'DEFAULT');
 
             // reset the failed login counter for that user (if necessary)
             if ($result->user_last_failed_login > 0) {
@@ -538,6 +542,8 @@ class LoginModel
             // send verification email, if verification email sending failed: instantly delete the user
             if ($this->sendVerificationEmail($user_id, $user_email, $user_activation_hash, $send_password)) {
                 $_SESSION["feedback_positive"][] = FEEDBACK_ACCOUNT_SUCCESSFULLY_CREATED;
+                $this->initiateUserSession($user_id, $user_name, $user_email, NULL, 'DEFAULT');
+
                 return true;
             } else {
                 $query = $this->db->prepare("DELETE FROM users WHERE user_id = :last_inserted_id");
@@ -1460,5 +1466,28 @@ class LoginModel
             $pass[] = $alphabet[$n];
         }
         return implode($pass); //turn the array into a string
+    }
+
+    /**
+     * This method is used to initiate user session which is equivalent to successfully logging in
+     * @param int user_id
+     * @param string user_name
+     * @param int account_type
+     * @param string user_provider_type
+     */
+    private function initiateUserSession($user_id, $user_name, $user_email, $user_account_type, $user_provider_type)
+    {
+        // login process, write the user data into session
+        Session::init();
+        Session::set('user_logged_in', true);
+        Session::set('user_id', $user_id);
+        Session::set('user_name', $user_name);
+        Session::set('user_email', $user_email);
+        Session::set('user_account_type', $user_account_type);
+        Session::set('user_provider_type', $user_provider_type);
+        // put native avatar path into session
+        Session::set('user_avatar_file', $this->getUserAvatarFilePath());
+        // put Gravatar URL into session
+        $this->setGravatarImageUrl($user_email, AVATAR_SIZE);
     }
 }

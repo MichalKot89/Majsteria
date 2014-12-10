@@ -233,13 +233,25 @@ class Login extends Controller
     /**
      * Register page action (after form submit)
      */
-    function register_action()
+    function register_action($post_project = false)
     {
         $login_model = $this->loadModel('Login');
         $registration_successful = $login_model->registerNewUser();
 
+        
+
         if ($registration_successful == true) {
-            header('location: ' . URL . 'login/index');
+            $user_info_model = $this->loadModel('UserInfo');
+            $user_info_model->createUserInfo($_SESSION['user_id']);
+        }
+
+        // Do not redirect if this is a post project registration
+        if($post_project) {
+            return;
+        }
+
+        if ($registration_successful == true) {
+            header('location: ' . URL . 'dashboard/index');
         } else {
             header('location: ' . URL . 'login/register');
         }

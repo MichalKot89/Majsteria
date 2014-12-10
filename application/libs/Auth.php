@@ -22,4 +22,17 @@ class Auth
             exit();
         }
     }
+
+    public static function isLoggedIn()
+    {
+        // initialize the session
+        Session::init();
+
+        // if user is still not logged in, then destroy session, handle user as "not logged in" and
+        // redirect user to login page
+        if (isset($_SESSION['user_logged_in'])) {
+            return true;
+        }
+        return false;
+    }
 }

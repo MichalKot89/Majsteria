@@ -1,4 +1,9 @@
     <div class="container">
+
+
+    <!-- echo out the system feedback (error and success messages) -->
+    <?php $this->renderFeedbackMessages(); ?>
+
     	<div class="row">
         	<div class="col-md-12 col-sm-12">
             	<div class="col-md-12 col-sm-12 quotes-head">
@@ -48,49 +53,90 @@
                 </div>
                 <div class="col-md-12 col-sm-12 quote-form-style">
            	    	<div class="col-md-12 col-sm-12 padd-null quote-form-inner">
-                    	<form role="form">
+                    	<form action="<?php echo URL; ?>project/create" method="post" name="post_project_form">
                           <div class="form-group">
-                            <label>What do you need?</label>
-                            <select class="form-control">
-                              <option>select</option>
-                              <option></option>
-                              <option></option>
-                              <option></option>
-                              <option></option>
+                            <label>Jakiego rodzaju fachowca poszukujesz?</label>
+                            <select class="form-control" name="subcategory_id" required>
+                              <option value>Wybierz kategorie</option>
+                              <?php
+                                  foreach($this->getAllSubcategories() as $subcategory) {
+                                      echo '<option value="'.$subcategory->subcategory_id.'">' . $subcategory->name.'</option>';
+                                  } 
+                              ?>
                             </select>
                           </div>
                           <div class="form-group">
-                            <label>When do you need the work to start?</label><br>
-                            <button type="button" class="btn btn-default btn-de">ASAP</button>
-                            <button type="button" class="btn btn-default btn-de btn-de-active">Next Few Days</button>
-                            <button type="button" class="btn btn-default btn-de">Weeks</button>
-                            <button type="button" class="btn btn-default btn-de">I’m flexible</button>
-                            <button type="button" class="btn btn-default btn-de">Other</button>
+                            <label>Na kiedy?</label><br />
+                            <select class="form-control" name = "timeline" required>
+                              <option value>Wybierz termin</option>
+                              <option value="1">Jak najszybciej</option>
+                              <option value="2">Za kilka dni</option>
+                              <option value="3">Za kilka tygodni</option>
+                              <option value="4">Dogadamy się</option>
+                              <option vlaue="5">Nie wiem</option>
+                            </select>
+
+                            <?php /*
+                            <button type="button" class="btn btn-default btn-de">Jak najszybciej</button>
+                            <button type="button" class="btn btn-default btn-de btn-de-active">Za kilka dni</button>
+                            <button type="button" class="btn btn-default btn-de">Za kilka tygodni</button>
+                            <button type="button" class="btn btn-default btn-de">Dogadamy się</button>
+                            <button type="button" class="btn btn-default btn-de">Nie wiem</button>*/ ?>
+                          </div>
+
+                          <?php 
+                            // display these only if user is not logged in
+                            if(!Auth::isLoggedIn()) { ?>
+                          <div class="form-group">
+                            <label>Imię i nazwisko</label>
+                            <input type="name" name="first_name" class="form-control" style="width:45%" pattern=".{1,}" 
+                              value = "<?php echo isset($_SESSION['first_name'])?$_SESSION['first_name']:''; ?>" 
+                              required />
+                            <input type="name" name="last_name" class="form-control" style="width: 45%" pattern=".{1,}" 
+                              value = "<?php echo isset($_SESSION['last_name'])?$_SESSION['last_name']:''; ?>" 
+                              required />
                           </div>
                           <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="name" class="form-control">
+                            <label>Telefon kontaktowy (np. 606555222)</label>
+                            <input type="name" name="user_phone" class="form-control" pattern="\+?\d{9,}" 
+                              value = "<?php echo isset($_SESSION['user_phone'])?$_SESSION['user_phone']:''; ?>" 
+                              required />
                           </div>
                           <div class="form-group">
-                            <label>Best number to contact you on</label>
-                            <input type="name" class="form-control">
+                            <label for="exampleInputEmail1">Adres email</label>
+                            <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" name="user_email" 
+                              value = "<?php echo isset($_SESSION['user_email'])?$_SESSION['user_email']:''; ?>" 
+                              required />
+                          </div>
+                          <?php } ?>
+
+                          <div class="form-group">
+                            <label>Kod pocztowy miejsca zlecenia (np. 23-100)</label>
+                            <input type="name" class="form-control" pattern="\d{2}\-\d{3}" name="post_code" 
+                              value = "<?php echo isset($_SESSION['post_code'])?$_SESSION['post_code']:''; ?>" 
+                              required />
                           </div>
                           <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <label>Opisz dokładnie czego potrzebujesz</label>
+                            <textarea class="form-control" rows="3" name="descr"><?php echo isset($_SESSION['descr'])?$_SESSION['descr']:''; ?></textarea>
                           </div>
                           <div class="form-group">
-                            <label>Where do you need the job done?</label>
-                            <input type="name" class="form-control">
+                            <label>Wpisz kod z obrazka</label> <br />
+                            <input type="text" name="captcha" required /> <br />
+                            <img id="captcha" src="<?php echo URL; ?>login/showCaptcha" /><a href="#" onclick="document.getElementById('captcha').src = '<?php echo URL; ?>login/showCaptcha?' + Math.random(); return false">[ Przeładuj kod ]</a> <br />
                           </div>
-                          <div class="form-group">
-                            <label>Describe what you need done</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                          </div>
+
+                                     <?php /* <img id="captcha" src="<?php echo URL; ?>login/showCaptcha" />
+            <span style="display: block; font-size: 11px; color: #999; margin-bottom: 10px">
+                <!-- quick & dirty captcha reloader -->
+                <a href="#" onclick="document.getElementById('captcha').src = '<?php echo URL; ?>login/showCaptcha?' + Math.random(); return false">[ Reload Captcha ]</a>
+            </span>
+            <input type="text" name="captcha" required />*/ ?>
+
                           <div class="form-group">
                             <label style="font-size:12px;">By pressing 'Get Quotes Now', you agree to the <br /> 
                             <span id="terms"><a href="#">terms and conditions</a></span> of Majsteria</label>
-                            <button class="btn btn-default navbar-btn quote-sub pull-right" type="button">Get Quotes »</button>
+                            <button class="btn btn-default navbar-btn quote-sub pull-right" type="submit">Wyceń koszty »</button>
                           </div>
                           
                         </form>

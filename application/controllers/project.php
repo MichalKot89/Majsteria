@@ -25,10 +25,30 @@ class Project extends Controller
      */
     public function index()
     {
+        Auth::handleLogin();
         $project_model = $this->loadModel('Project');
-        $this->view->subcategories = $project_model->getAllSubcategories();
-        $this->view->categories = $project_model->getAllCategories();
+        $this->view->projects = $project_model->getProjectsByUser($_SESSION['user_id']);
+        $admin_model = $this->loadModel('Admin');
+        $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
         $this->view->render('project/index');
+    }
+
+    /**
+     * This method controls what happens when you move to /project/all in your app.
+     * Gets all projects.
+     */
+    public function all()
+    {
+        Auth::handleLogin();
+        $admin_model = $this->loadModel('Admin');
+        if(!$admin_model->isAdmin($_SESSION['user_id'])) {
+            $this->index();
+        }
+        else {
+            $project_model = $this->loadModel('Project');
+            $this->view->projects = $project_model->getAllProjects();
+            $this->view->render('project/all');
+        }
     }
 
     /**
@@ -37,21 +57,33 @@ class Project extends Controller
      */
     public function create()
     {
+        $this->storePostFieldsInSession();
+        // if not logged in try to register
         if (!isset($_SESSION['user_id'])) {
-            echo "Zaloguj sie wpierw, tu nastapi rejestracja";
-            exit(1);
+            require CONTROLLER_PATH . 'login.php';
+            $controller = new Login();
+            $controller->register_action(true);
         }
-        else {
-            $user_id = $_SESSION['user_logged_in'];
+
+        // if still not logged in, come back to get quotes page
+        if (!isset($_SESSION['user_id'])) {
+            header('location: ' . URL . 'get_quotes/index');
+            return;
         }
+
+        $user_id = $_SESSION['user_id'];
         // optimal MVC structure handles POST data in the controller, not in the model.
         // personally, I like POST-handling in the model much better (skinny controllers, fat models), so the login
         // stuff handles POST in the model. in this project-controller/model, the POST data is intentionally handled
         // in the controller, to show people how to do it "correctly". But I still think this is ugly.
-        if (isset($_POST['subcategory_id']) AND !empty($_POST['subcategory_id'])) {
-            $project_model = $this->loadModel('Project');
-            $project_model->create($user_id, $_POST['when'], $_POST['descr'], $_POST['post_code'], $_POST['subcategory'], $_POST['subsubcategory']);            
+        if (isset($_POST['subcategory_id']) AND !empty($_POST['subcategory_id']) AND 
+            isset($_POST['timeline']) AND !empty($_POST['timeline']) AND 
+            isset($_POST['descr']) AND !empty($_POST['descr']) AND 
+            isset($_POST['post_code']) AND !empty($_POST['post_code'])) {
+                $project_model = $this->loadModel('Project');
+                $project_model->create($user_id, $_POST['timeline'], $_POST['descr'], $_POST['post_code'], $_POST['subcategory_id'], NULL);            
         }
+        $this->destroyPostFieldsInSession();
         header('location: ' . URL . 'project');
     }
 
@@ -85,7 +117,7 @@ class Project extends Controller
             $admin_model = $this->loadModel('Admin');
             $project_model = $this->loadModel('Project');
             if($admin_model->isAdmin($_SESSION['user_id']) OR $project_model->getProject($project_id)->user_id == $_SESSION['user_id']) {
-                $project_model->editSave($_POST['when'], $_POST['descr'], $_POST['post_code'], $_POST['subcategory'], $_POST['subsubcategory']);
+                $project_model->editSave($_POST['timeline'], $_POST['descr'], $_POST['post_code'], $_POST['subcategory'], $_POST['subsubcategory']);
             }
         }
         header('location: ' . URL . 'project');
@@ -117,9 +149,35 @@ class Project extends Controller
             $admin_model = $this->loadModel('Admin');
             if($admin_model->isAdmin($_SESSION['user_id'])) {
                 $project_model = $this->loadModel('Project');
-                $project_model->delete($project_id);
+                $project_model->activate($project_id);
             }
         }
         header('location: ' . URL . 'project');
+    }
+
+    /**
+     * This method makes sures post form values are stored in session
+     */
+    public function storePostFieldsInSession()
+    {
+        $_SESSION['first_name'] = (isset($_POST['first_name']) AND !empty($_POST['first_name'])) ? $_POST['first_name'] : NULL;
+        $_SESSION['last_name'] = (isset($_POST['last_name']) AND !empty($_POST['last_name'])) ? $_POST['last_name'] : NULL;
+        $_SESSION['user_phone'] = (isset($_POST['user_phone']) AND !empty($_POST['user_phone'])) ? $_POST['user_phone'] : NULL;
+        $_SESSION['user_email'] = (isset($_POST['user_email']) AND !empty($_POST['user_email'])) ? $_POST['user_email'] : NULL;
+        $_SESSION['post_code'] = (isset($_POST['post_code']) AND !empty($_POST['post_code'])) ? $_POST['post_code'] : NULL;
+        $_SESSION['descr'] = (isset($_POST['descr']) AND !empty($_POST['descr'])) ? $_POST['descr'] : NULL;
+    }
+
+    /**
+     * This method destroys get free quotes form values
+     */
+    public function destroyPostFieldsInSession()
+    {
+        $_SESSION['first_name'] = NULL;
+        $_SESSION['last_name'] = NULL;
+        $_SESSION['user_phone'] = NULL;
+        $_SESSION['user_email'] = NULL;
+        $_SESSION['post_code'] = NULL;
+        $_SESSION['descr'] = NULL;
     }
 }

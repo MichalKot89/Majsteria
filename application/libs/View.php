@@ -109,7 +109,9 @@ class View
     private function getAllSubcategories()
     {
         $controller = 'subcategory_list';
-        require CONTROLLER_PATH . $controller . '.php';
+        if(!class_exists('Subcategory_List', false)) {
+            require CONTROLLER_PATH . $controller . '.php';
+        }
         $subcategory_view_controller = new Subcategory_List();
         return $subcategory_view_controller->getAllSubcategories();
     }
