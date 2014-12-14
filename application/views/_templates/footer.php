@@ -4,55 +4,55 @@
     <div class="col-md-2 col-sm-2 br-line">
     <h2>About</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» About hipages Group</a></li>
-    <li><a href="#">» hipages Blog</a></li>
-    <li><a href="#">» Careers at hipages Group</a></li>
-    <li><a href="#">» Meet the Team</a></li>
-    <li><a href="#">» List your Business</a></li>
-    <li><a href="#">» Contact Us</a></li>
+    <li><a href="#">» O Nas</a></li>
+    <li><a href="#">» Blog Majsterii</a></li>
+    <li><a href="#">» Oferty pracy</a></li>
+    <li><a href="#">» Poznaj Team Majsterii</a></li>
+    <li><a href="#">» Dodaj swoją firmę</a></li>
+    <li><a href="#">» Kontakt</a></li>
     </ul>
     </div>
     
     <div class="col-md-2 col-sm-2 br-line">
     <h2>Resources</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» Articles / Hints & Tips</a></li>
-    <li><a href="#">» Inspiration / Photos</a></li>
-    <li><a href="#">» Licensing  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-    <li><a href="#">» Glossary</a></li>
-    <li><a href="#">» Council Regulations</a></li>
+    <li><a href="#">» Artukuły / Porady i Wskazówki</a></li>
+    <li><a href="#">» Inspiracje / Zdjęcia</a></li>
+    <li><a href="#">» Licencje  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+    <li><a href="#">» Słowniczek</a></li>
+    <li><a href="#">» Regulacje Prawne</a></li>
     </ul>
     </div>
     
     <div class="col-md-2 col-sm-2 br-line">
-    <h2>Popular Categories</h2>
+    <h2>Najpopularniejsze kategorie</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» Cement Render</a></li>
-    <li><a href="#">» Ducted Air Conditioning</a></li>
-    <li><a href="#">» Fly Screens</a></li>
-    <li><a href="#">» Metal Roofing</a></li>
-    <li><a href="#">» Browse All Categories</a></li>
+    <li><a href="#">» Cementowanie</a></li>
+    <li><a href="#">» Klimatyzacja</a></li>
+    <li><a href="#">» Mostitiery</a></li>
+    <li><a href="#">» Dachy</a></li>
+    <li><a href="#">» Wszystkie kategorie</a></li>
     </ul>
     </div>
     
     <div class="col-md-2 col-sm-2 br-line">
-    <h2>How We Work</h2>
+    <h2>Jak to działa?</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» Post a Job</a></li>
-    <li><a href="#">» Search Directory</a></li>
-    <li><a href="#">» Hiring a Professional</a></li>
+    <li><a href="#">» Dodaj Zlecenie</a></li>
+    <li><a href="#">» Katalog Wyszukiwania</a></li>
+    <li><a href="#">» Zatrudnienie Profesjonalisty</a></li>
     </ul>
     </div>
     
     <div class="col-md-2 col-sm-2 br-line1 pull-right padd-null m-left">
-    <div class="txt">Thousands of Jobs!</div>
-    <div class="sml-txt">1 job posted every 64 seconds</div>
-    <div class="ogr">40,000 + Tradies</div>
-    <div class="bkl">1,100 + Categories</div>
+    <div class="txt">Multum zleceń!</div>
+    <div class="sml-txt">Dzięsiątki zleceń każdego dnia!</div>
+    <div class="ogr">Największa baza fachowców</div>
+    <div class="bkl">Największa liczba kategorii</div>
     </div>
     
     <div class="col-md-12 col-sm-12 shadow">
-    <img class="img-responsive" alt="" src="<img src="<?php echo URL; ?>public/images/shadow.png">
+    <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
     </div>
     
     
@@ -66,32 +66,32 @@
     <div class="row padding-bootom">
     <div class="col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4 col-one">
-    <h2>Post a job! <span>it's free!</span></h2>
-    <p>The easiest way to find trade professionals - Tell us what you need and we'll get you three quotes.
-    <span class="org-sm">Freecall 1300 217 968</span><br>
-    <span class="sm1">MON - FRI: 7AM - 11PM (AEST)<br>
-    SAT - SUN: 8AM - 10PM (AEST)</span></p>
+    <h2>Dodaj Zlecenie <span>ZA DARMO!</span></h2>
+    <p>The easiest way to find trade professionals - Tell us what you need and we'll get you three quotes. Najprostsza droga do znalezienia fachowcy- Powiedz czego potrzebujesz, a my dostarczymy Ci trzy wyceny.
+    <span class="org-sm">Dzwoń (numer mańka)</span><br>
+    <span class="sm1">Pn-Pt 9:00-17:00<br>
+    Sb-Nd (do dogadania z mańkiem)</span></p>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
     <h2>O Nas:</h2>
-    <p>Portal majsteria.pl to świetne miejsce gdzie każdy z Was, znajdzie dobrego fachowca lub firmę świadczącą usługi remontowe, budowlane czy renowacyjne, zaprojektują Ci zarówno wnętrze domu czy biura lub wykonają świetny projekt nowego ogrodu i tym podobne usługi. Obiektywny ranking specjalistów ułatwi Ci wybór wykonawcy, który ziści Twoją wizję... Serwis majsteria to nie tylko miejsce gdzie znajdziesz wymarzonego fachowca ale i wizję, pomysł na coś nowego o czym możliwe, że nawet nigdy nie słyszeliście. Ten portal łączy w sobie dwie bardzo ważne rzeczy: ma bazę pomysłów na usprawnienia Twojego domu, posesji, biura, itp…
+    <p>Witamy w Majsterii, krainie w której znaleźc można rozwiązanie każdego problemu zwiazanego z naprawami, budową czy renowacją powierzchni użytkowych. Serwis Majsteria zrzesza najlepszych fachowców z poszczególnych branży. Wygodna wyszukiwarka pozwoli na szybką wycenę kosztu zlecenia, oraz dostarczy listę możliwych kontaktów w najblizszym sąsiedztwie. Majsteria to nie tylko baza kontaktów -- znajdziesz tu również masę inspiracji do wykorzystania przy własnych pracach remontowych czy budowlanych. Udostępniona baza sprawdzonych fachowców dodatkowo pomoże w realizacji pomysłu.
+	…
     <br>
-    Jak zarówno bazę z fachowcami, którzy będą w stanie to dla Ciebie wykonać… 
-    <br><br>
-    A to wszystko online bez wychodzenia z domu i żmudnego wydzwaniania po “złotych rączkach” poleconych przez znajomych. Portal majsteria.pl to największe źródło sprawdzonych profesjonalistów!
+   
+    A to wszystko online, bez wychodzenia z domu i tracenia czasu! Portal majsteria.pl to największe i najwygodniesze źródło profesjonalistów!
     <br>
-    Nie zwlekaj już ani chwili !</p>
-    <button type="button" class="btn btn-default navbar-btn btn-blue">WYCEŃ KOSZTY</button>
+    Nie zwlekaj już ani chwili! </p>
+    <button type="button" class="btn btn-default navbar-btn btn-blue">Szukaj kontaktów</button>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
-    <h2><span>Advertise with us!</span></h2>
-    <p>Our highly engaged audience is actively sending enquiries to local trades & professionals just like you!
-    <span class="org-sm">Call (02) 8396 1300</span>
-    <span class="sm1">MON - FRI: 9AM - 5:30PM (AEST)<br>
-    SAT - SUN: Leave a message and we'll call back on Monday</span></p>
-    <button type="button" class="btn btn-default navbar-btn btn-blk">List your Business</button>
+    <h2><span>Reklamuj sie z nami!</span></h2>
+    <p>Nasi użytkownicy regularnie wysyłają nam zapytania o profesjonalistów z Twojej branży!
+    <span class="org-sm">Dzwoń (numer Mańka)</span>
+    <span class="sm1">Pn-Pt 9:00-17:00 <br>
+   Sb-Nd: Zostaw wiadomośc, a my skontaktujemy się z Toba w poniedziałek</span></p>
+    <button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button>
     </div>
     
     
