@@ -22,6 +22,14 @@ class AdminModel
      */
     public function isAdmin($user_id)
     {
+        if(isset($_SESSION['is_admin'])) {
+            if($_SESSION['is_admin'] == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
         $sql = "SELECT admin_id, user_id FROM admin WHERE user_id = :user_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));
@@ -29,9 +37,11 @@ class AdminModel
         // fetch() is the PDO method that gets a single result
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION['is_admin'] = 1;
             return true;
         }
         // default return
+        $_SESSION['is_admin'] = 0;
         return false;
     }
 }
