@@ -20,7 +20,10 @@ class ProjectModel
      */
     public function getAllProjects()
     {
-        $sql = "SELECT project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted FROM project";
+        $sql = "SELECT p.project_id, p.submit_date, p.user_id, p.timeline, p.descr, p.post_code, 
+                p.subcategory_id, p.subsubcategory_id, p.active, p.deleted, s.name AS subcategory_name
+            FROM project p
+            JOIN subcategory s ON s.subcategory_id = p.subcategory_id";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -35,7 +38,11 @@ class ProjectModel
      */
     public function getProject($project_id)
     {
-        $sql = "SELECT project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted FROM project WHERE project_id = :project_id";
+        $sql = "SELECT p.project_id, p.submit_date, p.user_id, p.timeline, p.descr, p.post_code, 
+                p.subcategory_id, p.subsubcategory_id, p.active, p.deleted, s.name AS subcategory_name
+            FROM project p
+            JOIN subcategory s ON s.subcategory_id = p.subcategory_id 
+            WHERE p.project_id = :project_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':project_id' => $project_id));
 
@@ -50,7 +57,10 @@ class ProjectModel
      */
     public function getProjectsByUser($user_id)
     {
-        $sql = "SELECT project_id, submit_date, user_id, timeline, descr, post_code, subcategory_id, subsubcategory_id, active, deleted FROM project WHERE user_id = :user_id";
+        $sql = "SELECT p.project_id, p.submit_date, p.user_id, p.timeline, p.descr, p.post_code, 
+                p.subcategory_id, p.subsubcategory_id, p.active, p.deleted, s.name AS subcategory_name
+            FROM project p
+            JOIN subcategory s ON s.subcategory_id = p.subcategory_id WHERE user_id = :user_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));
 

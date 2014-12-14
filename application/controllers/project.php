@@ -87,6 +87,24 @@ class Project extends Controller
         header('location: ' . URL . 'project');
     }
 
+
+    /**
+     * This method controls what happens when you move to /project/view(/XX) in your app.
+     * Displays info about one project
+     * @param $project_id int id of the project
+     */
+    public function view($project_id)
+    {
+        if (isset($project_id)) {
+            // get the project that you want to edit (to show the current content)
+            $project_model = $this->loadModel('Project');
+            $this->view->project = $project_model->getProject($project_id);
+                $this->view->render('project/view');
+        } else {
+            header('location: ' . URL . 'project');
+        }
+    }
+
     /**
      * This method controls what happens when you move to /project/edit(/XX) in your app.
      * Shows the current content of the project and an editing form.

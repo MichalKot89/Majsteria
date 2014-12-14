@@ -1,12 +1,11 @@
-<div class="content">
+<div class="container">
     <h1>Moje zlecenia</h1>
 
-    <table>
+    <table class="table">
     <?php
         if ($this->projects) {
             foreach($this->projects as $key => $value) {
                 echo '<tr>';
-                echo '<td>' . $value->project_id . '</td>';
                 echo '<td>' . $value->submit_date . '</td>';
                 echo '<td>' . $value->descr . '</td>';
                 echo '<td>' . $value->post_code . '</td>';
