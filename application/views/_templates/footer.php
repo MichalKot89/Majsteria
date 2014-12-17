@@ -4,7 +4,7 @@
     <div class="col-md-2 col-sm-2 br-line">
     <h2>About</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» O Nas</a></li>
+    <li><a href="#">» O Majsterii</a></li>
     <li><a href="#">» Blog Majsterii</a></li>
     <li><a href="#">» Oferty pracy</a></li>
     <li><a href="#">» Poznaj Team Majsterii</a></li>
@@ -52,7 +52,7 @@
     </div>
     
     <div class="col-md-12 col-sm-12 shadow">
-    <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
+    <img class="img-responsive" alt="" src="<img src="<?php echo URL; ?>public/images/shadow.png">
     </div>
     
     
@@ -67,19 +67,19 @@
     <div class="col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4 col-one">
     <h2>Dodaj Zlecenie <span>ZA DARMO!</span></h2>
-    <p>The easiest way to find trade professionals - Tell us what you need and we'll get you three quotes. Najprostsza droga do znalezienia fachowcy- Powiedz czego potrzebujesz, a my dostarczymy Ci trzy wyceny.
-    <span class="org-sm">Dzwoń (numer mańka)</span><br>
+    <p> Znadź pomoc już teraz- powiedz czego potrzebujesz, a my dostarczymy Ci trzy wyceny przesłane przez naszych fachowców.
+    <span class="org-sm">Dzwoń (000000)</span><br>
     <span class="sm1">Pn-Pt 9:00-17:00<br>
-    Sb-Nd (do dogadania z mańkiem)</span></p>
+    Sb-Nd (00:00-00:00)</span></p>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
     <h2>O Nas:</h2>
-    <p>Witamy w Majsterii, krainie w której znaleźc można rozwiązanie każdego problemu zwiazanego z naprawami, budową czy renowacją powierzchni użytkowych. Serwis Majsteria zrzesza najlepszych fachowców z poszczególnych branży. Wygodna wyszukiwarka pozwoli na szybką wycenę kosztu zlecenia, oraz dostarczy listę możliwych kontaktów w najblizszym sąsiedztwie. Majsteria to nie tylko baza kontaktów -- znajdziesz tu również masę inspiracji do wykorzystania przy własnych pracach remontowych czy budowlanych. Udostępniona baza sprawdzonych fachowców dodatkowo pomoże w realizacji pomysłu.
+    <p>Witamy w Majsterii, miejscu w którym znaleźc można rozwiązanie każdego problemu zwiazanego z naprawami, budową czy renowacją powierzchni użytkowych. Serwis Majsteria zrzesza najlepszych fachowców z poszczególnych branży. Wygodna wyszukiwarka pozwoli na szybką wycenę kosztu zlecenia, oraz dostarczy listę możliwych kontaktów w najblizszym sądsiedztwie. Majsteria to nie tylko baza kontaktów- znajdziesz tu również masę inspiracji do wykorzystania przy własnych pracach remontowych czy budowlanych. Udostępniona lista sprawdzonych fachowców dodatkowo pomoże w realizacji pomysłu.
 	…
     <br>
    
-    A to wszystko online, bez wychodzenia z domu i tracenia czasu! Portal majsteria.pl to największe i najwygodniesze źródło profesjonalistów!
+    Portal majsteria.pl to największe i najwygodniesze źródło profesjonalistów!
     <br>
     Nie zwlekaj już ani chwili! </p>
     <button type="button" class="btn btn-default navbar-btn btn-blue">Szukaj kontaktów</button>
@@ -87,7 +87,7 @@
     
     <div class="col-md-4 col-sm-4 col-one">
     <h2><span>Reklamuj sie z nami!</span></h2>
-    <p>Nasi użytkownicy regularnie wysyłają nam zapytania o profesjonalistów z Twojej branży!
+    <p>Regularnie otrzymujemy zapytania o fachowców z Twojej branży!
     <span class="org-sm">Dzwoń (numer Mańka)</span>
     <span class="sm1">Pn-Pt 9:00-17:00 <br>
    Sb-Nd: Zostaw wiadomośc, a my skontaktujemy się z Toba w poniedziałek</span></p>
@@ -108,72 +108,72 @@
     <div class="container">
     <div class="row">
     <div class="col-md-12 col-sm-12 white-font">
-    Current popular trade categories within capital cities of Australia
+     Najpopularniejsze kategorie w największych polskich miastach
     </div>
     
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Rubbish Removal Sydney</a></li>
-    <li><a href="#">Builders Melbourne</a></li>
-    <li><a href="#">Asbestos Removal Brisbane</a></li>
-    <li><a href="#">Air Conditioning Perth</a></li>
-    <li><a href="#">Rainwater Tanks Adelaide</a></li>
-    <li><a href="#">Insulation Canberra</a></li>
-    <li><a href="#">Draftsman Hobart</a></li>
-    <li><a href="#">Carpenter Darwin</a></li>
+    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
+    <li><a href="#">Pracownicy Budowy Poznań</a></li>
+    <li><a href="#">Usuwanie azbestu Kraków</a></li>
+    <li><a href="#">Klimatyzacja Wrocław</a></li>
+    <li><a href="#">Orynnowanie Rzeszów</a></li>
+    <li><a href="#">Izolacja cieplna Lublin</a></li>
+    <li><a href="#">Konstruktor Łódź</a></li>
+    <li><a href="#">Stolarz Warszawa</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Rubbish Removal Sydney</a></li>
-    <li><a href="#">Builders Melbourne</a></li>
-    <li><a href="#">Asbestos Removal Brisbane</a></li>
-    <li><a href="#">Air Conditioning Perth</a></li>
-    <li><a href="#">Rainwater Tanks Adelaide</a></li>
-    <li><a href="#">Insulation Canberra</a></li>
-    <li><a href="#">Draftsman Hobart</a></li>
-    <li><a href="#">Carpenter Darwin</a></li>
+    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
+    <li><a href="#">Pracownicy Budowy Poznań</a></li>
+    <li><a href="#">Usuwanie azbestu Kraków</a></li>
+    <li><a href="#">Klimatyzacja Wrocław</a></li>
+    <li><a href="#">Orynnowanie Rzeszów</a></li>
+    <li><a href="#">Izolacja cieplna Lublin</a></li>
+    <li><a href="#">Konstruktor Łódź</a></li>
+    <li><a href="#">Stolarz Warszawa</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Rubbish Removal Sydney</a></li>
-    <li><a href="#">Builders Melbourne</a></li>
-    <li><a href="#">Asbestos Removal Brisbane</a></li>
-    <li><a href="#">Air Conditioning Perth</a></li>
-    <li><a href="#">Rainwater Tanks Adelaide</a></li>
-    <li><a href="#">Insulation Canberra</a></li>
-    <li><a href="#">Draftsman Hobart</a></li>
-    <li><a href="#">Carpenter Darwin</a></li>
+    <li><a href="#">Usuwanie godparent Warszawa</a></li>
+    <li><a href="#">Pracownicy Budowy Poznań</a></li>
+    <li><a href="#">Usuwanie azbestu Kraków</a></li>
+    <li><a href="#">>Klimatyzacja Wrocław</a></li>
+    <li><a href="#">Orynnowanie Rzeszów</a></li>
+    <li><a href="#">Izolacja cieplna Lublin</a></li>
+    <li><a href="#">Konstruktor Łódź</a></li>
+    <li><a href="#">Stolarz Warszawa</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Rubbish Removal Sydney</a></li>
-    <li><a href="#">Builders Melbourne</a></li>
-    <li><a href="#">Asbestos Removal Brisbane</a></li>
-    <li><a href="#">Air Conditioning Perth</a></li>
-    <li><a href="#">Rainwater Tanks Adelaide</a></li>
-    <li><a href="#">Insulation Canberra</a></li>
-    <li><a href="#">Draftsman Hobart</a></li>
-    <li><a href="#">Carpenter Darwin</a></li>
+    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
+    <li><a href="#">Pracownicy Budowy Poznań</a></li>
+    <li><a href="#">Usuwanie azbestu Kraków</a></li>
+    <li><a href="#">>Klimatyzacja Wrocław</a></li>
+    <li><a href="#">Orynnowanie Rzeszów</a></li>
+    <li><a href="#">Izolacja cieplna Lublin</a></li>
+    <li><a href="#">Konstruktor Łódź</a></li>
+    <li><a href="#">Stolarz Warszawa</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Rubbish Removal Sydney</a></li>
-    <li><a href="#">Builders Melbourne</a></li>
-    <li><a href="#">Asbestos Removal Brisbane</a></li>
-    <li><a href="#">Air Conditioning Perth</a></li>
-    <li><a href="#">Rainwater Tanks Adelaide</a></li>
-    <li><a href="#">Insulation Canberra</a></li>
-    <li><a href="#">Draftsman Hobart</a></li>
-    <li><a href="#">Carpenter Darwin</a></li>
+    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
+    <li><a href="#">Pracownicy Budowy Poznań</a></li>
+    <li><a href="#">Usuwanie azbestu Kraków</a></li>
+    <li><a href="#">>Klimatyzacja Wrocław</a></li>
+    <li><a href="#">Orynnowanie Gdańsk</a></li>
+    <li><a href="#">Izolacja cieplna Lublin</a></li>
+    <li><a href="#">Konstruktor Łódź</a></li>
+    <li><a href="#">Stolarz Warszawa</a></li>
     </ul>
     </div>
     
@@ -182,7 +182,7 @@
     <a href="#"><img src="<?php echo URL; ?>public/images/foot-logo.png" alt="" class="img-responsive"></a>
     </div>
     <div class="col-md-7 col-sm-12 foot-links">
-    <a href="#">Sydney</a> » <a href="#">Melbourne</a> » <a href="#">Adelaide</a> » <a href="#">Brisbane</a> » <a href="#">Hobart</a> » <a href="#">Perth</a> » <a href="#">Darwin</a> » <a href="#">Canberra</a>
+    <a href="#">Warszawa</a> » <a href="#">Poznań</a> » <a href="#">Wrocław</a> » <a href="#">Łódź</a> » <a href="#">Kraków</a> » <a href="#">Lublin</a> » <a href="#">Gdańsk</a> » <a href="#"></a>
     </div>
     
     <div class="col-md-3 col-sm-12 icon">
@@ -207,13 +207,17 @@
     <div class="row">
     <div class="col-md-12 col-sm-12 text-blk">
     <div class="col-md-5 col-sm-6">
-    © 2014 · <a href="#">Terms &amp; Conditions</a>  |  <a href="#">Privacy Policy</a>  |  <a href="#">Site map</a><br>
-    <a href="#">Partner Sites: Natural Therapy Pages</a>  |  <a href="#">Pet Pages</a>
+    © 2014 · <a href="#">Warunki Uczestnictwa</a>  |  <a href="#">Polityka Prywatności</a> 
+    <?php /*<br>
+    <a href="#">Strony Partnerskie:</a>  |  <a href="#">{przykladowe strony}</a>*/
+    ?>
 	</div>
     
     <div class="col-md-5 col-sm-6 pull-right">
-    <a href="#">Tradesmen by Name</a>  |  <a href="#">Trades by Business</a>  |  <a href="#">Trade Associations</a><br>
-    <a href="#">Advertiser Login</a>  |  <a href="#">Customer Support</a>
+        <?php /*
+    <a href="#">Wyszukiwanie po nazwie...</a>  |  <a href="#">Wszyszukiwanie po nazwie firmy...</a>  |  <a href="#">Stowarzyszenia Branżowe</a><br>
+    */ ?>
+    <a href="#">Ogłoszeniodawca</a>  |  <a href="#">Pomoc Techniczna Strony</a> |  <a href="#">Mapa Strony</a>
 	</div>
     </div>
     </div>
