@@ -26,7 +26,7 @@ class LoginModel
     public function login()
     {
         // we do negative-first checks here
-        if (!isset($_POST['user_name']) OR empty($_POST['user_name'])) {
+        if (!isset($_POST['user_email']) OR empty($_POST['user_email'])) {
             $_SESSION["feedback_negative"][] = FEEDBACK_USERNAME_FIELD_EMPTY;
             return false;
         }
@@ -46,11 +46,11 @@ class LoginModel
                                           user_failed_logins,
                                           user_last_failed_login
                                    FROM   users
-                                   WHERE  (user_name = :user_name OR user_email = :user_name)
+                                   WHERE  (user_email = :user_email)
                                           AND user_provider_type = :provider_type");
         // DEFAULT is the marker for "normal" accounts (that have a password etc.)
         // There are other types of accounts that don't have passwords etc. (FACEBOOK)
-        $sth->execute(array(':user_name' => $_POST['user_name'], ':provider_type' => 'DEFAULT'));
+        $sth->execute(array(':user_email' => $_POST['user_email'], ':provider_type' => 'DEFAULT'));
         $count =  $sth->rowCount();
         // if there's NOT one result
         if ($count != 1) {
@@ -137,9 +137,9 @@ class LoginModel
             // increment the failed login counter for that user
             $sql = "UPDATE users
                     SET user_failed_logins = user_failed_logins+1, user_last_failed_login = :user_last_failed_login
-                    WHERE user_name = :user_name OR user_email = :user_name";
+                    WHERE user_email = :user_email";
             $sth = $this->db->prepare($sql);
-            $sth->execute(array(':user_name' => $_POST['user_name'], ':user_last_failed_login' => time() ));
+            $sth->execute(array(':user_email' => $_POST['user_email'], ':user_last_failed_login' => time() ));
             // feedback message
             $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_WRONG;
             return false;
@@ -249,8 +249,22 @@ class LoginModel
                 $query->execute(array(':user_facebook_uid' => $facebook_user_data["id"], ':provider_type' => 'FACEBOOK'));
                 $count =  $query->rowCount();
                 if ($count != 1) {
-                    $_SESSION["feedback_negative"][] = FEEDBACK_FACEBOOK_LOGIN_NOT_REGISTERED;
-                    return false;
+                    if(!$this->registerNewUserWithFacebook($facebook_user_data)) {
+                        $_SESSION["feedback_negative"][] = FEEDBACK_FACEBOOK_LOGIN_NOT_REGISTERED;
+                        return false;
+                    }
+                    else {
+                        // check again after registering
+                        $query = $this->db->prepare("SELECT user_id,
+                                                      user_name,
+                                                      user_email,
+                                                      user_account_type,
+                                                      user_provider_type
+                                                   FROM users
+                                                   WHERE user_facebook_uid = :user_facebook_uid
+                                                     AND user_provider_type = :provider_type");
+                        $query->execute(array(':user_facebook_uid' => $facebook_user_data["id"], ':provider_type' => 'FACEBOOK'));
+                    }
                 }
 
                 $result = $query->fetch();
@@ -1175,7 +1189,7 @@ class LoginModel
 
         // get the "login"-URL: This is the URL the user will be redirected to after being sent to the Facebook Auth
         // server by clicking the "login via facebook"-button. Don't touch this until you know exactly what you do.
-        $facebook_login_url = $facebook->getLoginUrl(array('redirect_uri' => URL . FACEBOOK_LOGIN_PATH));
+        $facebook_login_url = $facebook->getLoginUrl(array('scope' => 'email', 'redirect_uri' => URL . FACEBOOK_LOGIN_PATH));
 
         return $facebook_login_url;
     }
@@ -1233,9 +1247,10 @@ class LoginModel
             }
         }
 
+
         // if we don't have the facebook-user array variable, leave the method
-        if (!$facebook_user_data) {
-            $_SESSION["feedback_negative"][] = FEEDBACK_FACEBOOK_UID_ALREADY_EXISTS;
+        if (!isset($facebook_user_data) OR !$facebook_user_data) {
+            $_SESSION["feedback_negative"][] = FEEDBACK_FACEBOOK_DATA_NOT_AVAILABLE;
             return false;
         }
 
@@ -1289,8 +1304,13 @@ class LoginModel
      */
     public function registerNewUserWithFacebook($facebook_user_data)
     {
-        // delete dots from facebook-username (it's the common way to do this like that)
-        $clean_user_name_from_facebook = str_replace(".", "", $facebook_user_data["username"]);
+        if(isset($facebook_user_data["username"])) {
+            // delete dots from facebook-username (it's the common way to do this like that)
+            $clean_user_name_from_facebook = str_replace(".", "", $facebook_user_data["username"]);
+        }
+        else {
+            $clean_user_name_from_facebook = $this->generateUniqueUserName($facebook_user_data["email"], NULL, $facebook_user_data["first_name"], $facebook_user_data["last_name"]);
+        }
         // generate integer-timestamp for saving of account-creating date
         $user_creation_timestamp = time();
 

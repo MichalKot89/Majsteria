@@ -115,4 +115,17 @@ class View
         $subcategory_view_controller = new Subcategory_List();
         return $subcategory_view_controller->getAllSubcategories();
     }
+
+    /**
+     * Get Facebook URL login link
+     */
+    function getFacebookLoginUrl()
+    {
+        $controller = 'login';
+        if(!class_exists('Login', false)) {
+            require CONTROLLER_PATH . $controller . '.php';
+        }
+        $login_controller = new Login();
+        return $login_controller->getFacebookLoginUrl();
+    }
 }

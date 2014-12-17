@@ -356,4 +356,19 @@ class Login extends Controller
         $login_model = $this->loadModel('Login');
         $login_model->generateCaptcha();
     }
+
+    /**
+     * Loads login model and returns Facebook Login Url
+     */
+    function getFacebookLoginUrl()
+    {
+        // create a login model to perform the getFacebookLoginUrl() method
+        $login_model = $this->loadModel('Login');
+
+        // if we use Facebook: this is necessary as we need the facebook_login_url in the login form (in the view)
+        if (FACEBOOK_LOGIN == true) {
+            return $login_model->getFacebookLoginUrl();
+        }
+        return '#';
+    }
 }

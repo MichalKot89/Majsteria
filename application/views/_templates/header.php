@@ -67,6 +67,7 @@
     <!-- Bootstrap -->
     <link href="<?php echo URL; ?>public/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/bootstrap-social.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -125,7 +126,7 @@
                 <li class="white-text" <?php if ($this->checkForActiveControllerAndAction($filename, "login/index")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo URL; ?>login/index"><div class="icon icon-log-in org wht"></div> Zaloguj się</a>
                 </li>
-                <li class="white-text"><a href="#"><div class="icon icon-social-facebook blue"></div> ZALOGUJ Z FB</a></li>
+                <li class="white-text"><a href="<?php echo $this->getFacebookLoginUrl(); ?>"><div class="icon icon-social-facebook blue"></div> ZALOGUJ Z FB</a></li>
             <!-- for logged in users -->
             <?php else:?>
                 <li class="white-text" <?php if ($this->checkForActiveControllerAndAction($filename, "subcategory/index")) { echo ' class="active" '; } ?> >
