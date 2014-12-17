@@ -450,14 +450,12 @@ class LoginModel
         }
 
         // if password is not provided, generate one
-        if(empty($_POST['user_password_new']) && empty($_POST['user_password_repeat'])) {
+        if(empty($_POST['user_password'])) {
             $user_password_new = $this->generateRandomPassword(8);
-            $user_password_repeat = $user_password_new;
             $send_password = $user_password_new;
         }
         else {
-            $user_password_new = !empty($_POST['user_password_new'])?$_POST['user_password_new']:NULL;
-            $user_password_repeat = !empty($_POST['user_password_repeat'])?$_POST['user_password_repeat']:NULL;
+            $user_password_new = !empty($_POST['user_password'])?$_POST['user_password']:NULL;
             $send_password = NULL;
         }
 
@@ -466,10 +464,8 @@ class LoginModel
             $_SESSION["feedback_negative"][] = FEEDBACK_CAPTCHA_WRONG;
         } elseif (empty($user_name)) {
             $_SESSION["feedback_negative"][] = FEEDBACK_USERNAME_FIELD_EMPTY;
-        } elseif (empty($user_password_new) OR empty($user_password_repeat)) {
+        } elseif (empty($user_password_new)) {
             $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_FIELD_EMPTY;
-        } elseif ($user_password_new !== $user_password_repeat) {
-            $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_REPEAT_WRONG;
         } elseif (strlen($user_password_new) < 6) {
             $_SESSION["feedback_negative"][] = FEEDBACK_PASSWORD_TOO_SHORT;
         } elseif (strlen($user_name) > 64 OR strlen($user_name) < 2) {
@@ -489,9 +485,7 @@ class LoginModel
             AND !empty($_POST['user_email'])
             AND strlen($_POST['user_email']) <= 64
             AND filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)
-            AND !empty($user_password_new)
-            AND !empty($user_password_repeat)
-            AND ($user_password_new === $user_password_repeat)) {
+            AND !empty($user_password_new)) {
 
             // clean the input
             $user_name = strip_tags($user_name);
