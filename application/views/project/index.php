@@ -9,7 +9,7 @@
                 echo '<td>' . $value->submit_date . '</td>';
                 echo '<td>' . $value->descr . '</td>';
                 echo '<td>' . $value->post_code . '</td>';
-                echo '<td>' . $value->subcategory_id . '</td>';
+                echo '<td>' . $value->subcategory_name . '</td>';
                 if($this->isAdmin) {
                     echo '<td><a href="'. URL . 'project/activate/' . $value->project_id.'">Activate</a></td>';
                     echo '<td><a href="'. URL . 'project/delete/' . $value->project_id.'">Delete</a></td>';
