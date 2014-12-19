@@ -120,18 +120,13 @@
                             <label>Opisz dokładnie czego potrzebujesz</label>
                             <textarea class="form-control" rows="3" name="descr"><?php echo isset($_SESSION['descr'])?$_SESSION['descr']:''; ?></textarea>
                           </div>
+                          <?php if($this->isCaptchaNeeded) { ?>
                           <div class="form-group">
                             <label>Wpisz kod z obrazka</label> <br />
                             <input type="text" name="captcha" required /> <br />
                             <img id="captcha" src="<?php echo URL; ?>login/showCaptcha" /><a href="#" onclick="document.getElementById('captcha').src = '<?php echo URL; ?>login/showCaptcha?' + Math.random(); return false">[ Przeładuj kod ]</a> <br />
                           </div>
-
-                                     <?php /* <img id="captcha" src="<?php echo URL; ?>login/showCaptcha" />
-            <span style="display: block; font-size: 11px; color: #999; margin-bottom: 10px">
-                <!-- quick & dirty captcha reloader -->
-                <a href="#" onclick="document.getElementById('captcha').src = '<?php echo URL; ?>login/showCaptcha?' + Math.random(); return false">[ Reload Captcha ]</a>
-            </span>
-            <input type="text" name="captcha" required />*/ ?>
+                          <?php } ?>
 
                           <div class="form-group">
                             <label style="font-size:12px;">By pressing 'Get Quotes Now', you agree to the <br /> 

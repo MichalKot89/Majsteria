@@ -226,6 +226,7 @@ class Login extends Controller
         if (FACEBOOK_LOGIN == true) {
             $this->view->facebook_register_url = $login_model->getFacebookRegisterUrl();
         }
+        $this->view->isCaptchaNeeded = $login_model->isCaptchaNeeded();
 
         $this->view->render('login/register');
     }

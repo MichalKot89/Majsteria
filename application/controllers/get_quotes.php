@@ -20,6 +20,8 @@ class Get_Quotes extends Controller
      */
     function index()
     {
-            $this->view->render('get_quotes/index');
+        $login_model = $this->loadModel('Login');
+        $this->view->isCaptchaNeeded = $login_model->isCaptchaNeeded();
+        $this->view->render('get_quotes/index');
     }
 }

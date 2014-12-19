@@ -3,7 +3,7 @@
 
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>
-    
+
 <div style="width: 270px; margin-left: auto; margin-right: auto; margin-top:20px; text-align: center;">
 
 <div style="width: 250px; margin-left: auto; margin-right: auto; ">
@@ -22,6 +22,7 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="user_password" id="inputPassword" class="form-control" placeholder="Hasło" required="">
         <label for="inputCatcha" class="sr-only">Kod z obrazka</label>
+        <?php if($this->isCaptchaNeeded) { ?>
         <input type="text" name="captcha" id="inputCaptcha" class="form-control" placeholder="Kod z obrazka" required="" />
         <!-- show the captcha by calling the login/showCaptcha-method in the src attribute of the img tag -->
         <!-- to avoid weird with-slash-without-slash issues: simply always use the URL constant here -->
@@ -30,6 +31,7 @@
             <!-- quick & dirty captcha reloader -->
             <a href="#" onclick="document.getElementById('captcha').src = '<?php echo URL; ?>login/showCaptcha?' + Math.random(); return false">[ Przeładuj kod ]</a>
         </span>
+        <?php } ?>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Załóż konto</button>
       </form>
 </div>

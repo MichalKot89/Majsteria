@@ -522,15 +522,16 @@ class LoginModel
             $user_creation_timestamp = time();
 
             // write new users data into database
-            $sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type)
-                    VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type)";
+            $sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_creation_timestamp, user_activation_hash, user_provider_type, ip)
+                    VALUES (:user_name, :user_password_hash, :user_email, :user_creation_timestamp, :user_activation_hash, :user_provider_type, :ip)";
             $query = $this->db->prepare($sql);
             $query->execute(array(':user_name' => $user_name,
                                   ':user_password_hash' => $user_password_hash,
                                   ':user_email' => $user_email,
                                   ':user_creation_timestamp' => $user_creation_timestamp,
                                   ':user_activation_hash' => $user_activation_hash,
-                                  ':user_provider_type' => 'DEFAULT'));
+                                  ':user_provider_type' => 'DEFAULT',
+                                  ':ip' => $_SERVER['REMOTE_ADDR']));
             $count =  $query->rowCount();
             if ($count != 1) {
                 $_SESSION["feedback_negative"][] = FEEDBACK_ACCOUNT_CREATION_FAILED;
@@ -1164,6 +1165,9 @@ class LoginModel
      */
     private function checkCaptcha()
     {
+        if((isset($_SESSION['captcha_not_needed']) AND Session::get('captcha_not_needed') == true)) {
+            return true;
+        }
         if (isset($_POST["captcha"]) AND ($_POST["captcha"] == $_SESSION['captcha'])) {
             return true;
         }
@@ -1308,15 +1312,16 @@ class LoginModel
         // generate integer-timestamp for saving of account-creating date
         $user_creation_timestamp = time();
 
-        $sql = "INSERT INTO users (user_name, user_email, user_creation_timestamp, user_active, user_provider_type, user_facebook_uid)
-                VALUES (:user_name, :user_email, :user_creation_timestamp, :user_active, :user_provider_type, :user_facebook_uid)";
+        $sql = "INSERT INTO users (user_name, user_email, user_creation_timestamp, user_active, user_provider_type, user_facebook_uid, ip)
+                VALUES (:user_name, :user_email, :user_creation_timestamp, :user_active, :user_provider_type, :user_facebook_uid, :ip)";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_name' => $clean_user_name_from_facebook,
                               ':user_email' => $facebook_user_data["email"],
                               ':user_creation_timestamp' => $user_creation_timestamp,
                               ':user_active' => 1,
                               ':user_provider_type' => 'FACEBOOK',
-                              ':user_facebook_uid' => $facebook_user_data["id"]));
+                              ':user_facebook_uid' => $facebook_user_data["id"],
+                              ':ip' => $_SERVER['REMOTE_ADDR']));
 
         $count = $query->rowCount();
         if ($count == 1) {
@@ -1503,5 +1508,26 @@ class LoginModel
         Session::set('user_avatar_file', $this->getUserAvatarFilePath());
         // put Gravatar URL into session
         $this->setGravatarImageUrl($user_email, AVATAR_SIZE);
+    }
+
+    /**
+     * This method decides whether captcha is required for registration
+     */
+    public function isCaptchaNeeded()
+    {
+        if(isset($_SESSION['user_logged_in']) AND $_SESSION['user_logged_in'] == true) {
+            return false;
+        }
+        else {
+            Session::set('captcha_not_needed', false);
+            $query = $this->db->prepare("SELECT user_id FROM users WHERE ip = :ip AND user_creation_timestamp > :time - 3600");
+            $query->execute(array(':ip' => $_SERVER["REMOTE_ADDR"], ':time' => time()));
+
+            if ($query->rowCount() == 0) {
+                Session::set('captcha_not_needed', true);
+                return false;
+            }
+        }
+        return true;
     }
 }
