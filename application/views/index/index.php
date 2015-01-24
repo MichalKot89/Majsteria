@@ -7,7 +7,7 @@
     <ul class="rslides" id="slider4">
     <li><img src="public/images/slide1.jpg" alt=""></li>
     <li><img src="public/images/slide2.jpg" alt=""></li>
-    <li><img src="public/images/slide1.jpg" alt=""></li>
+    <li><img src="public/images/slide3.jpg" alt=""></li>
     </ul>
     
     <div class="container">
