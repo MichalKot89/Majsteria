@@ -52,7 +52,7 @@
     </div>
     
     <div class="col-md-12 col-sm-12 shadow">
-    <img class="img-responsive" alt="" src="<img src="<?php echo URL; ?>public/images/shadow.png">
+    <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
     </div>
     
     
