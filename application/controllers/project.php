@@ -26,6 +26,9 @@ class Project extends Controller
     public function index()
     {
         Auth::handleLogin();
+        $this->view->headline = "Moje zlecenia";
+        $this->view->no_projects_message = "Nie masz jeszcze zleceń. Najwyższy czas coś dodać!";
+
         $project_model = $this->loadModel('Project');
         $this->view->projects = $project_model->getProjectsByUser($_SESSION['user_id']);
         $admin_model = $this->loadModel('Admin');
@@ -41,13 +44,17 @@ class Project extends Controller
     {
         Auth::handleLogin();
         $admin_model = $this->loadModel('Admin');
-        if(!$admin_model->isAdmin($_SESSION['user_id'])) {
+        $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
+
+        if(!$this->view->isAdmin) {
             $this->index();
         }
         else {
             $project_model = $this->loadModel('Project');
             $this->view->projects = $project_model->getAllProjects();
-            $this->view->render('project/all');
+            $this->view->headline = "Wszystkie zlecenia";
+            $this->view->no_projects_message = "Nie ma zleceń.";        
+            $this->view->render('project/index');
         }
     }
 
@@ -58,6 +65,9 @@ class Project extends Controller
     public function matching()
     {
         Auth::handleLogin();
+
+        $admin_model = $this->loadModel('Admin');
+        $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
 
         $business_model = $this->loadModel('Business');
         if(!$business_model->isBusiness($_SESSION['user_id'])) {
@@ -76,7 +86,10 @@ class Project extends Controller
 
         $project_model = $this->loadModel('Project');
         $this->view->projects = $project_model->getMatchingProjects($_SESSION['user_id'], $post_code);
-        $this->view->render('project/matching');
+
+        $this->view->headline = "Sugerowane zlecenia";
+        $this->view->no_projects_message = "Niestety nie znaleźliśmy dla Ciebie żadnych zleceń. Rozważ dodanie większej ilości kategorii.";
+        $this->view->render('project/index');
     }
 
     /**

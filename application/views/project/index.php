@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Moje zlecenia</h1>
+    <h1><?php echo $this->headline; ?></h1>
 
     <table class="table">
     <?php
@@ -10,10 +10,17 @@
                 echo '<td>' . $value->descr . '</td>';
                 echo '<td>' . $value->post_code . '</td>';
                 echo '<td>' . $value->subcategory_name . '</td>';
+                if($value->active == 0 && $this->isAdmin) {
+                    echo '<td><a href="'. URL . 'project/activate/' . $value->project_id.'">Activate</a></td>';
+                }
+                if($value->deleted == 0 && $this->isAdmin) {
+                    echo '<td><a href="'. URL . 'project/delete/' . $value->project_id.'">Delete</a></td>';
+                }
                 echo '</tr>';
+
             }
         } else {
-            echo 'Nie masz jeszcze zleceń. Najwyższy czas coś dodać!';
+            echo $this->no_projects_message;
         }
     ?>
     </table>
