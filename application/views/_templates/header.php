@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/demo.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="<?php echo URL; ?>public/js/responsiveslides.min.js"></script>
+
    <!--  <script>
     $(function () {
     $('#myTab a:first').tab('show')
@@ -64,6 +65,41 @@
     });
     </script>
 
+    <!-- jQuery autocomplete -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<script>
+  $(function() {
+    $( "#post_code" ).autocomplete({
+      source: function( request, response ) {
+        $.ajax({
+          //url: "http://gd.geobytes.com/AutoCompleteCity",
+          url: "<?php echo URL; ?>application/ajax/list_post_codes.php",
+          dataType: "jsonp",
+          data: {
+            q: request.term
+          },
+          success: function( data ) {
+            response( data );
+          }
+        });
+      },
+      minLength: 3,
+      change: function (event, ui) {
+        if (!ui.item) { this.value = ''; }
+      },
+      open: function() {
+        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+      },
+      close: function() {
+        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+      }
+    });
+  });
+  </script>
+
     <!-- Bootstrap -->
     <link href="<?php echo URL; ?>public/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
@@ -98,7 +134,7 @@
     <div class="col-md-6 col-sm-12 padd-null">
     <div class=" col-md-12 col-sm-12 btn-group">
     <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-comment-1 wht"></div> <a href="<?php echo URL; ?>get_quotes/index">Wyceń koszty</a></button>
-    <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-align-justify wht"></div> Dodaj swój biznes</button>
+    <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-align-justify wht"></div> <a href="<?php echo URL; ?>business/index">Dodaj swój biznes</a></button>
     <button type="button" class="btn btn-default dropdown-toggle bgnone org blank2" data-toggle="dropdown">
     <div class="icon icon-flow-cascade wht">
     Kategorie

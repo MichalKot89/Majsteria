@@ -52,6 +52,34 @@ class Project extends Controller
     }
 
     /**
+     * This method controls what happens when you move to /project/matching in your app.
+     * Gets projects matching to the business subcategories.
+     */
+    public function matching()
+    {
+        Auth::handleLogin();
+
+        $business_model = $this->loadModel('Business');
+        if(!$business_model->isBusiness($_SESSION['user_id'])) {
+            header('location: ' . URL . 'business');
+            exit(1);
+        }
+
+        $subcategories_result = $business_model->getBusinessSubcategories($_SESSION['user_id']);
+        $subcategories = array();
+        foreach($subcategories_result AS $subcategory_result) {
+            $subcategories[] = $subcategory_result->subcategory_id;
+        }
+
+        $user_info_model = $this->loadModel('UserInfo');
+        $post_code = $user_info_model->getUserInfo($_SESSION['user_id'])->post_code;
+
+        $project_model = $this->loadModel('Project');
+        $this->view->projects = $project_model->getMatchingProjects($_SESSION['user_id'], $post_code);
+        $this->view->render('project/matching');
+    }
+
+    /**
      * This method controls what happens when you move to /dashboard/create in your app.
      * Creates a new project. This is usually the target of form submit actions.
      */
@@ -80,8 +108,12 @@ class Project extends Controller
             isset($_POST['timeline']) AND !empty($_POST['timeline']) AND 
             isset($_POST['descr']) AND !empty($_POST['descr']) AND 
             isset($_POST['post_code']) AND !empty($_POST['post_code'])) {
+
+                $post_code_model = $this->loadModel('PostCode');
+                $post_code_id = $post_code_model->findPostCodeIdFromInput($_POST['post_code']);
+
                 $project_model = $this->loadModel('Project');
-                $project_model->create($user_id, $_POST['timeline'], $_POST['descr'], $_POST['post_code'], $_POST['subcategory_id'], NULL);            
+                $project_model->create($user_id, $_POST['timeline'], $_POST['descr'], $post_code_id, $_POST['subcategory_id'], NULL);            
         }
         $this->destroyPostFieldsInSession();
         header('location: ' . URL . 'project');

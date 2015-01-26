@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Moje zlecenia</h1>
+    <h1>Sugerowane zlecenia</h1>
 
     <table class="table">
     <?php
@@ -13,7 +13,7 @@
                 echo '</tr>';
             }
         } else {
-            echo 'Nie masz jeszcze zleceń. Najwyższy czas coś dodać!';
+            echo 'Niestety nie znaleźliśmy dla Ciebie żadnych zleceń. Rozważ dodanie większej ilości kategorii.';
         }
     ?>
     </table>

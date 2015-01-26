@@ -21,7 +21,10 @@ class UserInfoModel
      */
     public function getUserInfo($user_id)
     {
-        $sql = "SELECT first_name, last_name, phone, post_code FROM user_info WHERE user_id = :user_id";
+        $sql = "SELECT ui.first_name, ui.last_name, ui.phone, ui.post_code_id, pc.post_code
+            FROM user_info ui 
+            JOIN post_code pc ON pc.post_code_id = ui.post_code_id
+            WHERE ui.user_id = :user_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));
 
@@ -38,16 +41,16 @@ class UserInfoModel
      * @param string post_code
      * @return bool whether successful
      */
-    private function setUserInfo($user_id, $first_name, $last_name, $phone, $post_code)
+    private function setUserInfo($user_id, $first_name, $last_name, $phone, $post_code_id)
     {
         if(!empty($this->getUserInfo($user_id))) {
-            $sql = "UPDATE user_info SET first_name = :first_name, last_name = :last_name, phone = :phone, post_code = :post_code WHERE user_id = :user_id";
+            $sql = "UPDATE user_info SET first_name = :first_name, last_name = :last_name, phone = :phone, post_code_id = :post_code_id WHERE user_id = :user_id";
         }
         else {
-            $sql = "INSERT INTO user_info (user_info_id, user_id, first_name, last_name, phone, post_code) VALUES (NULL, :user_id, :first_name, :last_name, :phone, :post_code)";
+            $sql = "INSERT INTO user_info (user_info_id, user_id, first_name, last_name, phone, post_code_id) VALUES (NULL, :user_id, :first_name, :last_name, :phone, :post_code_id)";
         }
         $query = $this->db->prepare($sql);
-        $query->execute(array(':user_id' => $user_id, ':first_name' => $first_name, ':last_name' => $last_name, ':phone' => $phone, ':post_code' => $post_code));
+        $query->execute(array(':user_id' => $user_id, ':first_name' => $first_name, ':last_name' => $last_name, ':phone' => $phone, ':post_code_id' => $post_code_id));
 
         $count =  $query->rowCount();
         if ($count == 1) {
@@ -66,13 +69,12 @@ class UserInfoModel
      * @param string post_code
      * @return bool whether successful
      */
-    public function createUserInfo($user_id)
+    public function createUserInfo($user_id, $post_code_id = NULL)
     {
         $first_name = (isset($_POST['first_name']) AND !empty($_POST['first_name'])) ? $_POST['first_name'] : NULL;
         $last_name = (isset($_POST['last_name']) AND !empty($_POST['last_name'])) ? $_POST['last_name'] : NULL;
         $phone = (isset($_POST['user_phone']) AND !empty($_POST['user_phone'])) ? $_POST['user_phone'] : NULL;
-        $post_code = (isset($_POST['post_code']) AND !empty($_POST['post_code'])) ? $_POST['post_code'] : NULL;
         
-        return $this->setUserInfo($user_id, $first_name, $last_name, $phone, $post_code);
+        return $this->setUserInfo($user_id, $first_name, $last_name, $phone, $post_code_id);
     }
 }

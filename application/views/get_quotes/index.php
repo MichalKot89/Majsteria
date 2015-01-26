@@ -112,7 +112,7 @@
 
                           <div class="form-group">
                             <label>Kod pocztowy miejsca zlecenia (np. 23-100)</label>
-                            <input type="name" class="form-control" pattern="\d{2}\-\d{3}" name="post_code" 
+                            <input type="name" class="form-control" id="post_code" name="post_code" 
                               value = "<?php echo isset($_SESSION['post_code'])?$_SESSION['post_code']:''; ?>" 
                               required />
                           </div>
