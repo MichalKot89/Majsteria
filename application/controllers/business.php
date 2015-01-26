@@ -30,6 +30,9 @@ class Business extends Controller
         else {
             $this->view->isBusiness = false;
         }
+        if($this->view->isBusiness) {
+            header('location: ' . URL . 'project/matching');
+        }
         $this->view->render('business/index');
     }
 
