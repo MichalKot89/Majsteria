@@ -134,7 +134,7 @@
     <div class="col-md-6 col-sm-12 padd-null">
     <div class=" col-md-12 col-sm-12 btn-group">
     <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-comment-1 wht"></div> <a href="<?php echo URL; ?>get_quotes/index">Wyceń koszty</a></button>
-    <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-align-justify wht"></div> <a href="<?php echo URL; ?>business/index">Dodaj swój biznes</a></button>
+    <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-align-justify wht"></div> <a href="<?php echo URL; ?>business/index">Przeglądaj zlecenia</a></button>
     <button type="button" class="btn btn-default dropdown-toggle bgnone org blank2" data-toggle="dropdown">
     <div class="icon icon-flow-cascade wht">
     Kategorie

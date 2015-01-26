@@ -7,7 +7,7 @@
     	<div class="row">
         	<div class="col-md-12 col-sm-12">
             	<div class="col-md-12 col-sm-12 add-business-head">
-                	<h1>Dodaj swój biznes i zbieraj zlecenia. Bezpłatnie!</h1>
+                	<h1>Powiedz nam więcej o sobie i zacznij zbierać zlecenia. Bezpłatnie!</h1>
                 </div>
                 <div class="col-md-12 col-sm-12 quote-form-style">
            	    	<div class="col-md-12 col-sm-12 padd-null quote-form-inner">
@@ -38,7 +38,6 @@
                           <div class="form-group">
                             <label>W czym się specjalizujesz?</label>
                             <select multiple = "multiple" class="form-control" name="subcategories[]" required>
-                              <option value="30">Wybierz kategorie</option>
                               <?php
                                   foreach($this->getAllSubcategories() as $subcategory) {
                                       echo '<option value="'.$subcategory->subcategory_id.'">' . $subcategory->name.'</option>';

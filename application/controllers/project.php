@@ -13,10 +13,13 @@ class Project extends Controller
     {
         parent::__construct();
 
-        // VERY IMPORTANT: All controllers/areas that should only be usable by logged-in users
-        // need this line! Otherwise not-logged in users could do actions. If all of your pages should only
-        // be usable by logged-in users: Put this line into libs/Controller->__construct
-        //Auth::handleLogin();
+        if(isset($_SESSION['user_id'])) {
+            $admin_model = $this->loadModel('Admin');
+            $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
+        }
+        else {
+            $this->view->isAdmin = false;
+        }
     }
 
     /**
@@ -43,8 +46,6 @@ class Project extends Controller
     public function all()
     {
         Auth::handleLogin();
-        $admin_model = $this->loadModel('Admin');
-        $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
 
         if(!$this->view->isAdmin) {
             $this->index();
@@ -65,9 +66,6 @@ class Project extends Controller
     public function matching()
     {
         Auth::handleLogin();
-
-        $admin_model = $this->loadModel('Admin');
-        $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
 
         $business_model = $this->loadModel('Business');
         if(!$business_model->isBusiness($_SESSION['user_id'])) {
@@ -141,13 +139,58 @@ class Project extends Controller
     public function view($project_id)
     {
         if (isset($project_id)) {
-            // get the project that you want to edit (to show the current content)
+            
             $project_model = $this->loadModel('Project');
             $this->view->project = $project_model->getProject($project_id);
-                $this->view->render('project/view');
+            $this->view->loggedIn = isset($_SESSION['user_id']);
+            $this->view->isOwner = $this->view->loggedIn && $this->view->project->user_id == $_SESSION['user_id'];
+
+            // Load project offers
+            $project_offer_model = $this->loadModel('ProjectOffer');
+            $this->view->offers = $project_offer_model->getProjectOffersForProject($project_id);
+
+            if(!$this->view->isOwner && $this->view->loggedIn) {
+                // Check this user has placed an offer
+                $this->view->hasPlacedOffer = $project_offer_model->hasPlacedOffer($project_id, $_SESSION['user_id']);
+                // Check if is business
+                $business_model = $this->loadModel('Business');
+                $this->view->isBusiness = $business_model->isBusiness($_SESSION['user_id']);
+            }
+            else {
+                $this->view->hasPlacedOffer = false;
+                $this->view->isBusiness = false;
+            }
+
+            $this->view->render('project/view');
         } else {
             header('location: ' . URL . 'project');
         }
+    }
+
+
+    /**
+     * This method controls what happens when you move to /project/offer(/XX) in your app.
+     * Creates an offer for the project
+     * @param $project_id int id of the project
+     */
+    public function offer($project_id)
+    {
+        Auth::handleLogin();
+        if (isset($project_id)) {
+
+            if (isset($_POST['offer_value']) AND !empty($_POST['offer_value']) AND 
+                isset($_POST['descr']) AND !empty($_POST['descr']) AND 
+                isset($_POST['offer_type']) AND !empty($_POST['offer_type'])) {
+
+                    $project_offer_model = $this->loadModel('ProjectOffer');
+                    if(!$project_offer_model->hasPlacedOffer($project_id, $_SESSION['user_id'])) {
+                        $project_offer_model->create($project_id, $_SESSION['user_id'], $_POST['descr'], $_POST['offer_value'], $_POST['offer_type']);
+                    }
+                }
+        } else {
+            header('location: ' . URL . 'project');
+        }
+        header('location: ' . URL . 'project/view/'.$project_id);
     }
 
     /**

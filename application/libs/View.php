@@ -128,4 +128,13 @@ class View
         $login_controller = new Login();
         return $login_controller->getFacebookLoginUrl();
     }
+
+    /**
+     * Display date in the same format
+     */
+    function displayDate($date)
+    {
+        return date("d.m.Y", strtotime($date));
+    }
+
 }
