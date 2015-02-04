@@ -103,6 +103,21 @@ class Project extends Controller
             $controller = new Login();
             $controller->register_action(true);
         }
+        else {
+            $business_model = $this->loadModel('Business');
+            // if not business then update User Info
+            if(!$business_model->isBusiness($_SESSION['user_id'])) {
+                $post_code_model = $this->loadModel('PostCode');
+                if(isset($_POST['post_code']) AND !empty($_POST['post_code'])) {
+                    $post_code = $post_code_model->findPostCodeIdFromInput($_POST['post_code']);
+                }
+                else {
+                    $post_code = NULL;
+                }
+                $user_info_model = $this->loadModel('UserInfo');
+                $user_info_model->createUserInfo($_SESSION['user_id'], $post_code);
+            }
+        }
 
         // if still not logged in, come back to get quotes page
         if (!isset($_SESSION['user_id'])) {
