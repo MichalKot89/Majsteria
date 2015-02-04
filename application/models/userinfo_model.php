@@ -44,11 +44,12 @@ class UserInfoModel
     private function setUserInfo($user_id, $first_name, $last_name, $phone, $post_code_id)
     {
         if(!$this->getUserInfo($user_id)) {
-            $sql = "UPDATE user_info SET first_name = :first_name, last_name = :last_name, phone = :phone, post_code_id = :post_code_id WHERE user_id = :user_id";
-        }
-        else {
             $sql = "INSERT INTO user_info (user_info_id, user_id, first_name, last_name, phone, post_code_id) VALUES (NULL, :user_id, :first_name, :last_name, :phone, :post_code_id)";
         }
+        else {
+            $sql = "UPDATE user_info SET first_name = :first_name, last_name = :last_name, phone = :phone, post_code_id = :post_code_id WHERE user_id = :user_id";
+        }
+ 
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id, ':first_name' => $first_name, ':last_name' => $last_name, ':phone' => $phone, ':post_code_id' => $post_code_id));
 
