@@ -19,12 +19,12 @@
 <div class="container">
   <div class="row">
       <div class="col-md-9 col-sm-9">
-          <div class="col-md-12 col-sm-12 padd-null category-top">
+       <!--   <div class="col-md-12 col-sm-12 padd-null category-top">
         <hr>
         <h1> Wszystko co musisz wiedzieć o zatrudnieniu 
               <?php echo $this->data->specialist_name; ?> </h1>
         <hr>
-      </div>
+      </div>-->
  
 <?php echo $this->data->content; ?>
 
