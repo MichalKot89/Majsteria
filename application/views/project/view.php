@@ -8,8 +8,20 @@
     ?>
     <div style="margin-top: 50px;">
     <?php
-    	// If not an owner and hasn't placed an offer, allow to place an offer
-    	if($this->loggedIn && !$this->isOwner && !$this->hasPlacedOffer && $this->isBusiness) { ?>
+    	// If not logged in, prompt to log in.
+		if(!$this->loggedIn) {
+			echo "Zaloguj się, aby złożyć ofertę.";
+		}
+		// if is owner, just display info
+		else if($this->isOwner){
+			echo "Poniżej znajdziesz oferty od majstrów i ich numery telefonów. Wybierz tego, który najbardziej Ci odpowiada."
+		}
+		// if not a business and not an owner, prompt to create one
+		else if(!$this->isBusiness) {
+			echo 'Zanim złożysz ofertę na to zlecenie potrzebujemy zebrać więcej informacji o Tobie. Zajmie Ci to minutę i możesz to zrobić ';
+			echo '<a href="' . URL . 'business">tutaj</a>.';
+		}
+    	else if(!$this->hasPlacedOffer) { ?>
 		    	<form class="form-signin" role="form" action="<?php echo URL; ?>project/offer/<?php echo $this->project->project_id;?>" method="post">
 				    <b>Złóż ofertę wykonania zlecenia. </b><br />
 				    Treść oferty: <br />
@@ -23,15 +35,7 @@
 				    <br />
 				    <button class="btn btn-lg btn-primary" type="submit">Złóż ofertę</button>
 				</form>
-			
-	<?php } 
-		else if(!$this->loggedIn) {
-			echo "Zaloguj się, aby złożyć ofertę.";
-		}
-		else if(!$this->isBusiness) {
-			echo 'Zanim złożysz ofertę na to zlecenie potrzebujemy zebrać więcej informacji o Tobie. Zajmie Ci to minutę i możesz to zrobić ';
-			echo '<a href="' . URL . 'business">tutaj</a>.';
-		}
+	<?php }
 	?>
 	</div>
 	<div style="margin-top: 50px;">
