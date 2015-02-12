@@ -10,7 +10,7 @@
     <li><img src="public/images/slide3.jpg" alt=""></li>
     </ul>
     
-    <div class="container">
+    <div class="container" style="margin-top: -590px;">
     <div class="row">
     <div class="col-md-5 col-sm-5 form-bg pull-right">
     <div class="org-div">
@@ -25,7 +25,7 @@
     </ul>
     
     <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle drop" type="button" id="dropdownMenu1" data-toggle="dropdown">Co potrzebujesz miec wykonane
+    <button class="btn btn-default dropdown-toggle drop" type="button" id="dropdownMenu1" data-toggle="dropdown">Wybierz kategorię
     <span class="caret pull-right mrg-top"></span>
     </button>
     <ul class="dropdown-menu dropdown-link full-width" role="menu" aria-labelledby="dropdownMenu1">
@@ -34,7 +34,7 @@
     </ul>
     </div>
     
-    <input type="text" class="form-control input-text enter" placeholder="Enter your suburb or postcode">
+    <input type="text" class="form-control input-text enter" placeholder="Podaj swój kod pocztowy">
     <button type="submit" class="btn btn-default blue-btn">WYCEŃ KOSZTY</button>
     </div>
     </div>
