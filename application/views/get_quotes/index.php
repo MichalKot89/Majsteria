@@ -85,23 +85,31 @@
                           </div>
 
                           <?php 
-                            // display these only if user is not logged in
-                            if(!Auth::isLoggedIn()) { ?>
+                            // display first_name and last_name only if user doesn't have it yet
+                            if(!isset($this->skip_name)) { ?>
                           <div class="form-group">
                             <label>Imię i nazwisko</label>
                             <input type="name" name="first_name" class="form-control" style="width:45%" pattern=".{1,}" 
-                              value = "<?php echo isset($_SESSION['first_name'])?$_SESSION['first_name']:''; ?>" 
+                              value = "<?php echo $this->fist_name; ?>" 
                               required />
                             <input type="name" name="last_name" class="form-control" style="width: 45%" pattern=".{1,}" 
-                              value = "<?php echo isset($_SESSION['last_name'])?$_SESSION['last_name']:''; ?>" 
+                              value = "<?php echo $this->last_name; ?>" 
                               required />
                           </div>
+                          <?php 
+                            }
+                            // display phone only if user doesn't have it yet
+                            if(!isset($this->skip_phone)) { ?>
                           <div class="form-group">
                             <label>Telefon kontaktowy (np. 606555222)</label>
                             <input type="name" name="user_phone" class="form-control" pattern="\+?\d{9,}" 
-                              value = "<?php echo isset($_SESSION['user_phone'])?$_SESSION['user_phone']:''; ?>" 
+                              value = "<?php echo $this->user_phone; ?>" 
                               required />
                           </div>
+                          <?php 
+                            }
+                            // display these only if user is not logged in
+                            if(!Auth::isLoggedIn()) { ?>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Adres email</label>
                             <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" name="user_email" 
@@ -113,7 +121,7 @@
                           <div class="form-group">
                             <label>Kod pocztowy miejsca zlecenia (np. 23-100)</label>
                             <input type="name" class="form-control" id="post_code" name="post_code" 
-                              value = "<?php echo isset($_SESSION['post_code'])?$_SESSION['post_code']:''; ?>" 
+                              value = "<?php echo $this->post_code; ?>" 
                               required />
                           </div>
                           <div class="form-group">
