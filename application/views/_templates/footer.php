@@ -18,10 +18,7 @@
     <h2>Jak to działa?</h2>
     <ul class="nav nav-pills links">
     <li><a href="<?php echo URL; ?>how_it_works/index">» Jak działa Majsteria.pl</a></li>
-    <li><a href="<?php echo URL; ?>get_quotes/index">» Dodaj Zlecenie</a></li>
-    <li><a href="<?php echo URL; ?>get_quotes/index">» Zatrudnienie Profesjonalisty</a></li>
-    <li><a href="<?php echo URL; ?>add_business/index">» Dodaj swoją firmę</a></li>
-    <li><a href="<?php echo URL; ?>add_business/index">» Przeglądaj zlecenia</a></li>
+
     <!--<li><a href="#">» Inspiracje / Zdjęcia</a></li>
     <li><a href="#">» Licencje  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
     <li><a href="#">» Słowniczek</a></li>
@@ -30,24 +27,20 @@
     </div>
     
     <div class="col-md-2 col-sm-2 br-line">
-    <h2>Najpopularniejsze kategorie</h2>
+    <h2>Znajdź fachowca</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» Cementowanie</a></li>
-    <li><a href="#">» Klimatyzacja</a></li>
-    <li><a href="#">» Mostitiery</a></li>
-    <li><a href="#">» Dachy</a></li>
-    <li><a href="#">» Wszystkie kategorie</a></li>
+    <li><a href="<?php echo URL; ?>get_quotes/index">» Dodaj Zlecenie</a></li>
+    <li><a href="<?php echo URL; ?>get_quotes/index">» Zatrudnij Eksperta</a></li>
     </ul>
     </div>
     
-    <!--<div class="col-md-2 col-sm-2 br-line">
-    <h2>Jak to działa?</h2>
+    <div class="col-md-2 col-sm-2 br-line">
+    <h2>Zbieraj zlecenia</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» Dodaj Zlecenie</a></li>
-    <li><a href="#">» Katalog Wyszukiwania</a></li>
-    <li><a href="#">» Zatrudnienie Profesjonalisty</a></li>
+    <li><a href="<?php echo URL; ?>add_business/index">» Dodaj swoją firmę</a></li>
+    <li><a href="<?php echo URL; ?>add_business/index">» Przeglądaj zlecenia</a></li>
     </ul>
-    </div>-->
+    </div>
     
     <div class="col-md-2 col-sm-2 br-line1 pull-right padd-null m-left">
     <div class="txt">Multum zleceń!</div>
