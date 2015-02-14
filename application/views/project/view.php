@@ -13,8 +13,8 @@
 			echo "Zaloguj się, aby złożyć ofertę.";
 		}
 		// if is owner, just display info
-		else if($this->isOwner){
-			echo "Poniżej znajdziesz oferty od majstrów i ich numery telefonów. Wybierz tego, który najbardziej Ci odpowiada."
+		else if($this->isOwner) {
+			echo "Poniżej znajdziesz oferty od majstrów i ich numery telefonów. Wybierz tego, który najbardziej Ci odpowiada.";
 		}
 		// if not a business and not an owner, prompt to create one
 		else if(!$this->isBusiness) {
