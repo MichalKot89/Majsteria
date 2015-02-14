@@ -2,25 +2,30 @@
     <div class="row">
     <div class="col-md-12 col-sm-12">
     <div class="col-md-2 col-sm-2 br-line">
-    <h2>About</h2>
+    <h2>O nas</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» O Majsterii</a></li>
-    <li><a href="#">» Blog Majsterii</a></li>
-    <li><a href="#">» Oferty pracy</a></li>
+    <li><a href="<?php echo URL; ?>about_us/index">» O Majsterii</a></li>
     <li><a href="#">» Poznaj Team Majsterii</a></li>
-    <li><a href="#">» Dodaj swoją firmę</a></li>
     <li><a href="#">» Kontakt</a></li>
+    <!-- <li><a href="#">» Blog Majsterii</a></li>
+    <li><a href="#">» Oferty pracy</a></li>
+    <li><a href="#">» Dodaj swoją firmę</a></li>
+    -->
     </ul>
     </div>
     
     <div class="col-md-2 col-sm-2 br-line">
-    <h2>Resources</h2>
+    <h2>Jak to działa?</h2>
     <ul class="nav nav-pills links">
-    <li><a href="#">» Artukuły / Porady i Wskazówki</a></li>
-    <li><a href="#">» Inspiracje / Zdjęcia</a></li>
+    <li><a href="<?php echo URL; ?>how_it_works/index">» Jak działa Majsteria.pl</a></li>
+    <li><a href="<?php echo URL; ?>get_quotes/index">» Dodaj Zlecenie</a></li>
+    <li><a href="<?php echo URL; ?>get_quotes/index">» Zatrudnienie Profesjonalisty</a></li>
+    <li><a href="<?php echo URL; ?>add_business/index">» Dodaj swoją firmę</a></li>
+    <li><a href="<?php echo URL; ?>add_business/index">» Przeglądaj zlecenia</a></li>
+    <!--<li><a href="#">» Inspiracje / Zdjęcia</a></li>
     <li><a href="#">» Licencje  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
     <li><a href="#">» Słowniczek</a></li>
-    <li><a href="#">» Regulacje Prawne</a></li>
+    <li><a href="#">» Regulacje Prawne</a></li>-->
     </ul>
     </div>
     
@@ -35,14 +40,14 @@
     </ul>
     </div>
     
-    <div class="col-md-2 col-sm-2 br-line">
+    <!--<div class="col-md-2 col-sm-2 br-line">
     <h2>Jak to działa?</h2>
     <ul class="nav nav-pills links">
     <li><a href="#">» Dodaj Zlecenie</a></li>
     <li><a href="#">» Katalog Wyszukiwania</a></li>
     <li><a href="#">» Zatrudnienie Profesjonalisty</a></li>
     </ul>
-    </div>
+    </div>-->
     
     <div class="col-md-2 col-sm-2 br-line1 pull-right padd-null m-left">
     <div class="txt">Multum zleceń!</div>
