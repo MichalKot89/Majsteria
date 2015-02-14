@@ -234,7 +234,7 @@ define("FEEDBACK_EMAIL_FIELD_EMPTY", "Nie wprowadzono adresu e-mail i hasła");
 define("FEEDBACK_EMAIL_AND_PASSWORD_FIELDS_EMPTY", "Nie wprowadzono adresu e-mail");
 define("FEEDBACK_USERNAME_SAME_AS_OLD_ONE", "Ta nazwa użytkownika jest taka sama jak ta której obecnie używasz. Prosimy wybrać inną");
 define("FEEDBACK_USERNAME_ALREADY_TAKEN", "Wybrana nazwa jest zajęta przez innego ućytkownika. Prosimy wybrać inną");
-define("FEEDBACK_USER_EMAIL_ALREADY_TAKEN", "Ten adres e-mail jest już zarejestrowany w naszym serwisie. Prosimy użyc innego");
+define("FEEDBACK_USER_EMAIL_ALREADY_TAKEN", "Ten adres e-mail jest już zarejestrowany w naszym serwisie. Proszę się najpierw zalogować lub użyć innego e-maila.");
 define("FEEDBACK_USERNAME_CHANGE_SUCCESSFUL", "Nazwa użytkownika zmieniona pomyślnie");
 define("FEEDBACK_USERNAME_AND_PASSWORD_FIELD_EMPTY", "Nie wprowadzono hasła i nazwy użytkownika");
 define("FEEDBACK_USERNAME_DOES_NOT_FIT_PATTERN", "Niedozwolone elementy użyte przy tworzeniu nazwy użytkownika. Prosimy używać wyłacznie liter alfabetu angielskiego oraz liczb");

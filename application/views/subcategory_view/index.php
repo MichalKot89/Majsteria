@@ -19,14 +19,14 @@
 <div class="container">
   <div class="row">
       <div class="col-md-9 col-sm-9">
-       <!--   <div class="col-md-12 col-sm-12 padd-null category-top">
-        <hr>
-        <h1> Wszystko co musisz wiedzieć o zatrudnieniu 
-              <?php echo $this->data->specialist_name; ?> </h1>
-        <hr>
-      </div>-->
+         <!--   <div class="col-md-12 col-sm-12 padd-null category-top">
+          <hr>
+          <h1> Wszystko co musisz wiedzieć o zatrudnieniu 
+                <?php echo $this->data->specialist_name; ?> </h1>
+          <hr>
+        </div>-->
  
-<?php echo $this->data->content; ?>
+          <?php echo $this->data->content; ?>
 
           <div class="col-md-12 col-sm-12 category-shadow"> <img class="img-responsive" src="<?php echo URL; ?>public/images/shadow.png" alt=""> </div>
           <div class="col-md-12 col-sm-12 category-mid-sec padd-null">
@@ -148,53 +148,7 @@
             </div>
         </div>
       
-        <div class="col-md-12 col-sm-12 quote-form-style">
-          <div class="col-md-12 col-sm-12 padd-null quote-form-inner">
-            <a name="get_quotes"></a>
-        <form role="form">
-              <div class="form-group">
-            <label>What do you need?</label>
-            <select class="form-control">
-                  <option>select</option>
-                  <option>Air COnditioning</option>
-                </select>
-          </div>
-              <div class="form-group">
-            <label>When do you need the work to start?</label>
-            <br>
-            <button type="button" class="btn btn-default btn-de">ASAP</button>
-            <button type="button" class="btn btn-default btn-de btn-de-active">Next Few Days</button>
-            <button type="button" class="btn btn-default btn-de">Weeks</button>
-            <button type="button" class="btn btn-default btn-de">I’m flexible</button>
-            <button type="button" class="btn btn-default btn-de">Other</button>
-          </div>
-              <div class="form-group">
-            <label>Your Name</label>
-            <input type="name" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Best number to contact you on</label>
-            <input type="name" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1">
-          </div>
-              <div class="form-group">
-            <label>Where do you need the job done?</label>
-            <input type="name" class="form-control">
-          </div>
-              <div class="form-group">
-            <label>Describe what you need done</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-              <div class="form-group">
-            <label style="font-size:12px;">By pressing 'Get Quotes Now', you agree to the <br />
-                  <span id="terms"><a href="#">terms and conditions</a></span> of Majsteria</label>
-            <button class="btn btn-default navbar-btn quote-sub pull-right" type="button">Get Quotes »</button>
-          </div>
-            </form>
-      </div>
+        <?php require VIEWS_PATH . '_templates/add_project_form.php'; ?>
         </div>
     </div>
 </div>
