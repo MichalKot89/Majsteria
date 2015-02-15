@@ -15,9 +15,9 @@
     
     <div class="col-md-4 col-sm-4 col-one">
     <h2>Dlaczego Majsteria.pl?</h2>
-    <p>Nasz dział obsługi klienta na bieżąco monitoruje jakość kwalifikacji i pracy tysięcy profesjonalistów z całej Polski. 
-        Dokładamy największych starań, aby zarówno zleceniodawcy, jak i fachowcy, byli 
-    </p>
+    <p>Dzięki nam szybko i bezpłatnie znajdziesz pomoc eksperta. Dodanie zlecenia jest proste i zajmuje tylko kilka minut. 
+        Nasz zespół regularnie monitoruje jakość usług oferowanych w serwisie. 
+        Majsteria to również doskonały sposób na dodatkowy zarobek jeśli prowadzisz biznes lub sam wykonujesz specjalistyczne prace.  </p>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
