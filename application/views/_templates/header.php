@@ -140,7 +140,16 @@ return false;
     
   </head>
   <body>
- 
+ <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=599337976843978&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
     <div style="visibility: visible; margin-top: 0px;" class="top-bar-hide" id="top-bar" role="complementary">
     <div class="container-fluid" id="top-bg">
     <div class="container">
@@ -150,7 +159,7 @@ return false;
     <div class="wf-td">
     <div class="col-md-6 col-sm-12 padd-null">
     <div class=" col-md-12 col-sm-12 btn-group">
-    <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-comment-1 wht"></div> <a href="<?php echo URL; ?>get_quotes/index">Wyceń koszty</a></button>
+    <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-comment-1 wht"></div> <a href="<?php echo URL; ?>get_quotes/index">Dodaj zlecenie</a></button>
     <button type="button" class="btn btn-default bgnone org blank"><div class="icon icon-align-justify wht"></div> <a href="<?php echo URL; ?>business/index">Przeglądaj zlecenia</a></button>
     <button type="button" class="btn btn-default dropdown-toggle bgnone org blank2" data-toggle="dropdown">
     <div class="icon icon-flow-cascade wht">
@@ -264,7 +273,7 @@ return false;
     <div class="logo"><a href="<?php echo URL; ?>"><img src="<?php echo URL; ?>public/images/logo.png" alt="" class="img-responsive"></a></div>
     </div>
     
-    
+    <!--
     <div class="col-md-8 col-sm-9 padd-null right-div">
     <form class="navbar-form navbar-left pull-right" role="search">
     <input type="text" class="form-control input-text input-text2" placeholder="Search by Service or Business Name">
@@ -275,7 +284,7 @@ return false;
     </div>
     <button type="submit" class="btn btn-default search-btn">SZUKAJ</button>
     </form>
-    </div>
+    </div>-->
     </div>
     </div>
     </div>

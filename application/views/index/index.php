@@ -29,13 +29,16 @@
     <span class="caret pull-right mrg-top"></span>
     </button>
     <ul class="dropdown-menu dropdown-link full-width" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Klimatyzatory</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Klimatyzacja</a></li>
+<?php
+    foreach($this->getAllSubcategories() as $subcategory) {
+        echo '<li role="presentation"><a role="menuitem" tabindex="-1">' . $subcategory->name.'</a></li>';
+    } 
+?>
     </ul>
     </div>
     
     <input type="text" class="form-control input-text enter" placeholder="Podaj swój kod pocztowy">
-    <button type="submit" class="btn btn-default blue-btn">WYCEŃ KOSZTY</button>
+    <button type="submit" class="btn btn-default blue-btn">DODAJ ZLECENIE</button>
     </div>
     </div>
     </div>
@@ -65,22 +68,22 @@
     <div class="col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4 blk">
     <div class="img-div"><img src="public/images/img1.png" alt="" class="img-responsive"></div>
-    <div class="img-text">Ponad <span class="bold">40000 fachowców</span>
-    <span class="img-sml">Największa sieć profesjonalistów</span>
+    <div class="img-text"><span class="bold">Sprawdzeni</span> fachowcy</span>
+    <span class="img-sml">Największa sieć profesjonalistów.</span>
     </div>
     </div>
     
     <div class="col-md-4 col-sm-4 blk">
     <div class="img-div"><img src="public/images/img2.png" alt="" class="img-responsive"></div>
-    <div class="img-text">Ponad <span class="bold">1200 kategorii.</span>
+    <div class="img-text">Ponad <span class="bold">50 kategorii.</span>
     <span class="img-sml">Znajdziemy Ci fachowca do każdego problemu.</span>
     </div>
     </div>
     
     <div class="col-md-4 col-sm-4 blk border-none">
     <div class="img-div"><img src="public/images/img3.png" alt="" class="img-responsive"></div>
-    <div class="img-text">Zlecenie <span class="bold">co 60 sekund</span>
-    <span class="img-sml"> Codziennie setki Polaków oszczędzają z Majsterią!</span>
+    <div class="img-text">Codziennie <span class="bold">świeże zlecenia</span>
+    <span class="img-sml"> Coraz więcej Polaków oszczędza z Majsterią!</span>
     </div>
     </div>
     
@@ -94,10 +97,15 @@
     <div class="row">
     <div class="col-md-12 col-sm-12 top">
     <div class="col-md-5 col-sm-5 about">
-    <h3>Witaj w Majsterii</h3>
+    <h3>Witaj na Majsterii</h3>
     <img src="public/images/about-img.png" alt="" class="img-responsive">
-    <span>Dział Obsługii Klienta Majsterii na bieżąco monitoruje i sprawdza jakość kwalifikacji i pracy ponad 40.000 profesjonalistów z całej Polski. Pozwól nam pomóc sobie w znalezieniu najlepszego fachowca..</span>
-    <button type="button" class="btn btn-default navbar-btn get-now">Wyceń Koszty</button>
+
+    <span>
+    Majsteria to serwis skupiający ekspertów z różnych dziedzin, na terenie całej Polski. 
+    Tutaj szybko uzyskasz pomoc przy pracach remontowych, budowlanych czy innych, wymagających specjalistycznej wiedzy. 
+    Publikacja zlecenia jest niezobowiązująca i bezpłatna, nie ponosisz więc żadnego ryzyka. Majsteria oszczędza Twój czas i pieniądze!
+    </span>
+    <button type="button" class="btn btn-default navbar-btn get-now">DODAJ ZLECENIE</button>
     </div>
     
     <div class="col-md-7 col-sm-7 recent">
@@ -105,7 +113,7 @@
     <p>Majsteria jest najczęściej odwiedzanym potralem o profilu budowlano-remontowym. Coraz więcej Polaków korzysta z naszej bazy najlepszych fachowców. </p>
     
     <ul class="nav nav-tabs" role="tablist" id="myTab">
-    <li class="active"><a href="#home" role="tab" data-toggle="tab" class="recm">Rekomendajce</a></li>
+    <li class="active"><a href="#home" role="tab" data-toggle="tab" class="recm">Rekomendacje</a></li>
     
     <li><a href="#profile" role="tab" data-toggle="tab" class="jobs">Zlecenia</a></li>
     </ul>
@@ -162,10 +170,15 @@
     </div>
     </div>
     </div>
+
+
+        <div class="col-md-12 col-sm-12 shadow">
+            <img src="public/images/shadow.png" alt="" class="img-responsive">
+        </div>
     </div>
     
     
-    
+    <!--
     <div class="container padd-null wd-768">
     <div class="row featured">
     <div class="col-md-12 colsm-12 top">
@@ -275,7 +288,7 @@
     <img class="img-responsive" alt="" src="public/images/shadow.png">
     </div>
     </div>
-    
+    -->
     
     <div class="row featured">
     <div class="col-md-12 colsm-12 top">
@@ -292,54 +305,54 @@
     <div class="row left-mr1">
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-6 col-sm-5 white-box">
-    <div class="col-md-6 col-sm-6 font1">Kuchnia</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Malarstwo</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/malarze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Pergole</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Architekci</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Kuchnia</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Pergole</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Architekci</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="#">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Ogrodnictwo</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/ogrodnicy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     
@@ -360,14 +373,17 @@
     <div class="col-md-6 col-sm-6 left-org">
     <h2>Przyłącz się do dyskusji na Facebooku</h2>
     <p>Dołącz do dyskusji na temat najnowszych trendów w Twojej profesji, oraz zainspiruj się zdjęciami prac Twoich kolegów po fachu! </p>
-    <img src="public/images/logo.jpg" alt="" class="img-responsive">
-    <img src="public/images/like-page.jpg" alt="" class="img-responsive like-page">
-    
+    <div class="fb-like-box" data-href="https://www.facebook.com/Majsteria" 
+        data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"
+        data-height="190"
+        style="background: white;"></div>
+
     </div>
     
     <div class="col-md-5 col-sm-5 right-org pull-right padd-null">
     <h2>Najpopularniejszy post dnia</h2>
-    <img src="public/images/like.jpg" alt="" class="img-responsive like-page">
+    <div class="fb-post" data-href="https://www.facebook.com/Majsteria/posts/783047508438633" 
+        data-width="500" data-show-border="true"></div>
     </div>
     </div>
     </div>

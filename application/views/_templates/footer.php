@@ -14,10 +14,9 @@
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
-    <h2>Czym jest Majsteria.pl?</h2>
-    <p>Majsteria to serwis skupiający ekspertów z różnych dziedzin, na terenie całej Polski. 
-        Tutaj szybko uzyskasz pomoc przy pracach remontowych, budowlanych czy innych, wymagających specjalistycznej wiedzy. 
-        Publikacja zlecenia jest niezobowiązująca i bezpłatna, nie ponosisz więc żadnego ryzyka. Majsteria oszczędza Twój czas i pieniądze! 
+    <h2>Dlaczego Majsteria.pl?</h2>
+    <p>Nasz dział obsługi klienta na bieżąco monitoruje jakość kwalifikacji i pracy tysięcy profesjonalistów z całej Polski. 
+        Dokładamy największych starań, aby zarówno zleceniodawcy, jak i fachowcy, byli 
     </p>
     </div>
     
