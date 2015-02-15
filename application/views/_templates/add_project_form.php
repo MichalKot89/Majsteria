@@ -84,9 +84,15 @@
                           <?php } ?>
 
                           <div class="form-group">
-                            <label style="font-size:12px;">By pressing 'Get Quotes Now', you agree to the <br /> 
-                            <span id="terms"><a href="#">terms and conditions</a></span> of Majsteria</label>
-                            <button class="btn btn-default navbar-btn quote-sub pull-right" type="submit">Wyceń koszty »</button>
+
+                            <?php 
+                            // display terms and conditions only if not logged in
+                            if(!isset($_SESSION['user_id'])) { ?>
+                              <label style="font-size:12px; color: grey;">Klikając 'Dodaj zlecenie' potwierdzasz, że akceptujesz <br /> 
+                              <span id="terms"><a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 600, 200)">regulamin</a></span>
+                               serwisu Majsteria.pl</label>
+                             <?php } ?>
+                            <button class="btn btn-default navbar-btn quote-sub pull-left" type="submit">Dodaj zlecenie »</button>
                           </div>
                           
                         </form>

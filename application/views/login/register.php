@@ -15,7 +15,7 @@
       lub
 </div>
 
-<form class="form-signin" role="form" action="<?php echo URL; ?>login/register_action" method="post">
+    <form class="form-signin" role="form" action="<?php echo URL; ?>login/register_action" method="post">
         <h2 class="form-signin-heading">Podaj email i hasło</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="user_email" id="inputEmail" class="form-control" placeholder="Adres email" required="" autofocus="">
@@ -33,7 +33,12 @@
         </span>
         <?php } ?>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Załóż konto</button>
-      </form>
+    </form>
+    <div style="font-size: 12px; color: grey; text-align: left; margin-top: 10px;">
+    Klikając 'Załóż konto' potwierdzasz, że akceptujesz
+    <span id="terms"><a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 600, 200)">regulamin</a></span>
+    serwisu Majsteria.pl
+    </div>
 </div>
 </div>
 </div>

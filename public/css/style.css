@@ -450,7 +450,7 @@ ul.f-links{list-style:url(../images/arrow.png) !important; color:#fff;}
 
 #terms a { color:#f58634; text-decoration:underline;}
 
-.quote-sub { width:165ppx; height:50px; background: none repeat scroll 0 0 #4b82c8; border: 1px solid #669bde; box-shadow: 0 5px 0 #235da7; color: #fff; font-family: "Conv_MyriadPro-Regular"; font-size: 15px; font-weight: normal; line-height: 30px; padding: 5px 10px; text-shadow: 1px 0 1px #000; text-transform: uppercase; transition: all 0.2s ease-out 0s;}
+.quote-sub { width:165ppx; height:50px; background: none repeat scroll 0 0 #4b82c8; border: 1px solid #669bde; box-shadow: 0 5px 0 #235da7; color: #fff; font-family: "Conv_MyriadPro-Regular"; font-size: 15px; font-weight: normal; line-height: 30px; padding: 5px 10px; margin-right: 10px; margin-top: 0px; text-shadow: 1px 0 1px #000; text-transform: uppercase; transition: all 0.2s ease-out 0s;}
 
 .quote-sub:hover { background: none repeat scroll 0 0 #6297da; color: #fff; }
 
