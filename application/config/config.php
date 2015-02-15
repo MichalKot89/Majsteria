@@ -201,10 +201,10 @@ define("EMAIL_SMTP_ENCRYPTION", 'ssl');
  * define("EMAIL_VERIFICATION_CONTENT", "Please click on this link to activate your account:");
  */
 define("EMAIL_PASSWORD_RESET_URL", URL . "login/verifypasswordreset");
-define("EMAIL_PASSWORD_RESET_FROM_EMAIL", "no-reply@example.com");
-define("EMAIL_PASSWORD_RESET_FROM_NAME", "My Project");
-define("EMAIL_PASSWORD_RESET_SUBJECT", "Password reset for PROJECT XY");
-define("EMAIL_PASSWORD_RESET_CONTENT", "Please click on this link to reset your password: ");
+define("EMAIL_PASSWORD_RESET_FROM_EMAIL", "no-reply@majsteria.pl");
+define("EMAIL_PASSWORD_RESET_FROM_NAME", "Majsteria.pl");
+define("EMAIL_PASSWORD_RESET_SUBJECT", "Zmiana hasla w serwisie Majsteria.pl");
+define("EMAIL_PASSWORD_RESET_CONTENT", "Proszę kliknąć w poniższy link, aby ustawić nowe hasło: ");
 
 define("EMAIL_VERIFICATION_URL", URL . "login/verify");
 define("EMAIL_VERIFICATION_FROM_EMAIL", "no-reply@majsteria.pl");
@@ -262,7 +262,7 @@ define("FEEDBACK_AVATAR_IMAGE_UPLOAD_FAILED", "Ładowanie obrazu nie powiodło s
 define("FEEDBACK_PASSWORD_RESET_TOKEN_FAIL", "Nie udało się zapisać tokena do bazy danych");
 define("FEEDBACK_PASSWORD_RESET_TOKEN_MISSING", "Brak tokenu resetowania hasła");
 define("FEEDBACK_PASSWORD_RESET_MAIL_SENDING_ERROR", "Link resetujący hasło nie został wysłany z powodu: ");
-define("FEEDBACK_PASSWORD_RESET_MAIL_SENDING_SUCCESSFUL", "Wiadomośc resetująca hasło została wysłana");
+define("FEEDBACK_PASSWORD_RESET_MAIL_SENDING_SUCCESSFUL", "Wiadomość resetująca hasło została wysłana na Twój adres email");
 define("FEEDBACK_PASSWORD_RESET_LINK_EXPIRED", "Link resetujący hasło stracił ważność. Link jest ważny przez godzinę od momentu otrzymania.");
 define("FEEDBACK_PASSWORD_RESET_COMBINATION_DOES_NOT_EXIST", "Użytkownik/Kod weryfikacyjny nie istnieje");
 define("FEEDBACK_PASSWORD_RESET_LINK_VALID", "Link resetujący hasło jest aktywny. Proszę zmienić hasło teraz");

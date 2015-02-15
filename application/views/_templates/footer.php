@@ -1,11 +1,47 @@
     <div class="container">
+        <div class="col-md-12 col-sm-12 shadow">
+        <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
+        </div>
+    <div class="row padding-bootom">
+    <div class="col-md-12 col-sm-12">
+    <div class="col-md-4 col-sm-4 col-one">
+    <h2>Dodaj zlecenie za darmo</h2>
+    <p> Znadź bezpłatną pomoc już teraz -- powiedz czego potrzebujesz, a wykwalifikowani fachowcy sami Cię znajdą. Masz pytania?
+    <br />
+    <span class="org-sm">Dzwoń (000000)</span><br />
+    <span class="sm1">Pn-Nd 9:00-22:00</span></p>
+        <button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button>
+    </div>
+    
+    <div class="col-md-4 col-sm-4 col-one">
+    <h2>Czym jest Majsteria.pl?</h2>
+    <p>Majsteria to serwis skupiający ekspertów z różnych dziedzin, na terenie całej Polski. 
+        Tutaj szybko uzyskasz pomoc przy pracach remontowych, budowlanych czy innych, wymagających specjalistycznej wiedzy. 
+        Publikacja zlecenia jest niezobowiązująca i bezpłatna, nie ponosisz więc żadnego ryzyka. Majsteria oszczędza Twój czas i pieniądze! 
+    </p>
+    </div>
+    
+    <div class="col-md-4 col-sm-4 col-one">
+    <h2>Reklamuj sie z nami!</h2>
+    <p>Regularnie otrzymujemy zapytania o fachowców z Twojej branży! Stwórz swój profil, a my będziemy podsyłać Ci pasujące zlecenia z okolicy. Wszystko bezpłatnie!
+    <br />
+    <span class="org-sm">Dzwoń (000000)</span><br />
+    <span class="sm1">Pn-Nd 9:00-22:00</span></p>
+    <button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button>
+    </div> 
+    </div>
+    </div>
+    </div>
+
+
+    <div class="container">
     <div class="row">
     <div class="col-md-12 col-sm-12">
     <div class="col-md-2 col-sm-2 br-line">
     <h2>O nas</h2>
     <ul class="nav nav-pills links">
     <li><a href="<?php echo URL; ?>about_us/index">» O Majsterii</a></li>
-    <li><a href="#">» Poznaj Team Majsterii</a></li>
+    <li><a href="#">» Poznaj zespół Majsterii</a></li>
     <li><a href="#">» Kontakt</a></li>
     <!-- <li><a href="#">» Blog Majsterii</a></li>
     <li><a href="#">» Oferty pracy</a></li>
@@ -49,57 +85,18 @@
     <div class="bkl">Największa liczba kategorii</div>
     </div>
     
-    <div class="col-md-12 col-sm-12 shadow">
-    <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
-    </div>
-    
     
     </div>
     </div>
-    </div>
-    
-    
-    
-    <div class="container">
-    <div class="row padding-bootom">
-    <div class="col-md-12 col-sm-12">
-    <div class="col-md-4 col-sm-4 col-one">
-    <h2>Dodaj Zlecenie <span>ZA DARMO!</span></h2>
-    <p> Znadź pomoc już teraz- powiedz czego potrzebujesz, a my dostarczymy Ci trzy wyceny przesłane przez naszych fachowców.
-    <span class="org-sm">Dzwoń (000000)</span><br>
-    <span class="sm1">Pn-Pt 9:00-17:00<br>
-    Sb-Nd (00:00-00:00)</span></p>
-    </div>
-    
-    <div class="col-md-4 col-sm-4 col-one">
-    <h2>O Nas:</h2>
-    <p>Witamy w Majsterii, miejscu w którym znaleźc można rozwiązanie każdego problemu zwiazanego z naprawami, budową czy renowacją powierzchni użytkowych. Serwis Majsteria zrzesza najlepszych fachowców z poszczególnych branży. Wygodna wyszukiwarka pozwoli na szybką wycenę kosztu zlecenia, oraz dostarczy listę możliwych kontaktów w najblizszym sądsiedztwie. Majsteria to nie tylko baza kontaktów- znajdziesz tu również masę inspiracji do wykorzystania przy własnych pracach remontowych czy budowlanych. Udostępniona lista sprawdzonych fachowców dodatkowo pomoże w realizacji pomysłu.
-	…
-    <br>
-   
-    Portal majsteria.pl to największe i najwygodniesze źródło profesjonalistów!
-    <br>
-    Nie zwlekaj już ani chwili! </p>
-    <button type="button" class="btn btn-default navbar-btn btn-blue">Szukaj kontaktów</button>
-    </div>
-    
-    <div class="col-md-4 col-sm-4 col-one">
-    <h2><span>Reklamuj sie z nami!</span></h2>
-    <p>Regularnie otrzymujemy zapytania o fachowców z Twojej branży!
-    <span class="org-sm">Dzwoń (numer Mańka)</span>
-    <span class="sm1">Pn-Pt 9:00-17:00 <br>
-   Sb-Nd: Zostaw wiadomośc, a my skontaktujemy się z Toba w poniedziałek</span></p>
-    <button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button>
+<!--
+        <div class="col-md-12 col-sm-12 shadow">
+        <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
+        </div> -->
     </div>
     
     
     
-   
-    
-    
-    </div>
-    </div>
-    </div>
+
     
     
     <div class="container-fluid black">
@@ -112,66 +109,47 @@
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
-    <li><a href="#">Pracownicy Budowy Poznań</a></li>
-    <li><a href="#">Usuwanie azbestu Kraków</a></li>
+    <li><a href="#">Malarze Warszawa</a></li>
+    <li><a href="#">Geodeci Poznań</a></li>
+    <li><a href="#">Stolarze Kraków</a></li>
+    <li><a href="#">Szklarze Wrocław</a></li>
+
+    </ul>
+    </div>
+    
+    <div class="col-md-3 col-sm-3 links-fot">
+    <ul class="nav nav-pills f-links">
+    <li><a href="#">Projektanci Warszawa</a></li>
+    <li><a href="#">Oświetlenia Rzeszów</a></li>
+    <li><a href="#">Firmy sprzątające Lublin</a></li>
+    <li><a href="#">Elektrycy Łódź</a></li>
+    </ul>
+    </div>
+    
+    <div class="col-md-3 col-sm-3 links-fot">
+    <ul class="nav nav-pills f-links">
+    <li><a href="#">Rozbiurki Kraków</a></li>
+    <li><a href="#">Posadzkarze Gdańsk</a></li>
+    <li><a href="#">Izolacje Gdańsk</a></li>
     <li><a href="#">Klimatyzacja Wrocław</a></li>
-    <li><a href="#">Orynnowanie Rzeszów</a></li>
-    <li><a href="#">Izolacja cieplna Lublin</a></li>
-    <li><a href="#">Konstruktor Łódź</a></li>
-    <li><a href="#">Stolarz Warszawa</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
-    <li><a href="#">Pracownicy Budowy Poznań</a></li>
-    <li><a href="#">Usuwanie azbestu Kraków</a></li>
-    <li><a href="#">Klimatyzacja Wrocław</a></li>
-    <li><a href="#">Orynnowanie Rzeszów</a></li>
-    <li><a href="#">Izolacja cieplna Lublin</a></li>
-    <li><a href="#">Konstruktor Łódź</a></li>
-    <li><a href="#">Stolarz Warszawa</a></li>
+    <li><a href="#">Elektrycy Warszawa</a></li>
+    <li><a href="#">Stolarze Łódź</a></li>
+    <li><a href="#">Firmy sprzątające Kraków</a></li>
+    <li><a href="#">Geodeci Lublin</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="#">Usuwanie godparent Warszawa</a></li>
-    <li><a href="#">Pracownicy Budowy Poznań</a></li>
-    <li><a href="#">Usuwanie azbestu Kraków</a></li>
-    <li><a href="#">>Klimatyzacja Wrocław</a></li>
-    <li><a href="#">Orynnowanie Rzeszów</a></li>
-    <li><a href="#">Izolacja cieplna Lublin</a></li>
-    <li><a href="#">Konstruktor Łódź</a></li>
-    <li><a href="#">Stolarz Warszawa</a></li>
-    </ul>
-    </div>
-    
-    <div class="col-md-3 col-sm-3 links-fot">
-    <ul class="nav nav-pills f-links">
-    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
-    <li><a href="#">Pracownicy Budowy Poznań</a></li>
-    <li><a href="#">Usuwanie azbestu Kraków</a></li>
-    <li><a href="#">>Klimatyzacja Wrocław</a></li>
-    <li><a href="#">Orynnowanie Rzeszów</a></li>
-    <li><a href="#">Izolacja cieplna Lublin</a></li>
-    <li><a href="#">Konstruktor Łódź</a></li>
-    <li><a href="#">Stolarz Warszawa</a></li>
-    </ul>
-    </div>
-    
-    <div class="col-md-3 col-sm-3 links-fot">
-    <ul class="nav nav-pills f-links">
-    <li><a href="#">Usuwanie odpadów Warszawa</a></li>
-    <li><a href="#">Pracownicy Budowy Poznań</a></li>
-    <li><a href="#">Usuwanie azbestu Kraków</a></li>
-    <li><a href="#">>Klimatyzacja Wrocław</a></li>
-    <li><a href="#">Orynnowanie Gdańsk</a></li>
-    <li><a href="#">Izolacja cieplna Lublin</a></li>
-    <li><a href="#">Konstruktor Łódź</a></li>
-    <li><a href="#">Stolarz Warszawa</a></li>
+    <li><a href="#">Oświetlenia Warszawa</a></li>
+    <li><a href="#">Ogrodnicy Poznań</a></li>
+    <li><a href="#">Malarze Kraków</a></li>
+    <li><a href="#">Posadzkarze Wrocław</a></li>
     </ul>
     </div>
     
@@ -205,7 +183,7 @@
     <div class="row">
     <div class="col-md-12 col-sm-12 text-blk">
     <div class="col-md-5 col-sm-6">
-    © 2014 · <a href="#">Warunki Uczestnictwa</a>  |  <a href="#">Polityka Prywatności</a> 
+    © 2015 · <a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 600, 200)">Regulamin</a> |  <a href="#">Cookies</a> 
     <?php /*<br>
     <a href="#">Strony Partnerskie:</a>  |  <a href="#">{przykladowe strony}</a>*/
     ?>
@@ -215,7 +193,7 @@
         <?php /*
     <a href="#">Wyszukiwanie po nazwie...</a>  |  <a href="#">Wszyszukiwanie po nazwie firmy...</a>  |  <a href="#">Stowarzyszenia Branżowe</a><br>
     */ ?>
-    <a href="#">Ogłoszeniodawca</a>  |  <a href="#">Pomoc Techniczna Strony</a> |  <a href="#">Mapa Strony</a>
+    <a href="#">Reklama</a>  |  <a href="#">Zgłoś błąd</a> |  <a href="#">Mapa Kategorii</a>
 	</div>
     </div>
     </div>

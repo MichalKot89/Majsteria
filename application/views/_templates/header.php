@@ -182,11 +182,11 @@ return false;
                 <li class="white-text"><a href="<?php echo $this->getFacebookLoginUrl(); ?>"><div class="icon icon-social-facebook blue"></div> ZALOGUJ Z FB</a></li>
             <!-- for logged in users -->
             <?php else:?>
-                <li class="white-text" <?php if ($this->checkForActiveControllerAndAction($filename, "subcategory/index")) { echo ' class="active" '; } ?> >
-                    <a href="<?php echo URL; ?>subcategory/index">Podkategorie</a>
-                </li>
                 <li class="white-text" <?php if ($this->checkForActiveControllerAndAction($filename, "dashboard/index")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo URL; ?>dashboard/index">Dashboard</a>
+                </li>
+                <li class="white-text" <?php if ($this->checkForActiveControllerAndAction($filename, "settings/index")) { echo ' class="active" '; } ?> >
+                    <a href="<?php echo URL; ?>settings/index">Ustawienia</a>
                 </li>
                 <li class="white-text" <?php if ($this->checkForActiveControllerAndAction($filename, "login/logout")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo URL; ?>login/logout">Wyloguj</a>

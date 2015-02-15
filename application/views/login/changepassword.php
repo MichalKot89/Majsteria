@@ -1,29 +1,24 @@
-<div class="content">
-    <h1>Set new password</h1>
+<div class="container">
+    <h1>Ustaw nowe hasło</h1>
 
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>
 
     <!-- new password form box -->
+    <br />
     <form method="post" action="<?php echo URL; ?>login/setnewpassword" name="new_password_form">
         <input type='hidden' name='user_name' value='<?php echo $this->user_name; ?>' />
         <input type='hidden' name='user_password_reset_hash' value='<?php echo $this->user_password_reset_hash; ?>' />
         <label for="reset_input_password_new">
-            New password (min. 6 characters!
-            <span class="login-form-password-pattern-reminder">
-                Please note: using a long sentence as a password is much much safer then something like "!c00lPa$$w0rd"). Have a look on
-                <a href="http://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase">
-                    this interesting security.stackoverflow.com thread
-                </a>.
-            </span>
+            Nowe hasło (min. 6 znaków)
         </label>
         <input id="reset_input_password_new" class="reset_input" type="password"
-               name="user_password_new" pattern=".{6,}" required autocomplete="off" />
-        <label for="reset_input_password_repeat">Repeat new password</label>
+               name="user_password_new" pattern=".{6,}" required autocomplete="off" /><br />
+        <label for="reset_input_password_repeat">Powtórz nowe hasło</label>
         <input id="reset_input_password_repeat" class="reset_input" type="password"
-               name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
-        <input type="submit"  name="submit_new_password" value="Submit new password" />
+               name="user_password_repeat" pattern=".{6,}" required autocomplete="off" /><br />
+        <input type="submit"  name="submit_new_password" value="Zatwierdź nowe hasło" />
     </form>
-
-    <a href="<?php echo URL; ?>login/index">Back to Login Page</a>
+    <br />
+    <a href="<?php echo URL; ?>login/index">Wróc do strony logowania</a>
 </div>
