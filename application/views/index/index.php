@@ -37,7 +37,7 @@
     </ul>
     </div>
     
-    <input type="text" class="form-control input-text enter" placeholder="Podaj swój kod pocztowy">
+    <input type="name" class="form-control input-text enter" id="post_code" name="post_code"  placeholder="Podaj swój kod pocztowy">
     <button type="submit" class="btn btn-default blue-btn">DODAJ ZLECENIE</button>
     </div>
     </div>
