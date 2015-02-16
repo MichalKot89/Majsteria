@@ -152,7 +152,7 @@ font-family: 'helvetica'; font-size:14px; font-weight:normal;}
 
 #slider{width:100%; margin:0 auto; padding:0;}
 
-.form-bg{width:420px; display:inline-block; z-index:10; background:rgba(255,255,255,0.9); margin-top:41px;
+.form-bg{width:420px; display:inline-block; z-index:10; background:rgba(255,255,255,0.9); margin-top:80px;
 border-left:1px solid #000; border-right:1px solid #000; border-top:1px solid #000; border-top-left-radius:3px; border-top-right-radius:3px; box-shadow:0px 0px 12px #000; padding:0; margin-right:15px;}
 
 .org-div{width:100%; background:rgba(245,172,118,0.9); padding:14px 18px 10px 18px;}

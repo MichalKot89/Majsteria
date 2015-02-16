@@ -10,7 +10,7 @@
     <li><img src="public/images/slide3.jpg" alt=""></li>
     </ul>
     
-    <div class="container" style="margin-top: -590px;">
+    <div class="container" <?php /*style="margin-top: -590px;"*/ ?>>
     <div class="row">
     <div class="col-md-5 col-sm-5 form-bg pull-right">
     <div class="org-div">
@@ -123,7 +123,7 @@
     <div class="row">
     <div class="col-md-11 col-sm-11 white-bg">
     <div class="col-md-7 col-sm-7 pad">
-    Gosia z Wrocławia zarekomendowała portal Majsteria.pl! dzisiaj 14:12
+    Gosia z Wrocławia poleca serwis Majsteria.pl! Dzisiaj, 09:12
     </div>
     <div class="col-md-1 col-sm-1 pull-right user">
     <i class="fa fa-user user-i"></i>
@@ -134,7 +134,7 @@
     <div class="row">
     <div class="col-md-11 col-sm-11 white-bg">
     <div class="col-md-7 col-sm-7 pad">
-    Gosia z Wrocławia zarekomendowała portal Majsteria.pl! dzisiaj 14:12
+    Marcin z Gdańska poleca serwis Majsteria.pl! Dzisiaj, 08:33
     </div>
     <div class="col-md-1 col-sm-1 pull-right user">
     <i class="fa fa-user user-i"></i>
@@ -148,7 +148,7 @@
     <div class="row">
     <div class="col-md-11 col-sm-11 white-bg">
     <div class="col-md-7 col-sm-7 pad">
-    Gosia z Wrocławia zarekomendowała portal Majsteria.pl! dzisiaj 14:12
+    Jerzy z Warszawy poszukuje hydraulika. Dzisiaj, 10:12
     </div>
     <div class="col-md-1 col-sm-1 pull-right user">
     <i class="fa fa-user"></i>
@@ -159,7 +159,7 @@
     <div class="row">
     <div class="col-md-11 col-sm-11 white-bg">
     <div class="col-md-7 col-sm-7 pad">
-    Gosia z Wrocławia zarekomendowała portal Majsteria.pl! dzisiaj 14:12
+    Jakub ze Szczecina poszukuje geodety. Dzisiaj, 09:31
     </div>
     <div class="col-md-1 col-sm-1 pull-right user">
     <i class="fa fa-user"></i>
@@ -171,6 +171,11 @@
     </div>
     </div>
 
+    <script>
+    (function () {
+    $('#myTab a:first').tab('show')
+    })
+    </script>
 
         <div class="col-md-12 col-sm-12 shadow">
             <img src="public/images/shadow.png" alt="" class="img-responsive">
@@ -389,4 +394,3 @@
     </div>
     </div>
     </div>
-    

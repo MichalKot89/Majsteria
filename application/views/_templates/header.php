@@ -5,7 +5,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>index</title>
+    <title>Majsteria.pl -- Źródło sprawdzonych fachowców</title>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Dosis:400,500,700" rel="stylesheet" type="text/css">
@@ -16,12 +16,6 @@
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/demo.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="<?php echo URL; ?>public/js/responsiveslides.min.js"></script>
-
-   <!--  <script>
-    $(function () {
-    $('#myTab a:first').tab('show')
-    })
-    </script> -->
     
     <script>
     // You can also use "$(window).load(function() {"
@@ -64,10 +58,8 @@
     
     });
     </script>
-
     <!-- jQuery autocomplete -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
 <script>
