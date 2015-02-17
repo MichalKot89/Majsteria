@@ -865,3 +865,5 @@ body { overflow:hidden !important;}
 
 }
 
+.get_quotes { position:absolute; color:#fff; text-align:center;}
+#get_quotes { padding-top: 60px; font-weight: bold;}
