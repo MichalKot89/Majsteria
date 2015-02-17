@@ -1,6 +1,0 @@
-1. Podkategorie -- pozwolic na wyswietlenie
-majsteria.vot.pl/zatrudnie/hydraulika z bazy danych
-2. Podlaczyc kategorie na gorze, zeby dziewczyny mogly widziec co wrzucaja
-3. Zrobic backend zeby dalo sie dodac zlecenie
-4. Podpiac kategorie pod dodawanie zlecen
-5. Zrobic strone zeby moc dodac biznes

@@ -81,7 +81,7 @@ class Business extends Controller
                 $business_model->create($user_id, $_POST['descr'], $_POST['is_company'], $_POST['company_name'], $_POST['subcategories']);          
         }
         $this->destroyPostFieldsInSession();
-        header('location: ' . URL . 'project');
+        header('location: ' . URL . 'project/matching');
     }
 
 

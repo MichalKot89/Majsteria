@@ -1,5 +1,5 @@
-<div class="content">
+<div class="container">
     <h1 style="color: red;">
-        This page does not exist.
+        Ta strona nie istnieje.
     </h1>
 </div>

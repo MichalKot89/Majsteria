@@ -7,13 +7,12 @@
     	<div class="row">
         	<div class="col-md-12 col-sm-12">
             	<div class="col-md-12 col-sm-12 quotes-head">
-                	<h1>Find Tradespeople And Home Services the Easy Way</h1>
+                	<h1>Znajdowanie specjalistów nigdy nie było tak szybkie i proste!</h1>
                     <hr />
                     <span>
-                    	Don't waste time doing the ring around, get 3 reliable local 
-                        businesses to follow you up to quote on your job. <br />
-                        We have been connecting Australians with local businesses for 
-                        over 10 years and our free get quote service makes this as easy as 1,2,3...
+                    	Nie trać czasu na dzwonienie i szukanie specjalistów. 
+                        Majsteria łączy Polaków z lokalnymi fachowcami poprzez prosty i bezpłatny system składania ofert. <br />
+                        Porównując fachowców i ich ceny zawsze znajdziesz najkorzystniejszą dla siebie ofertę. To proste jak raz, dwa, trzy...
                     </span>
                 </div>
               <div class="col-md-12 col-sm-12 quote-mid-sec">
@@ -23,7 +22,7 @@
                     </div>
                     <div class="center-block">
                    		<img src="<?php echo URL; ?>public/images/first.png" class="img-responsive center-block"> 
-                        <p>Tell us what you need</p>
+                        <p>Powiedz nam czego potrzebujesz</p>
                     </div>
                     </div>
                   <div class="col-md-3 col-sm-3 padd-null quote-mid">
@@ -32,7 +31,7 @@
                         </div>
                         <div class="center-block">
                    			<img src="<?php echo URL; ?>public/images/second.png" class="img-responsive center-block"> 
-                            <p>Plumbers contact you</p>
+                            <p>Specjaliści składają Ci oferty</p>
                     	</div>
                     </div>
                   <div class="col-md-3 col-sm-3 padd-null">
@@ -41,7 +40,7 @@
                         </div>
                         <div class="center-block quote-mid1">
                    			<img src="<?php echo URL; ?>public/images/third.png" class="img-responsive center-block"> 
-                            <p>You choose the best plumber</p>
+                            <p>Ty wybierasz najlepszego specjalistę</p>
                     	</div>
                     </div>
                   <div class="col-md-3 col-sm-3 padd-null box-styling">

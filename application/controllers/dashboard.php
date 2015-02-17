@@ -23,6 +23,21 @@ class Dashboard extends Controller
      */
     function index()
     {
+        
+        $project_model = $this->loadModel('Project');
+        $this->view->my_projects = $project_model->getProjectsByUser($_SESSION['user_id']);
+
+        $business_model = $this->loadModel('Business');
+        $this->view->isBusiness = $business_model->isBusiness($_SESSION['user_id']);
+
+
+        if($this->view->isBusiness) {
+            $user_info_model = $this->loadModel('UserInfo');
+            $user_info = $user_info_model->getUserInfo($_SESSION['user_id']);
+            //$this->view->business = $business_model->getBusiness($_SESSION['user_id']);
+            $this->view->matching_projects = $project_model->getMatchingProjects($_SESSION['user_id'], $user_info->post_code);
+        }
+
         $this->view->render('dashboard/index');
     }
 }
