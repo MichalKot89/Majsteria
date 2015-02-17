@@ -23,22 +23,33 @@
     <li><span>2</span> Poczekaj na błyskawiczną wycenę</li>
     <li><span>3</span> Wybierz najlepszą ofertę</li>
     </ul>
-    
-    <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle drop" type="button" id="dropdownMenu1" data-toggle="dropdown">Wybierz kategorię
-    <span class="caret pull-right mrg-top"></span>
-    </button>
-    <ul class="dropdown-menu dropdown-link full-width" role="menu" aria-labelledby="dropdownMenu1">
-<?php
-    foreach($this->getAllSubcategories() as $subcategory) {
-        echo '<li role="presentation"><a role="menuitem" tabindex="-1">' . $subcategory->name.'</a></li>';
-    } 
-?>
-    </ul>
-    </div>
-    
-    <input type="name" class="form-control input-text enter" id="post_code" name="post_code"  placeholder="Podaj swój kod pocztowy">
-    <button type="submit" class="btn btn-default blue-btn">DODAJ ZLECENIE</button>
+
+    <form action="<?php echo URL; ?>get_quotes/index" method="post" name="post_project_form">
+        <select class="form-control full-width drop input-text" name="subcategory_id" required>
+            <option value>Wybierz kategorie</option>
+            <?php
+                foreach($this->getAllSubcategories() as $subcategory) {
+                    echo '<option value="'.$subcategory->subcategory_id.'">' . $subcategory->name.'</option>';
+                } 
+            ?>
+        </select>
+<?php /*
+        <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle drop" type="button" id="dropdownMenu1" data-toggle="dropdown">Wybierz kategorię
+        <span class="caret pull-right mrg-top"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-link full-width" role="menu" aria-labelledby="dropdownMenu1">
+        <?php
+            foreach($this->getAllSubcategories() as $subcategory) {
+              echo '<li role="presentation"><a role="menuitem" tabindex="-1">' . $subcategory->name.'</a></li>';
+            } 
+        ?>
+        </ul>
+        </div>
+     */ ?>   
+        <input type="name" class="form-control input-text enter" id="post_code" name="post_code"  placeholder="Podaj swój kod pocztowy">
+        <button type="submit" class="btn btn-default blue-btn">DODAJ ZLECENIE</button>
+    </form>
     </div>
     </div>
     </div>

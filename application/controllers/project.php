@@ -287,6 +287,8 @@ class Project extends Controller
         $_SESSION['user_email'] = (isset($_POST['user_email']) AND !empty($_POST['user_email'])) ? $_POST['user_email'] : NULL;
         $_SESSION['post_code'] = (isset($_POST['post_code']) AND !empty($_POST['post_code'])) ? $_POST['post_code'] : NULL;
         $_SESSION['descr'] = (isset($_POST['descr']) AND !empty($_POST['descr'])) ? $_POST['descr'] : NULL;
+        $_SESSION['subcategory_id'] = (isset($_POST['subcategory_id']) AND !empty($_POST['subcategory_id'])) ? $_POST['subcategory_id'] : NULL;
+        $_SESSION['timeline'] = (isset($_POST['timeline']) AND !empty($_POST['timeline'])) ? $_POST['timeline'] : NULL;
     }
 
     /**
@@ -300,5 +302,7 @@ class Project extends Controller
         $_SESSION['user_email'] = NULL;
         $_SESSION['post_code'] = NULL;
         $_SESSION['descr'] = NULL;
+        $_SESSION['subcategory_id'] = NULL;
+        $_SESSION['timeline'] = NULL;
     }
 }

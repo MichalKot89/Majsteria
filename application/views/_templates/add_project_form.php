@@ -6,8 +6,9 @@
                             <select class="form-control" name="subcategory_id" required>
                               <option value>Wybierz kategorie</option>
                               <?php
+                                  $sid = isset($_SESSION['subcategory_id'])?$_SESSION['subcategory_id']:NULL;
                                   foreach($this->getAllSubcategories() as $subcategory) {
-                                      echo '<option value="'.$subcategory->subcategory_id.'">' . $subcategory->name.'</option>';
+                                      echo '<option value="'.$subcategory->subcategory_id.'"' . (($sid==$subcategory->subcategory_id)?' selected':'') . '>' . $subcategory->name.'</option>';
                                   } 
                               ?>
                             </select>
@@ -16,13 +17,16 @@
                             <label>Na kiedy?</label><br />
                             <select class="form-control" name = "timeline" required>
                               <option value>Wybierz termin</option>
-                              <option value="1">Jak najszybciej</option>
-                              <option value="2">Za kilka dni</option>
-                              <option value="3">Za kilka tygodni</option>
-                              <option value="4">Dogadamy się</option>
-                              <option vlaue="5">Nie wiem</option>
+                              <?php 
+                                $t = isset($_SESSION['timeline'])?$_SESSION['timeline']:NULL;
+                              ?>
+                              <option value="1" <?php if($t==1) echo 'selected'; ?>>Jak najszybciej</option>
+                              <option value="2" <?php if($t==2) echo 'selected'; ?>>Za kilka dni</option>
+                              <option value="3" <?php if($t==3) echo 'selected'; ?>>Za kilka tygodni</option>
+                              <option value="4" <?php if($t==4) echo 'selected'; ?>>Dogadamy się</option>
+                              <option vlaue="5" <?php if($t==5) echo 'selected'; ?>>Nie wiem</option>
                             </select>
-
+                            
                             <?php /*
                             <button type="button" class="btn btn-default btn-de">Jak najszybciej</button>
                             <button type="button" class="btn btn-default btn-de btn-de-active">Za kilka dni</button>

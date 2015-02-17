@@ -23,6 +23,12 @@ class Get_Quotes extends Controller
         $login_model = $this->loadModel('Login');
         $this->view->isCaptchaNeeded = $login_model->isCaptchaNeeded();
 
+        if(isset($_POST['post_code'])) {
+            $_SESSION['post_code'] = $_POST['post_code'];
+        }
+        if(isset($_POST['subcategory_id'])) {
+            $_SESSION['subcategory_id'] = $_POST['subcategory_id'];
+        }
 
         if(isset($_SESSION['user_id'])) {
             $user_info_model = $this->loadModel('UserInfo');
