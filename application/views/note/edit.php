@@ -1,5 +1,5 @@
 <div class="content">
-    <h1>Edit a note</h1>
+<?php /*    <h1>Edit a note</h1>
 
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>
@@ -14,4 +14,5 @@
     <?php } else { ?>
         <p>This note does not exist.</p>
     <?php } ?>
+    */
 </div>

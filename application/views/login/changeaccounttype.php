@@ -1,5 +1,6 @@
-<div class="content">
-    <h1>Change account type</h1>
+<div class="container">
+    <h1>Ulepszenie konta</h1>
+<?php /*
     <p>
         This page is a basic implementation of the upgrade-process.
         User can click on that button to upgrade their accounts from
@@ -29,4 +30,5 @@
         <input type="submit" name="user_account_downgrade" value="Downgrade my account" />
     </form>
     <?php } ?>
+    */
 </div>

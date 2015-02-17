@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
       <div class="col-md-12 col-sm-12 top-link">
-          <a href="#">Majsteria </a> <a href="#"> » Kategorie</a> <span>»  <a href="#"><?php echo $this->data->name; ?></a></span>
+          <a href="<?php echo URL; ?>">Majsteria</a> » <a href="#">Kategorie</a> <span>» <a href="<?php echo URL . 'znajdz/' . $this->data->seo_url; ?>"><?php echo $this->data->name; ?></a></span>
         </div>
     </div>
 </div>

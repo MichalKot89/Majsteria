@@ -1,4 +1,5 @@
-<div class="content">
+<div class="container">
+<?php /*
     <h1>Create new note</h1>
     <h3>"Notes" are just an example of how to create, show (read), edit (update) and delete things. CRUD, you know...</h3>
 
@@ -27,4 +28,5 @@
         }
     ?>
     </table>
+    */
 </div>

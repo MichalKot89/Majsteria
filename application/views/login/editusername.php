@@ -1,4 +1,5 @@
-<div class="content">
+<div class="container">
+	<?php /*
     <h1>Change your username</h1>
 
     <!-- echo out the system feedback (error and success messages) -->
@@ -8,5 +9,5 @@
         <label>New username</label>
         <input type="text" name="user_name" required />
         <input type="submit" value="Submit" />
-    </form>
+    </form>*/
 </div>

@@ -161,11 +161,11 @@
     </div>
     
     <div class="col-md-3 col-sm-12 icon">
-    <a href="#"><img src="<?php echo URL; ?>public/images/f.png" alt="" class="img-responsive"></a>
-    <a href="#"><img src="<?php echo URL; ?>public/images/t.png" alt="" class="img-responsive"></a>
-    <a href="#"><img src="<?php echo URL; ?>public/images/lin.png" alt="" class="img-responsive"></a>
-    <a href="#"><img src="<?php echo URL; ?>public/images/g+.png" alt="" class="img-responsive"></a>
-    <a href="#"><img src="<?php echo URL; ?>public/images/you.png" alt="" class="img-responsive"></a>
+    <a href="https://www.facebook.com/majsteriapl"><img src="<?php echo URL; ?>public/images/f.png" alt="" class="img-responsive"></a>
+    <a href="https://twitter.com/majsteriapl"><img src="<?php echo URL; ?>public/images/t.png" alt="" class="img-responsive"></a>
+    <?php /*<a href="#"><img src="<?php echo URL; ?>public/images/lin.png" alt="" class="img-responsive"></a>*/ ?>
+    <a href="https://plus.google.com/u/0/b/103685477565455271698/dashboard/overview"><img src="<?php echo URL; ?>public/images/g+.png" alt="" class="img-responsive"></a>
+    <?php /* <a href="#"><img src="<?php echo URL; ?>public/images/you.png" alt="" class="img-responsive"></a> */ ?>
     </div>
     </div>
     

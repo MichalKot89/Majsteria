@@ -1,4 +1,4 @@
-<div class="container">
+<div class="content">
     <h1>Your profile</h1>
 
     <!-- echo out the system feedback (error and success messages) -->

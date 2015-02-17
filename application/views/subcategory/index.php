@@ -1,4 +1,4 @@
-<div class="content">
+<div class="container">
     <h1>Dodaj nową podkategorię</h1>
     <h3>Podkategoria to każda ze stron jak tu: http://www.homeimprovementpages.com.au/find/plumbers</h3>
 
