@@ -192,6 +192,7 @@ return false;
         echo '<li><a href="'.URL.subcategory_SEO.'/' . $subcategory->seo_url .'">' . $subcategory->name.'</a></li>';
     } 
 ?>
+    <li><a href="<?php echo URL; ?>znajdz/all">Pokaż wszystkie</a></li>
     </ul>
     </div>
     </div>

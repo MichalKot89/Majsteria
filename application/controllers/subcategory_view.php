@@ -49,4 +49,15 @@ class Subcategory_View extends Controller
         // TEMP
         //$membership = $this->loadModel('Membership');
     }
+
+    /**
+     * Shows all subcategories
+     */
+    public function all()
+    {
+        $subcategory_model = $this->loadModel('Subcategory');
+        $this->view->subcategories = $subcategory_model->getAllSubcategories();
+        $this->view->categories = $subcategory_model->getAllCategories();
+        $this->view->render('subcategory_view/all');
+    }
 }

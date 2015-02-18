@@ -192,7 +192,7 @@
         <?php /*
     <a href="#">Wyszukiwanie po nazwie...</a>  |  <a href="#">Wszyszukiwanie po nazwie firmy...</a>  |  <a href="#">Stowarzyszenia Branżowe</a><br>
     */ ?>
-    <a href="#">Reklama</a>  |  <a href="#">Zgłoś błąd</a> |  <a href="#">Mapa Kategorii</a>
+    <a href="#">Reklama</a>  |  <a href="#">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>znajdz/all">Mapa Kategorii</a>
 	</div>
     </div>
     </div>

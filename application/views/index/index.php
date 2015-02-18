@@ -314,7 +314,7 @@
     </div>
     
     <div class="col-md-2 col-sm-2 pull-right pdd">
-    <button type="button" class="btn btn-default navbar-btn featured-btn">zobacz więcej kategorii</button>    
+    <a href="<?php echo URL; ?>znajdz/all"><button type="button" class="btn btn-default navbar-btn featured-btn">więcej kategorii</button></a>  
     </div>
     </div>    
     
