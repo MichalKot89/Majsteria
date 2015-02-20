@@ -44,13 +44,7 @@
                     	</div>
                     </div>
                   <div class="col-md-3 col-sm-3 padd-null box-styling">
-               	  	<div class="get_quotes">
-			<p>Bezpłatna publikacja zlecenia</p>
-			<p>Błyskawiczne wyceny</p>
-			<p>Brak konieczności wyboru</p>
-			<p id="get_quotes">Nad czym się jeszcze zastanawiasz?</p>
-			</div>
-               	  	<img src="<?php echo URL; ?>public/images/right-banner.png" class="center-block img-responsive" title="Prosty wybór fachowców!" alt="prosty wybor fachowcow">
+               	  	<img src="<?php echo URL; ?>public/images/right-banner.png" class="center-block img-responsive" title="Bezpłatna publikacja zlecenia, błyskawiczne wyceny, brak konieczności wyboru. Nad czym się jeszcze zastanawiasz?" alt="Bezpłatna publikacja zlecenia, błyskawiczne wyceny, brak konieczności wyboru.">
                   </div>
                 </div> 
                 <div class="col-md-12 col-sm-12">
