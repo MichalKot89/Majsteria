@@ -123,18 +123,34 @@ class BusinessModel
     }
 
     /**
+     * Updates subcategories for the business
+     * @return bool feedback (was it added properly?)
+     */
+    public function update_subcategories($business_id, $subcategories)
+    {
+        $sql = "DELETE FROM business_subcategory WHERE business_id = :business_id";
+        $query = $this->db->prepare($sql);
+        $query->execute(array(':business_id' => $business_id));
+
+        return $this->add_subcategories($business_id, $subcategories);
+    }
+
+    /**
      * Setter for a business (update)
      * @param int $business_id id of the specific business
      * @return bool feedback (was the update successful ?)
      */
-    public function editSave($business_id, $descr, $is_company, $company_name)
+    public function editSave($business_id, $descr, $is_company, $company_name, $subcategories)
     {
+
         $sql = "UPDATE business SET descr = :descr, is_company = :is_company, company_name = :company_name WHERE business_id = :business_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':business_id' => $business_id, ':descr' => $descr, ':is_company' => $is_company, ':company_name' => $company_name));
 
+        $update_successful = $this->update_subcategories($business_id, $subcategories);
+
         $count =  $query->rowCount();
-        if ($count == 1) {
+        if ($count == 1 OR $update_successful) {
             return true;
         }
         // default return

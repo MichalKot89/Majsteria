@@ -37,6 +37,46 @@ class Business extends Controller
     }
 
     /**
+     * Handles what happens when user moves to URL/business/edit/(XX)
+     * allows editing of the business
+     */
+    function edit($user_id)
+    {
+        Auth::handleLogin();
+        if($_SESSION['user_id'] != $user_id) {
+            header('location: ' . URL . 'business/index');
+        }
+        $this->view->isCaptchaNeeded = false;
+
+        $business_model = $this->loadModel('Business');
+        $this->view->isBusiness = $business_model->isBusiness($_SESSION['user_id']);
+        if(!$this->view->isBusiness) {
+            header('location: ' . URL . 'business/index');
+        }
+
+        $user_info_model = $this->loadModel('UserInfo');
+        $this->view->user_info = $user_info_model->getUserInfo($_SESSION['user_id']);
+        $this->view->business_info = $business_model->getBusiness($_SESSION['user_id']);
+        $this->view->business_subs = $business_model->getBusinessSubcategories($_SESSION['user_id']);
+        $this->view->business_subcategories = array();
+        foreach($this->view->business_subs AS $subcategory) {
+            $this->view->business_subcategories[] = $subcategory->subcategory_id;
+        }
+
+        $_SESSION['first_name'] = $this->view->user_info->first_name;
+        $_SESSION['last_name'] = $this->view->user_info->last_name;
+        $_SESSION['user_phone'] = $this->view->user_info->phone;
+        $_SESSION['user_phone'] = $this->view->user_info->phone;
+        $_SESSION['post_code'] = $this->view->user_info->post_code . ' ' . $this->view->user_info->city;
+        $_SESSION['company_name'] = $this->view->business_info->company_name;
+        $_SESSION['is_company'] = $this->view->business_info->is_company;
+        $_SESSION['descr'] = $this->view->business_info->descr;
+        
+
+        $this->view->render('business/index');
+    }
+
+    /**
      * This method controls what happens when you move to /dashboard/create in your app.
      * Creates a new project. This is usually the target of form submit actions.
      */
@@ -82,6 +122,35 @@ class Business extends Controller
         }
         $this->destroyPostFieldsInSession();
         header('location: ' . URL . 'project/matching');
+    }
+
+    /**
+     * This method controls what happens when you move to /business/editSave(/XX) in your app.
+     * @param $user_id of the business
+     */
+    public function editSave($user_id)
+    {
+        if (isset($user_id) AND $user_id == $_SESSION['user_id']) {
+            $business_model = $this->loadModel('Business');
+            $edit_business_success = $business_model->editSave($business_model->getBusiness($user_id)->business_id, $_POST['descr'], $_POST['is_company'], $_POST['company_name'], $_POST['subcategories']);
+
+            if(isset($_POST['post_code']) AND !empty($_POST['post_code'])) {
+                    $post_code_model = $this->loadModel('PostCode');
+                    $post_code_id = $post_code_model->findPostCodeIdFromInput($_POST['post_code']);
+            }
+            else {
+                $post_code_id = NULL;
+            }
+            $user_info_model = $this->loadModel('UserInfo');
+            $edit_userinfo_success = $user_info_model->setUserInfo($user_id, $_POST['first_name'], $_POST['last_name'], $_POST['user_phone'], $post_code_id);
+            if($edit_business_success OR $edit_userinfo_success) {
+                $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
+            }
+            header('location: ' . URL . 'business/edit/' . $user_id);
+        
+        } else {
+            header('location: ' . URL . 'business/index');
+        }
     }
 
 

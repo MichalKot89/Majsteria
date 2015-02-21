@@ -20,6 +20,8 @@ class Settings extends Controller
      */
     function index()
     {
-            $this->view->render('settings/index');
+        $business_model = $this->loadModel('Business');
+        $this->view->isBusiness = $business_model->isBusiness($_SESSION['user_id']);
+        $this->view->render('settings/index');
     }
 }

@@ -11,17 +11,31 @@
                 </div>
                 <div class="col-md-12 col-sm-12 quote-form-style">
            	    	<div class="col-md-12 col-sm-12 padd-null quote-form-inner">
-                    	<form action="<?php echo URL; ?>business/create" method="post" name="add_business">
+                    	
+                      <?php echo '<form action="' . URL;
+                        if($this->isBusiness) {
+                          echo 'business/editSave/'.$_SESSION['user_id'];
+                        }
+                        else {
+                          echo 'business/create';
+                        }
+                        echo '" method="post" name="add_business">'; ?>
                           <div class="form-group">
                             <div class="radio">
                               Szukasz zleceń jako firma czy osoba prywatna? <br />
-                              <label><input type="radio" name="is_company" onchange="showCompanyInput();" value="1">Firma</label>
+                              <label><input type="radio" name="is_company" onchange="showCompanyInput();" 
+                                <?php echo (isset($_SESSION['is_company']) AND $_SESSION['is_company'] == 1)?'checked':''?>
+                                value="1">Firma</label>
                             </div>
                             <div class="radio">
-                              <label><input type="radio" name="is_company" onchange="hideCompanyInput();" value="0">Osoba prywatna</label>
+                              <label><input type="radio" name="is_company" onchange="hideCompanyInput();" 
+                                <?php echo (isset($_SESSION['is_company']) AND $_SESSION['is_company'] == 0)?'checked':''?>
+                                value="0">Osoba prywatna</label>
                             </div>
                           </div>
-                          <div class="form-group" id="company_name_div" style="display: none;">
+                          <div class="form-group" id="company_name_div" 
+                            <?php echo (isset($_SESSION['is_company']) AND $_SESSION['is_company'] == 0)?'style="display: none;"':''?>
+                          >
                             <label>Nazwa firmy</label>
                             <input type="name" name="company_name" class="form-control" pattern=".{1,}" 
                               value = "<?php echo isset($_SESSION['company_name'])?$_SESSION['company_name']:''; ?>"  />
@@ -40,7 +54,11 @@
                             <select multiple = "multiple" class="form-control" name="subcategories[]" required>
                               <?php
                                   foreach($this->getAllSubcategories() as $subcategory) {
-                                      echo '<option value="'.$subcategory->subcategory_id.'">' . $subcategory->name.'</option>';
+                                      echo '<option value="'.$subcategory->subcategory_id.'" ';
+                                      if($this->isBusiness AND in_array($subcategory->subcategory_id, $this->business_subcategories)) {
+                                        echo 'selected';
+                                      }
+                                      echo '>' . $subcategory->name.'</option>';
                                   } 
                               ?>
                             </select>

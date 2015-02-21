@@ -286,3 +286,5 @@ define("FEEDBACK_FACEBOOK_USERNAME_ALREADY_EXISTS", "Nazwa użytkownika powiąza
 define("FEEDBACK_FACEBOOK_REGISTER_SUCCESSFUL", "Rejestracja konta z Facebookiem zakończona pomyślnie");
 define("FEEDBACK_FACEBOOK_OFFLINE", "Nie możemy połączyć się z serwerami Facebooka. Możliwe, że Facebook jest chwilowo offline..");
 define("MEMBERSHIP_UPGRADE_FAILED", "Upgrade członkostwa nie powiódł się");
+
+define("FEEDBACK_EDIT_SUCCESSFUL", "Twoje zmiany zostały zapisane.");

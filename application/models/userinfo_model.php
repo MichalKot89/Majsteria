@@ -41,7 +41,7 @@ class UserInfoModel
      * @param string post_code
      * @return bool whether successful
      */
-    private function setUserInfo($user_id, $first_name, $last_name, $phone, $post_code_id)
+    public function setUserInfo($user_id, $first_name, $last_name, $phone, $post_code_id)
     {
         if(!$this->getUserInfo($user_id)) {
             $sql = "INSERT INTO user_info (user_info_id, user_id, first_name, last_name, phone, post_code_id) VALUES (NULL, :user_id, :first_name, :last_name, :phone, :post_code_id)";

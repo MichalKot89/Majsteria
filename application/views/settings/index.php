@@ -10,9 +10,15 @@
         <tr>
             <td><a href="<?php echo URL;?>login/edituseremail">Zmień adres email</a></td>
         </tr>
-        <!--<tr>
+        <tr>
             <td><a href="<?php echo URL;?>login/uploadavatar">Zmień zdjęcie profilowe</a></td>
-        </tr>-->
+        </tr>
+        <?php
+        if($this->isBusiness) { ?>
+        <tr>
+            <td><a href="<?php echo URL . 'business/edit/' . $_SESSION['user_id']; ?>">Edycja biznesu</a></td>
+        </tr>
+        <? } ?>
     </table>
 </center>
 </div>
