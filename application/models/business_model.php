@@ -73,9 +73,10 @@ class BusinessModel
      */
     public function getBusinessSubcategories($user_id)
     {
-        $sql = "SELECT bs.subcategory_id
+        $sql = "SELECT bs.subcategory_id, s.name
             FROM business b
             JOIN business_subcategory bs ON bs.business_id = b.business_id
+            JOIN subcategory s ON bs.subcategory_id = s.subcategory_id
             WHERE b.user_id = :user_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));

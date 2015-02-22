@@ -5,10 +5,10 @@
     <?php $this->renderFeedbackMessages(); ?>
 
     <form action="<?php echo URL; ?>login/uploadavatar_action" method="post" enctype="multipart/form-data">
-        <label for="avatar_file">Wybierz zdjęcie z dysku (zostanie przeskalowane do rozmiaru 44x44 px):</label>
+        <label for="avatar_file">Wybierz zdjęcie z dysku (zostanie przeskalowane do rozmiaru <?php echo AVATAR_SIZE . 'x'. AVATAR_SIZE; ?> px):</label>
         <input type="file" name="avatar_file" required />
-        <!-- max size 5 MB (as many people directly upload high res pictures from their digital cameras) -->
-        <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+        <!-- max size 10 MB (as many people directly upload high res pictures from their digital cameras) -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
         <input name="submit" type="submit" value="Dodaj zdjęcie" />
     </form>
 </div>

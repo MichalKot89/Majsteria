@@ -75,6 +75,38 @@ class Business extends Controller
         $this->view->render('business/index');
     }
 
+
+    /**
+     * Handles what happens when user moves to URL/business/profile/(XX)
+     * allows editing of the business
+     */
+    function profile($user_id)
+    {
+        $business_model = $this->loadModel('Business');
+        $this->view->isBusiness = $business_model->isBusiness($user_id);
+        if(!$this->view->isBusiness) {
+            header('location: ' . URL . 'get_quotes/index');
+        }
+
+        $overview_model = $this->loadModel('Overview');
+        $this->view->user = $overview_model->getUserProfile($user_id);
+
+        $user_info_model = $this->loadModel('UserInfo');
+        $this->view->user_info = $user_info_model->getUserInfo($user_id);
+        
+        $this->view->business_info = $business_model->getBusiness($user_id);
+        $this->view->business_subcategories = $business_model->getBusinessSubcategories($user_id);
+
+        if($this->view->business_info->is_company) {
+            $this->view->name = $this->view->business_info->company_name;
+        }
+        else {
+            $this->view->name = $this->view->user_info->first_name . ' ' . $this->view->user_info->last_name;
+        }
+
+        $this->view->render('business/profile');
+    }
+
     /**
      * This method controls what happens when you move to /dashboard/create in your app.
      * Creates a new project. This is usually the target of form submit actions.
