@@ -10,7 +10,7 @@
     <br />
     <span class="org-sm">Dzwoń (000000)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
-        <button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button>
+    <a href="<?php echo URL; ?>get_quotes/index"><button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button></a>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
@@ -26,7 +26,7 @@
     <br />
     <span class="org-sm">Dzwoń (000000)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
-    <button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button>
+    <a href="<?php echo URL; ?>business/index"><button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button></a>
     </div> 
     </div>
     </div>
