@@ -145,10 +145,15 @@ class Business extends Controller
         // stuff handles POST in the model. in this project-controller/model, the POST data is intentionally handled
         // in the controller, to show people how to do it "correctly". But I still think this is ugly.
         if (isset($_POST['descr']) AND !empty($_POST['descr']) AND
-            isset($_POST['is_company']) AND !empty($_POST['is_company']) AND 
             isset($_POST['subcategories']) AND !empty($_POST['subcategories'])) {
 
                 $business_model = $this->loadModel('Business');
+                if(isset($_POST['company_name'])){
+                    $company_name = $_POST['company_name'];
+                }
+                else {
+                    $company_name = NULL;
+                }
                 $business_model->create($user_id, $_POST['descr'], $_POST['is_company'], $_POST['company_name'], $_POST['subcategories']);          
         }
         $this->destroyPostFieldsInSession();

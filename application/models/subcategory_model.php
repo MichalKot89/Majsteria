@@ -21,7 +21,7 @@ class SubcategoryModel
      */
     public function getAllSubcategories()
     {
-        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, content FROM subcategory";
+        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, content FROM subcategory ORDER BY name ASC";
         $query = $this->db->prepare($sql);
         $query->execute();
 
