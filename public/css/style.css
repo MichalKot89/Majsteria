@@ -484,7 +484,9 @@ ul.f-links{list-style:url(../images/arrow.png) !important; color:#fff;}
 
 .cat-mid-sec hr {background:#f58634; color:#f58634; border:none; height:1px; margin:5px 0px 15px 0px; padding:0;}
 
-.cat-mid-sec p { font-family:'Conv_MyriadPro-Regular'; color:#333333; font-size:13px; float:left; line-height:20px;}
+.cat-mid-sec p, ul { font-family:'Conv_MyriadPro-Regular'; color:#333333; font-size:13px; float:left; line-height:20px;}
+
+.cat-mid-sec ul {clear:left;}
 
 #orange { color:#cd691e; font-weight:bold; margin-top:15px;}
 
