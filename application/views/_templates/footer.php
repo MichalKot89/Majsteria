@@ -182,7 +182,7 @@
     <div class="row">
     <div class="col-md-12 col-sm-12 text-blk">
     <div class="col-md-5 col-sm-6">
-    © 2015 · <a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 600, 200)">Regulamin</a> |  <a href="#">Cookies</a> 
+    © 2015 · <a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 800, 600)">Regulamin</a> |  <a href="#">Cookies</a> 
     <?php /*<br>
     <a href="#">Strony Partnerskie:</a>  |  <a href="#">{przykladowe strony}</a>*/
     ?>

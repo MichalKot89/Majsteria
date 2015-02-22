@@ -66,7 +66,6 @@ class Business extends Controller
         $_SESSION['first_name'] = $this->view->user_info->first_name;
         $_SESSION['last_name'] = $this->view->user_info->last_name;
         $_SESSION['user_phone'] = $this->view->user_info->phone;
-        $_SESSION['user_phone'] = $this->view->user_info->phone;
         $_SESSION['post_code'] = $this->view->user_info->post_code . ' ' . $this->view->user_info->city;
         $_SESSION['company_name'] = $this->view->business_info->company_name;
         $_SESSION['is_company'] = $this->view->business_info->is_company;

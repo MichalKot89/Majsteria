@@ -36,7 +36,7 @@
     </form>
     <div style="font-size: 12px; color: grey; text-align: left; margin-top: 10px;">
     Klikając 'Załóż konto' potwierdzasz, że akceptujesz
-    <span id="terms"><a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 600, 200)">regulamin</a></span>
+    <span id="terms"><a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 800, 600)">regulamin</a></span>
     serwisu Majsteria.pl
     </div>
 </div>

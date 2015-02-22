@@ -64,7 +64,7 @@ class ProjectModel
     public function getProject($project_id)
     {
         $sql = "SELECT p.project_id, p.submit_date, p.user_id, p.timeline, p.descr, p.post_code_id, 
-                p.subcategory_id, p.subsubcategory_id, p.active, p.deleted, pc.post_code, s.name AS subcategory_name
+                p.subcategory_id, p.subsubcategory_id, p.active, p.deleted, pc.post_code, pc.city, s.name AS subcategory_name
             FROM project p
             JOIN subcategory s ON s.subcategory_id = p.subcategory_id
             JOIN post_code pc ON pc.post_code_id = p.post_code_id 
@@ -120,7 +120,7 @@ class ProjectModel
      * @param int $project_id id of the specific project
      * @return bool feedback (was the update successful ?)
      */
-    public function editSave($project_id, $timeline, $descr, $post_code, $subcategory_id, $subsubcategory_id = NULL)
+    public function editSave($project_id, $timeline, $descr, $post_code_id, $subcategory_id, $subsubcategory_id = NULL)
     {
 
         $sql = "UPDATE project SET timeline = :timeline, descr = :descr, post_code_id = :post_code_id, subcategory_id = :subcategory_id, subsubcategory_id = :subsubcategory_id WHERE project_id = :project_id";

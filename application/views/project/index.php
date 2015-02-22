@@ -11,6 +11,9 @@
                 echo '<td>' . $value->post_code . '</td>';
                 echo '<td>' . $value->subcategory_name . '</td>';
                 echo '<td><a href="' . URL . 'project/view/' . $value->project_id . '">Szczegóły zlecenia</a></td>';
+                if($this->isAdmin || $value->user_id == $_SESSION['user_id']) {
+                    echo '<td><a href="'. URL . 'project/edit/' . $value->project_id.'">Edycja zlecenia</a></td>';
+                }
                 if($value->active == 0 && $this->isAdmin) {
                     echo '<td><a href="'. URL . 'project/activate/' . $value->project_id.'">Activate</a></td>';
                 }

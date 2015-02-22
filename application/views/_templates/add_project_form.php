@@ -1,6 +1,13 @@
                 <div class="col-md-12 col-sm-12 quote-form-style">
            	    	<div class="col-md-12 col-sm-12 padd-null quote-form-inner">
-                    	<form action="<?php echo URL; ?>project/create" method="post" name="post_project_form">
+                      <?php echo '<form action="' . URL;
+                        if(isset($this->project)) {
+                          echo 'project/editSave/'.$this->project->project_id;
+                        }
+                        else {
+                          echo 'project/create';
+                        }
+                        echo '" method="post" name="post_project_form">'; ?>
                           <div class="form-group">
                             <label>Jakiego rodzaju fachowca poszukujesz?</label>
                             <select class="form-control" name="subcategory_id" required>
@@ -93,10 +100,10 @@
                             // display terms and conditions only if not logged in
                             if(!isset($_SESSION['user_id'])) { ?>
                               <label style="font-size:12px; color: grey;">Klikając 'Dodaj zlecenie' potwierdzasz, że akceptujesz <br /> 
-                              <span id="terms"><a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 600, 200)">regulamin</a></span>
+                              <span id="terms"><a href="<?php echo URL; ?>public/html/regulamin.html" onClick="return popup(this, 'Regulamin', 800, 600)">regulamin</a></span>
                                serwisu Majsteria.pl</label>
                              <?php } ?>
-                            <button class="btn btn-default navbar-btn quote-sub pull-left" type="submit">Dodaj zlecenie »</button>
+                            <button class="btn btn-default navbar-btn quote-sub pull-left" type="submit"><?php echo (isset($this->project)?'Edytuj':'Dodaj'); ?> zlecenie »</button>
                           </div>
                           
                         </form>

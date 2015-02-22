@@ -217,11 +217,24 @@ class Project extends Controller
     {
         if (isset($project_id)) {
             // get the project that you want to edit (to show the current content)
+            $this->view->isCaptchaNeeded = false;
+            $this->view->skip_phone = true;
+            $this->view->skip_name = true;
             $admin_model = $this->loadModel('Admin');
             $project_model = $this->loadModel('Project');
             $this->view->project = $project_model->getProject($project_id);
             if($admin_model->isAdmin($_SESSION['user_id']) OR $this->view->project->user_id == $_SESSION['user_id']) {
-                $this->view->render('project/edit');
+                $user_info_model = $this->loadModel('UserInfo');
+                $this->view->user_info = $user_info_model->getUserInfo($_SESSION['user_id']);
+
+                $_SESSION['first_name'] = $this->view->user_info->first_name;
+                $_SESSION['last_name'] = $this->view->user_info->last_name;
+                $_SESSION['user_phone'] = $this->view->user_info->phone;
+                $_SESSION['post_code'] = $this->view->project->post_code . ' ' . $this->view->project->city;
+                $_SESSION['subcategory_id'] = $this->view->project->subcategory_id;
+                $_SESSION['timeline'] = $this->view->project->timeline;
+                $_SESSION['descr'] = $this->view->project->descr;
+                $this->view->render('get_quotes/index');
             }
         } else {
             header('location: ' . URL . 'project');
@@ -234,14 +247,19 @@ class Project extends Controller
      */
     public function editSave($project_id)
     {
-        if (isset($_POST['subcategory_id']) && isset($project_id)) {
+        if (isset($_POST['post_code']) && isset($_POST['subcategory_id']) && isset($project_id)) {
             $admin_model = $this->loadModel('Admin');
             $project_model = $this->loadModel('Project');
             if($admin_model->isAdmin($_SESSION['user_id']) OR $project_model->getProject($project_id)->user_id == $_SESSION['user_id']) {
-                $project_model->editSave($_POST['timeline'], $_POST['descr'], $_POST['post_code'], $_POST['subcategory'], $_POST['subsubcategory']);
+                $post_code_model = $this->loadModel('PostCode');
+                $post_code_id = $post_code_model->findPostCodeIdFromInput($_POST['post_code']);
+                $project_edit_successful = $project_model->editSave($project_id, $_POST['timeline'], $_POST['descr'], $post_code_id, $_POST['subcategory_id']);
+                if($project_edit_successful) {
+                    $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
+                }
             }
         }
-        header('location: ' . URL . 'project');
+        header('location: ' . URL . 'project/edit/' . $project_id);
     }
 
     /**
