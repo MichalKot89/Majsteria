@@ -1,8 +1,8 @@
 <div class="container">
     <?php 
         if($this->project) {
-            echo '<h1>' . $this->project->subcategory_name . ' ' . $this->project->post_code . '</h1>';
-            echo '<b>Data dodania:</b> ' . $this->project->submit_date . '<br />';
+            echo '<h1>' . $this->project->subcategory_name . ' ' . $this->project->city . '</h1>';
+            echo '<b>Data dodania:</b> ' . $this->displayDate($this->project->submit_date) . '<br />';
             echo '<b>Opis zlecenia: </b><br />' . $this->project->descr;
         }
     ?>
@@ -50,7 +50,6 @@
 	    		<th>Treść oferty</th>
 	    		<?php if($this->isOwner OR $this->isAdmin) { ?>
 	    		<th>Cena</th>
-	    		<th>Koszt</th>
 	    		<th>Nr kontaktowy</th>
 	    		<?php } ?>
 	    	</tr>
@@ -58,12 +57,12 @@
 	            foreach($this->offers as $key => $value) {
 	                echo '<tr>';
 	                echo '<td>' . $this->displayDate($value->submit_date) . '</td>';
-	                echo '<td>' . $value->company_name . ' ' . $value->first_name . ' ' . $value->last_name . '</td>';
+	                echo '<td><a href="' . URL . 'business/profile/' . $value->user_id . '">' . ($value->is_company?$value->company_name:($value->first_name . ' ' . $value->last_name)). '</a></td>';
 	                echo '<td>' . $value->city . '</td>';
 	                echo '<td>' . $value->descr . '</td>';
 	                if($this->isOwner OR $this->isAdmin) {
-	                	echo '<td>' . $value->offer_value . '</td>';
-	                	echo '<td>' . $value->offer_type . '</td>';
+	                	echo '<td>' . $value->offer_value . ' zł ';
+	                	echo '' . (($value->offer_type==1)?'':'za godz.') . '</td>';
 	                    echo '<td>' . $value->phone . '</td>';
 	                }
 	                if($value->active == 0 && $this->isAdmin) {
@@ -76,7 +75,10 @@
 
 	            }
 	        } else {
-	            echo "Nikt nie złożył jeszcze oferty na to zlecenie. To szansa dla Ciebie!";
+	            echo "Nikt nie złożył jeszcze oferty na to zlecenie.";
+	            if(!$this->isOwner) {
+	            	echo " To szansa dla Ciebie!";
+	            }
 	        }
 	    ?>
 	    </table>

@@ -45,7 +45,7 @@ class ProjectModel
             JOIN business_subcategory bs ON bs.subcategory_id = p.subcategory_id
             JOIN business b ON b.business_id = bs.business_id
             JOIN post_code pc ON pc.post_code_id = p.post_code_id
-            WHERE b.user_id = :user_id AND pc.post_code LIKE :post_code
+            WHERE b.user_id = :user_id AND p.user_id <> :user_id AND pc.post_code LIKE :post_code
             LIMIT 20";
         $query = $this->db->prepare($sql);
 
