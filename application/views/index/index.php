@@ -8,6 +8,8 @@
     <li><img src="public/images/slide1.jpg" alt=""></li>
     <li><img src="public/images/slide2.jpg" alt=""></li>
     <li><img src="public/images/slide3.jpg" alt=""></li>
+    <li><img src="public/images/slide4.jpg" alt=""></li>
+    <li><img src="public/images/slide5.jpg" alt=""></li>
     </ul>
     
     <div class="container" <?php /*style="margin-top: -590px;"*/ ?>>
