@@ -21,7 +21,7 @@ class SubcategoryModel
      */
     public function getAllSubcategories()
     {
-        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, content FROM subcategory ORDER BY name ASC";
+        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, meta_keywords, content FROM subcategory ORDER BY name ASC";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -51,7 +51,7 @@ class SubcategoryModel
      */
     public function getSubcategory($subcategory_id)
     {
-        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, content FROM subcategory WHERE subcategory_id = :subcategory_id";
+        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, meta_keywords, content FROM subcategory WHERE subcategory_id = :subcategory_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':subcategory_id' => $subcategory_id));
 
@@ -66,7 +66,7 @@ class SubcategoryModel
      */
     public function getSubcategoryByName($seo_url)
     {
-        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, content FROM subcategory WHERE seo_url = :seo_url";
+        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_keywords, content FROM subcategory WHERE seo_url = :seo_url";
         $query = $this->db->prepare($sql);
         $query->execute(array(':seo_url' => $seo_url));
 
@@ -78,13 +78,13 @@ class SubcategoryModel
      * Setter for a subcategory (create)
      * @return bool feedback (was the note created properly ?)
      */
-    public function create($category_id, $name, $specialist_name, $seo_url, $meta_title, $meta_descr, $content)
+    public function create($category_id, $name, $specialist_name, $seo_url, $meta_title, $meta_descr, $meta_keywords, $content)
     {
-        $sql = "INSERT INTO subcategory (category_id, name, specialist_name, seo_url, meta_title, meta_descr, content) 
-	  VALUES (:category_id, :name, :specialist_name, :seo_url, :meta_title, :meta_descr, :content)";
+        $sql = "INSERT INTO subcategory (category_id, name, specialist_name, seo_url, meta_title, meta_descr, meta_keywords, content) 
+	  VALUES (:category_id, :name, :specialist_name, :seo_url, :meta_title, :meta_descr, :meta_descr, :content)";
         $query = $this->db->prepare($sql);
         $query->execute(array(':category_id' => $category_id, ':name' => $name, ':specialist_name' => $specialist_name, 
-	  ':seo_url' => $seo_url, ':meta_title' => $meta_title, ':meta_descr' => $meta_descr, ':content' => $content));
+	  ':seo_url' => $seo_url, ':meta_title' => $meta_title, ':meta_descr' => $meta_descr, ':meta_keywords' => $meta_keywords, ':content' => $content));
 
         $count =  $query->rowCount();
         if ($count == 1) {
@@ -101,14 +101,14 @@ class SubcategoryModel
      * @param int $subcategory_id id of the specific subcategory
      * @return bool feedback (was the update successful ?)
      */
-    public function editSave($subcategory_id, $category_id, $name, $specialist_name, $seo_url, $meta_title, $meta_descr, $content)
+    public function editSave($subcategory_id, $category_id, $name, $specialist_name, $seo_url, $meta_title, $meta_descr, $meta_keywords, $content)
     {
 
         $sql = "UPDATE subcategory SET category_id = :category_id, name = :name, specialist_name = :specialist_name, seo_url = :seo_url, meta_title = :meta_title, 
-	  meta_descr = :meta_descr, content = :content WHERE subcategory_id = :subcategory_id";
+	  meta_descr = :meta_descr, meta_keywords = :meta_keywords, content = :content WHERE subcategory_id = :subcategory_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':subcategory_id' => $subcategory_id, ':category_id' => $category_id, ':name' => $name, ':specialist_name' => $specialist_name, 
-	  ':seo_url' => $seo_url, ':meta_title' => $meta_title, ':meta_descr' => $meta_descr, ':content' => $content));
+	  ':seo_url' => $seo_url, ':meta_title' => $meta_title, ':meta_descr' => $meta_descr, ':meta_keywords' => $meta_keywords, ':content' => $content));
 
         $count =  $query->rowCount();
         if ($count == 1) {

@@ -27,6 +27,8 @@
 	<input type="text" name="meta_title" /><br /><br />
 	    <label>Meta descr: </label><br />
 	<input type="text" name="meta_descr" /><br /><br />
+        <label>Meta keywords: </label><br />
+    <input type="text" name="meta_keywords" /><br /><br />
 	    <label>Treść: </label><br />
         <textarea style="width: 400px; height: 300px" name="content"></textarea><br />
         <input type="submit" value='Dodaj podkategorie' autocomplete="off" />

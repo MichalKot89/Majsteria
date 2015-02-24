@@ -25,10 +25,12 @@
 	    <input type="text" name="specialist_name" value="<?php echo $this->subcategory->specialist_name; ?>"/>
 			<label>Seo url -- np. hydraulicy: </label>
 	    <input type="text" name="seo_url" value="<?php echo $this->subcategory->seo_url; ?>"/>
-			<label>Meta title -- np. Hydraulicy -- znajdź hydraulika: </label>
+		<label>Meta title -- np. Hydraulicy -- znajdź hydraulika: </label>
 	    <input type="text" name="meta_title" value="<?php echo $this->subcategory->meta_title; ?>"/>
 		<label>Meta descr: </label>
 	    <input type="text" name="meta_descr" value="<?php echo $this->subcategory->meta_descr; ?>"/>
+		<label>Meta keywords: </label>
+	    <input type="text" name="meta_keywords" value="<?php echo $this->subcategory->meta_keywords; ?>"/>
 		<label>Treść: </label>
 	    <textarea style="width: 400px; height: 300px" name="content"><?php echo $this->subcategory->content; ?></textarea>
             <input type="submit" value='Change' />

@@ -49,7 +49,7 @@ class Subcategory extends Controller
         if (isset($_POST['category_id']) AND !empty($_POST['category_id'])) {
             $subcategory_model = $this->loadModel('Subcategory');
             $subcategory_model->create($_POST['category_id'], $_POST['name'], $_POST['specialist_name'], 
-	      $_POST['seo_url'], $_POST['meta_title'], $_POST['meta_descr'], $_POST['content']);           
+	      $_POST['seo_url'], $_POST['meta_title'], $_POST['meta_descr'], $_POST['meta_keywords'], $_POST['content']);           
             
         }
         header('location: ' . URL . 'subcategory');
@@ -84,7 +84,7 @@ class Subcategory extends Controller
             // perform the update: pass subcategory_id from URL and subcategory_text from POST
             $subcategory_model = $this->loadModel('Subcategory');
             $subcategory_model->editSave($subcategory_id, $_POST['category_id'], $_POST['name'], $_POST['specialist_name'], 
-	      $_POST['seo_url'], $_POST['meta_title'], $_POST['meta_descr'], $_POST['content']);
+	      $_POST['seo_url'], $_POST['meta_title'], $_POST['meta_descr'], $_POST['meta_keywords'], $_POST['content']);
         }
         header('location: ' . URL . 'subcategory');
     }
