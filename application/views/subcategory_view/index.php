@@ -140,9 +140,9 @@
                 </div>
               <img src="<?php echo URL; ?>public/images/hand.png" class="center-block right-pannel-last-img" width="58" height="79" alt="hand">
                 <p>
-                  1. Powiedz nam do czego potrzebujesz <?php echo $this->subcategory->specialist_name; ?> <br />
-                    2. <?php echo $this->subcategory->name; ?> kontaktują się z Tobą <br />
-                    3. Porównujesz oferty i wybierasz najlepszą, oszczędzając czas i pieniądze
+                  1. Powiedz nam czego potrzebujesz w kategorii <?php echo $this->subcategory->specialist_name; ?> <br />
+                  2. Najlepiej pasujący wykonawcy z kategorii <?php echo $this->subcategory->name; ?> kontaktują się z Tobą <br />
+                  3. Porównujesz oferty i wybierasz najlepszą, oszczędzając czas i pieniądze
                 </p> 
                 <a href="#get_quotes"><button class="btn btn-default navbar-btn get-quote-cat center-block" type="button">Wyceń koszty »</button></a>
             </div>
