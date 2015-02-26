@@ -46,7 +46,7 @@
             <h1>2</h1>
           </div>
               <div class="center-block"> <img src="<?php echo URL; ?>public/images/second.png" class="img-responsive center-block">
-            <p><?php echo $this->subcategory->name; ?> kontaktują się z Tobą</p>
+            <p>Wykonawcy z kategorii <?php echo $this->subcategory->name; ?> kontaktują się z Tobą</p>
           </div>
             </div>
         <div class="col-md-4 col-sm-4 padd-null">
@@ -54,7 +54,7 @@
             <h1>3</h1>
           </div>
               <div class="center-block category-mid1"> <img src="<?php echo URL; ?>public/images/third.png" class="img-responsive center-block">
-            <p>Wybierasz najlepszego <?php echo $this->subcategory->specialist_name; ?></p>
+            <p>Wybór najlepszej oferty z dziedziny <?php echo $this->subcategory->specialist_name; ?></p>
           </div>
             </div>
       </div>
