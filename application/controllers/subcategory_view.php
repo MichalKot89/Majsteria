@@ -44,6 +44,9 @@ class Subcategory_View extends Controller
         $subcategory_model = $this->loadModel('Subcategory');
         $this->view->seo_url = $seo_url;
         $this->view->subcategory = $subcategory_model->getSubcategoryByName($seo_url);
+        if(!$this->view->subcategory) {
+            header('location: ' . URL .subcategory_SEO . '/all');
+        }
         $this->view->render('subcategory_view/index');
     }
 
@@ -62,6 +65,9 @@ class Subcategory_View extends Controller
 
         $post_code_model = $this->loadModel('PostCode');
         $post_codes = $post_code_model->findPostCodesByCityUrl($city_url);
+        if(count($post_codes) < 1) {
+            header('location: ' . URL .subcategory_SEO . '/' . $seo_url);
+        }
         $post_code_ids = array();
         foreach($post_codes as $post_code) {
             $post_code_ids[] = $post_code->post_code_id;

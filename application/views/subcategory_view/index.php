@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
       <div class="col-md-12 col-sm-12 top-link">
-          <a href="<?php echo URL; ?>">Majsteria</a> » <a href="<?php echo URL; ?>znajdz/all">Kategorie</a> <span>» <a href="<?php echo URL . 'znajdz/' . $this->data->seo_url; ?>"><?php echo $this->data->name; ?></a></span>
+          <a href="<?php echo URL; ?>">Majsteria</a> » <a href="<?php echo URL; ?>znajdz/all">Kategorie</a> <span>» <a href="<?php echo URL . 'znajdz/' . $this->subcategory->seo_url; ?>"><?php echo $this->subcategory->name; ?></a></span>
         </div>
     </div>
 </div>
@@ -22,16 +22,16 @@
          <!--   <div class="col-md-12 col-sm-12 padd-null category-top">
           <hr>
           <h1> Wszystko co musisz wiedzieć o zatrudnieniu 
-                <?php echo $this->data->specialist_name; ?> </h1>
+                <?php echo $this->subcategory->specialist_name; ?> </h1>
           <hr>
         </div>-->
  
-          <?php echo $this->data->content; ?>
+          <?php echo $this->subcategory->content; ?>
 
           <div class="col-md-12 col-sm-12 category-shadow"> <img class="img-responsive" src="<?php echo URL; ?>public/images/shadow.png" alt=""> </div>
           <div class="col-md-12 col-sm-12 category-mid-sec padd-null">
         <div class="col-md-12 col-sm-12 category-head padd-null">
-              <h1>Znalezienie <?php echo $this->data->specialist_name; ?> nigdy nie było tak proste</h1>
+              <h1>Znalezienie <?php echo $this->subcategory->specialist_name; ?> nigdy nie było tak proste</h1>
             </div>
         <div class="col-md-4 col-sm-4 padd-null category-mid">
               <div class="center-block shape-no1">
@@ -46,7 +46,7 @@
             <h1>2</h1>
           </div>
               <div class="center-block"> <img src="<?php echo URL; ?>public/images/second.png" class="img-responsive center-block">
-            <p><?php echo $this->data->name; ?> kontaktują się z Tobą</p>
+            <p><?php echo $this->subcategory->name; ?> kontaktują się z Tobą</p>
           </div>
             </div>
         <div class="col-md-4 col-sm-4 padd-null">
@@ -54,7 +54,7 @@
             <h1>3</h1>
           </div>
               <div class="center-block category-mid1"> <img src="<?php echo URL; ?>public/images/third.png" class="img-responsive center-block">
-            <p>Wybierasz najlepszego <?php echo $this->data->specialist_name; ?></p>
+            <p>Wybierasz najlepszego <?php echo $this->subcategory->specialist_name; ?></p>
           </div>
             </div>
       </div>
@@ -136,12 +136,12 @@
             -->
           <div class="col-md-12 col-sm-12 padd-null right-pannel-last">
               <div class="col-md-12 col-sm-12 padd-null pannel-last">
-                      <h3>Otrzymaj bezpłatne wyceny od <?php echo $this->data->specialist_name; ?> </h3>
+                      <h3>Otrzymaj bezpłatne wyceny od <?php echo $this->subcategory->specialist_name; ?> </h3>
                 </div>
               <img src="<?php echo URL; ?>public/images/hand.png" class="center-block right-pannel-last-img" width="58" height="79" alt="hand">
                 <p>
-                  1. Powiedz nam do czego potrzebujesz <?php echo $this->data->specialist_name; ?> <br />
-                    2. <?php echo $this->data->name; ?> kontaktują się z Tobą <br />
+                  1. Powiedz nam do czego potrzebujesz <?php echo $this->subcategory->specialist_name; ?> <br />
+                    2. <?php echo $this->subcategory->name; ?> kontaktują się z Tobą <br />
                     3. Porównujesz oferty i wybierasz najlepszą, oszczędzając czas i pieniądze
                 </p> 
                 <a href="#get_quotes"><button class="btn btn-default navbar-btn get-quote-cat center-block" type="button">Wyceń koszty »</button></a>
