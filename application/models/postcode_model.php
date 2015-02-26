@@ -48,4 +48,44 @@ class PostCodeModel
         }
         return $query->fetch()->post_code_id;
     }
+
+    /**
+     * Find post codes for particular city_url strings
+     * @return id of the post code or 0
+     */
+    public function findPostCodesByCityUrl($city_url)
+    {
+        $sql = "SELECT post_code_id, post_code, city FROM post_code WHERE city_url = :city_url";
+        $query = $this->db->prepare($sql);
+        $query->execute(array(':city_url' => $city_url));
+
+        if($query->rowCount() < 1) {
+            return NULL;
+        }
+        return $query->fetchAll();
+    }
+
+/*
+    public function oneOff()
+    {
+        $sql = "SELECT post_code_id, city FROM post_code";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        $post_codes = $query->fetchAll();
+        $polish = array("ę", "ó", "ą", "ś", "ł", "ż", "ź", "ć", "ń", "Ę", "Ó", "Ą", "Ś", "Ł", "Ż", "Ź", "Ć", "Ń");
+        $normal = array("e", "o", "a", "s", "l", "z", "z", "c", "n", "E", "O", "A", "S", "L", "Z", "Z", "C", "N");
+   
+        foreach($post_codes AS $post_code) {
+            $no_polish_letters = str_replace($polish, $normal, $post_code->city);
+            $no_bracket_array = explode(' (', $no_polish_letters);
+            $no_bracket = $no_bracket_array[0];
+            $city_url = strtolower(str_replace(' ', '_', $no_bracket));
+
+            $sql = "UPDATE post_code SET city_url = :city_url WHERE post_code_id = :post_code_id";
+            $query = $this->db->prepare($sql);
+            $query->execute(array(':city_url' => $city_url, ':post_code_id' => $post_code->post_code_id));
+            echo $query->rowCount() . '<br />';
+
+        }
+    }*/
 }

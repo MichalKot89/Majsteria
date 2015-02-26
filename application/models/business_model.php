@@ -85,6 +85,27 @@ class BusinessModel
     }
 
     /**
+     * Get all business with specific subcategory and list of post codes
+     * @param int $subcategory_id
+     * @param array post_code_ids
+     * @return object array of businesses
+     */
+    public function getBusinessesWithPostCodeIds($subcategory_id, $post_code_ids)
+    {
+        $sql = "SELECT b.business_id, b.submit_date, b.user_id, b.descr, b.is_company, b.company_name,
+                ui.first_name, ui.last_name, ui.phone, pc.city
+            FROM business b
+            JOIN business_subcategory bs ON bs.business_id = b.business_id
+            JOIN user_info ui ON ui.user_id = b.user_id
+            JOIN post_code pc ON pc.post_code_id = ui.post_code_id
+            WHERE bs.subcategory_id = :subcategory_id AND ui.post_code_id IN (" . implode(',', $post_code_ids) . ")";
+        $query = $this->db->prepare($sql);
+        $query->execute(array(':subcategory_id' => $subcategory_id));
+
+        return $query->fetchAll();
+    }
+
+    /**
      * Setter for a business (create)
      * @return bool feedback (was the business created properly ?)
      */

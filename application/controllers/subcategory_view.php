@@ -41,13 +41,36 @@ class Subcategory_View extends Controller
         }
 
 
-        $subcategory_view = $this->loadModel('Subcategory');
+        $subcategory_model = $this->loadModel('Subcategory');
         $this->view->seo_url = $seo_url;
-        $this->view->data = $subcategory_view->getSubcategoryByName($seo_url);
+        $this->view->subcategory = $subcategory_model->getSubcategoryByName($seo_url);
         $this->view->render('subcategory_view/index');
+    }
 
-        // TEMP
-        //$membership = $this->loadModel('Membership');
+
+    /**
+     * This method controls what happens when you move to /find/seo_url in your app.
+     * Render subcategory view page
+     */
+    public function directory($seo_url, $city_url)
+    {
+        $this->view->city_url = $city_url;
+
+        $subcategory_model = $this->loadModel('Subcategory');
+        $this->view->seo_url = $seo_url;
+        $this->view->subcategory = $subcategory_model->getSubcategoryByName($seo_url);
+
+        $post_code_model = $this->loadModel('PostCode');
+        $post_codes = $post_code_model->findPostCodesByCityUrl($city_url);
+        $post_code_ids = array();
+        foreach($post_codes as $post_code) {
+            $post_code_ids[] = $post_code->post_code_id;
+        }
+
+        $business_model = $this->loadModel('Business');
+        $this->view->businesses = $business_model->getBusinessesWithPostCodeIds($this->view->subcategory->subcategory_id, $post_code_ids);
+
+        $this->view->render('subcategory_view/directory');
     }
 
     /**

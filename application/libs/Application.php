@@ -57,7 +57,11 @@ class Application
                         }
                     } else if($controller_name == 'subcategory_view') {
                         // for category pages, call the controller with subcategory name
-                        $this->url_controller->index($this->url_action); 
+                        if (isset($this->url_parameter_1)) {
+                            $this->url_controller->directory($this->url_action, $this->url_parameter_1);
+                        } else {
+                            $this->url_controller->index($this->url_action);
+                        }
                     }
                       else {
                         // redirect user to error page (there's a controller for that)
