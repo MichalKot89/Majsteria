@@ -104,47 +104,47 @@
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/malarze/warszawa">Malarze Warszawa</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/geodeci/poznan">Geodeci Poznań</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/stolarze/krakow">Stolarze Kraków</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/szklarze/wroclaw">Szklarze Wrocław</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/malarze/warszawa">Malarze Warszawa</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/geodeci/poznan">Geodeci Poznań</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/stolarze/krakow">Stolarze Kraków</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/szklarze/wroclaw">Szklarze Wrocław</a></li>
 
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/projektanci_mebli/warszawa">Projektanci Mebli Warszawa</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/oswietlenia/rzeszow">Oświetlenia Rzeszów</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/sprzatanie/lublin">Firmy sprzątające Lublin</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/elektrycy/lodz">Elektrycy Łódź</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/projektanci_mebli/warszawa">Projektanci Mebli Warszawa</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/oswietlenia/rzeszow">Oświetlenia Rzeszów</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/sprzatanie/lublin">Firmy sprzątające Lublin</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/elektrycy/lodz">Elektrycy Łódź</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/przeprowadzki/krakow">Przeprowadzki Kraków</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/posadzkarze/szczecin">Posadzkarze Szczecin</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/izolacje/gdansk">Izolacje Gdańsk</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/dacharze/wroclaw">Dacharze Wrocław</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/przeprowadzki/krakow">Przeprowadzki Kraków</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/posadzkarze/szczecin">Posadzkarze Szczecin</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/izolacje/gdansk">Izolacje Gdańsk</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/dacharze/wroclaw">Dacharze Wrocław</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/elektrycy/warszawa">Elektrycy Warszawa</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/stolarze/lodz">Stolarze Łódź</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/sprzatanie/krakow">Firmy sprzątające Kraków</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/geodeci/lublin">Geodeci Lublin</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/elektrycy/warszawa">Elektrycy Warszawa</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/stolarze/lodz">Stolarze Łódź</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/sprzatanie/krakow">Firmy sprzątające Kraków</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/geodeci/lublin">Geodeci Lublin</a></li>
     </ul>
     </div>
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/oswietlenia/warszawa">Oświetlenia Warszawa</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/ogrodnicy/poznan">Ogrodnicy Poznań</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/malarze/krakow">Malarze Kraków</a></li>
-    <li><a href="<?php echo URL . SUBCATEGORY_URL;?>/marmur/wroclaw">Marmur Wrocław</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/oswietlenia/warszawa">Oświetlenia Warszawa</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/ogrodnicy/poznan">Ogrodnicy Poznań</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/malarze/krakow">Malarze Kraków</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/marmur/wroclaw">Marmur Wrocław</a></li>
     </ul>
     </div>
     
@@ -153,14 +153,14 @@
     <a href="#"><img src="<?php echo URL; ?>public/images/foot-logo.png" alt="" class="img-responsive"></a>
     </div>
     <div class="col-md-7 col-sm-12 foot-links">
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/sauny/warszawa">Warszawa</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/grzejniki/poznan">Poznań</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/akcesoria_lazienkowe/warszawa">Wrocław</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/rynny/lodz">Łódź</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/rusztowania/krakow">Kraków</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/nawadnianie/lublin">Lublin</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/inspektorzy/gdansk">Gdańsk</a> » 
-    <a href="<?php echo URL . SUBCATEGORY_URL;?>/rolety/bydgoszcz">Bydgoszcz</a>
+    <a href="<?php echo URL . subcategory_SEO;?>/sauny/warszawa">Warszawa</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/grzejniki/poznan">Poznań</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/akcesoria_lazienkowe/warszawa">Wrocław</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/rynny/lodz">Łódź</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/rusztowania/krakow">Kraków</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/nawadnianie/lublin">Lublin</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/inspektorzy/gdansk">Gdańsk</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/rolety/bydgoszcz">Bydgoszcz</a>
     </div>
     
     <div class="col-md-3 col-sm-12 icon">
@@ -202,5 +202,7 @@
     </div>
     
     <script src="<?php echo URL; ?>public/js/bootstrap.js"></script>
+
+    
   </body>
 </html>
