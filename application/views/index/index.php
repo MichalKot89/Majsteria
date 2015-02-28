@@ -5,11 +5,9 @@
     <div class="container-fluid">
     <div class="row">
     <ul class="rslides" id="slider4">
-    <li><img src="public/images/slide1.jpg" alt=""></li>
-    <li><img src="public/images/slide2.jpg" alt=""></li>
-    <li><img src="public/images/slide3.jpg" alt=""></li>
-    <li><img src="public/images/slide4.jpg" alt=""></li>
-    <li><img src="public/images/slide5.jpg" alt=""></li>
+    <li><img src="public/images/slide1.jpg" alt="fachowiec online"></li>
+    <li><img src="public/images/slide2.jpg" alt="specjalista online"></li>
+    <li><img src="public/images/slide3.jpg" alt="złota rączka online"></li>
     </ul>
     
     <div class="container" <?php /*style="margin-top: -590px;"*/ ?>>
@@ -66,7 +64,7 @@
     <div class="row">
     <div class="col-md-11 col-sm-11 mid">
     <div class="col-md-1 col-sm-2 cap">
-    <img src="public/images/cap.png" alt="" class="img-responsive">
+    <img src="public/images/cap.png" alt="sprawdzeni fachowcy" class="img-responsive">
     </div>
     <div class="col-md-9 col-sm-10 text-div">
     Dołącz do grona zadowolonych klientów
@@ -74,34 +72,34 @@
     </div>
     
     <div class="col-md-12 col-sm-12 arrow">
-    <img src="public/images/arrow.png" alt="" class="img-responsive arrow">
+    <img src="public/images/arrow.png" alt="usługi hydrauliczne" class="img-responsive arrow">
     </div>
     </div>
     <div class="row">
     <div class="col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4 blk">
-    <div class="img-div"><img src="public/images/img1.png" alt="" class="img-responsive"></div>
+    <div class="img-div"><img src="public/images/img1.png" alt="usługi elektryczne" class="img-responsive"></div>
     <div class="img-text"><span class="bold">Sprawdzeni</span> fachowcy</span>
     <span class="img-sml">Największa sieć profesjonalistów.</span>
     </div>
     </div>
     
     <div class="col-md-4 col-sm-4 blk">
-    <div class="img-div"><img src="public/images/img2.png" alt="" class="img-responsive"></div>
+    <div class="img-div"><img src="public/images/img2.png" alt="zatrudnię fachowca" class="img-responsive"></div>
     <div class="img-text">Ponad <span class="bold">50 kategorii.</span>
     <span class="img-sml">Znajdziemy Ci fachowca do każdego problemu.</span>
     </div>
     </div>
     
     <div class="col-md-4 col-sm-4 blk border-none">
-    <div class="img-div"><img src="public/images/img3.png" alt="" class="img-responsive"></div>
+    <div class="img-div"><img src="public/images/img3.png" alt="zatrudnię majstra" class="img-responsive"></div>
     <div class="img-text">Codziennie <span class="bold">świeże zlecenia</span>
     <span class="img-sml"> Coraz więcej Polaków oszczędza z Majsterią!</span>
     </div>
     </div>
     
     <div class="col-md-12 col-sm-12 shadow">
-    <img src="public/images/shadow.png" alt="" class="img-responsive">
+    <img src="public/images/shadow.png" alt="szukam specjalisty" class="img-responsive">
     </div>
     </div>
     </div>
@@ -111,7 +109,7 @@
     <div class="col-md-12 col-sm-12 top">
     <div class="col-md-5 col-sm-5 about">
     <h3>Witaj na Majsterii</h3>
-    <img src="public/images/about-img.png" alt="" class="img-responsive">
+    <img src="public/images/about-img.png" alt="fachowiec szybko" class="img-responsive">
 
     <span>
     Majsteria to serwis skupiający ekspertów z różnych dziedzin, na terenie całej Polski. 
@@ -191,7 +189,7 @@
     </script>
 
         <div class="col-md-12 col-sm-12 shadow">
-            <img src="public/images/shadow.png" alt="" class="img-responsive">
+            <img src="public/images/shadow.png" alt="zlecenia dla firm remontowych" class="img-responsive">
         </div>
     </div>
     
@@ -392,7 +390,7 @@
     <h2>Przyłącz się do dyskusji na Facebooku</h2>
     <p>Dołącz do dyskusji na temat najnowszych trendów w Twojej profesji, oraz zainspiruj się zdjęciami prac Twoich kolegów po fachu! </p>
    
-    <div class="fb-like-box" data-href="https://www.facebook.com/majsteriapl" 
+    <div class="fb-like-box" data-href="http://www.facebook.com/majsteriapl" 
         data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"
         data-height="190"
         style="background: white;"></div>
@@ -404,8 +402,8 @@
     <div class="col-md-5 col-sm-5 right-org pull-right padd-null">
     <h2>Najpopularniejszy post dnia</h2>
 
-<div class="fb-post" data-href="https://www.facebook.com/majsteriapl/posts/724045407710912:0" data-width="466" data-show-border="true">
-    <div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/majsteriapl/posts/724045407710912:0">Post</a> by <a href="https://www.facebook.com/majsteriapl">Majsteria.pl</a>.</div></div>
+<div class="fb-post" data-href="http://www.facebook.com/majsteriapl/posts/724045407710912:0" data-width="466" data-show-border="true">
+    <div class="fb-xfbml-parse-ignore"><a href="http://www.facebook.com/majsteriapl/posts/724045407710912:0">Post</a> by <a href="http://www.facebook.com/majsteriapl">Majsteria.pl</a>.</div></div>
   <?php /*
     <div class="fb-post" data-href="https://www.facebook.com/Majsteria/posts/724045407710912" 
         data-width="500" data-show-border="true"></div>*/ ?>
