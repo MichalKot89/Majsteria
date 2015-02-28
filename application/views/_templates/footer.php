@@ -229,6 +229,5 @@ var dtLocal = {"passText":"To view this protected post, enter the password below
 <script type="text/javascript" src="<?php echo URL; ?>public/jquery/desktop.js"></script> 
 <script type="text/javascript" src="<?php echo URL; ?>public/jquery/main.js"></script> 
 <script type="text/javascript" src="<?php echo URL; ?>public/jquery/js_composer_front.js"></script>
-
   </body>
 </html>

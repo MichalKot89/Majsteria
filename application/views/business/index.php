@@ -50,8 +50,8 @@
                               required />
                           </div>
                           <div class="form-group">
-                            <label>W czym się specjalizujesz?</label>
-                            <select multiple = "multiple" class="form-control" name="subcategories[]" required>
+                            <label>Wybierz kategorie, w których się specjalizujesz</label>
+                            <select multiple="multiple" id="subcategory-select" name="subcategories[]" required>
                               <?php
                                   foreach($this->getAllSubcategories() as $subcategory) {
                                       echo '<option value="'.$subcategory->subcategory_id.'" ';
@@ -62,6 +62,7 @@
                                   } 
                               ?>
                             </select>
+
                           </div>
                           <div class="form-group">
                             <label>Telefon kontaktowy (np. 606555222)</label>
@@ -127,4 +128,13 @@
     function hideCompanyInput() {
       document.getElementById("company_name_div").style.display="none";
     }
+  </script>
+
+  <script>
+    jQuery(document).ready(function(){
+        $('#subcategory-select').multiSelect({selectableHeader: "<div class='ms-footer'>Dostępne kategorie</div>",
+  selectionHeader: "<div class='ms-footer'>Wybrane kategorie</div>"
+});
+
+    });
   </script>

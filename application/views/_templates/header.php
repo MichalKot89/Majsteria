@@ -45,13 +45,18 @@
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Dosis:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- multiselect --> 
+    <link rel="stylesheet"  href="<?php echo URL; ?>public/css/multi-select.css" media="screen" type="text/css">
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/responsiveslides.css">
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/demo.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <?php /*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>*/ ?>
     <script src="<?php echo URL; ?>public/js/responsiveslides.min.js"></script>
+    <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.multi-select.js"></script>
     
     <script>
     // You can also use "$(window).load(function() {"
@@ -175,6 +180,7 @@ return false;
   ga('send', 'pageview');
 
 </script>
+
 
   </head>
   <body>
