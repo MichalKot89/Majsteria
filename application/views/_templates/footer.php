@@ -6,8 +6,8 @@
     <div class="col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4 col-one">
     <h2>Dodaj zlecenie za darmo</h2>
-    <p> Znadź pomoc już teraz -- powiedz czego potrzebujesz, a wykwalifikowani fachowcy sami Cię znajdą. Masz pytania?
-    <br />
+    <p>Znajdź pomoc już teraz - powiedz czego potrzebujesz, a wykwalifikowani fachowcy sami Cię znajdą. Masz pytania?
+    <br>
     <span class="org-sm">Dzwoń (000000)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
     <a href="<?php echo URL; ?>get_quotes/index"><button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button></a>
