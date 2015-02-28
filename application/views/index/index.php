@@ -323,53 +323,53 @@
     <div class="row left-mr1">
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-6 col-sm-5 white-box">
-    <div class="col-md-6 col-sm-6 font1">Malarstwo</div>
+    <div class="col-md-6 col-sm-6 font1">Malarze</div>
     <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/malarze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Dacharze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/dacharze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Pergole</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Elektrycy</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/elektrycy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Architekci</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Geodeci</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/geodeci">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Kuchnia</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Garaże</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/garaze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Izolacje</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/izolacje">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Pergole</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Szklarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/szklarze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Architekci</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Inteligentne domy</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/inteligentne_domy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Wiaty garażowe</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="#">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Sprzątacze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/sprzatanie">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Ogrodnictwo</div>
+    <div class="col-md-6 col-sm-6 font1">Ogrodnicy</div>
     <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/ogrodnicy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
     </div>
     
@@ -391,17 +391,24 @@
     <div class="col-md-6 col-sm-6 left-org">
     <h2>Przyłącz się do dyskusji na Facebooku</h2>
     <p>Dołącz do dyskusji na temat najnowszych trendów w Twojej profesji, oraz zainspiruj się zdjęciami prac Twoich kolegów po fachu! </p>
-    <div class="fb-like-box" data-href="https://www.facebook.com/Majsteria" 
+   
+    <div class="fb-like-box" data-href="https://www.facebook.com/majsteriapl" 
         data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"
         data-height="190"
         style="background: white;"></div>
 
     </div>
-    
+
+<div id="fb-root"></div><script>(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="col-md-5 col-sm-5 right-org pull-right padd-null">
     <h2>Najpopularniejszy post dnia</h2>
-    <div class="fb-post" data-href="https://www.facebook.com/Majsteria/posts/783047508438633" 
-        data-width="500" data-show-border="true"></div>
+
+<div class="fb-post" data-href="https://www.facebook.com/majsteriapl/posts/724045407710912:0" data-width="466" data-show-border="true">
+    <div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/majsteriapl/posts/724045407710912:0">Post</a> by <a href="https://www.facebook.com/majsteriapl">Majsteria.pl</a>.</div></div>
+  <?php /*
+    <div class="fb-post" data-href="https://www.facebook.com/Majsteria/posts/724045407710912" 
+        data-width="500" data-show-border="true"></div>*/ ?>
     </div>
     </div>
     </div>
