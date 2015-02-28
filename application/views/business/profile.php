@@ -22,10 +22,12 @@
                         <p>
                             <?php echo $this->business_info->descr; ?>
                         </p>
+                        <br />
+                        <b>Telefon: </b><br />
                         <?php if(!isset($_SESSION['user_id'])) { ?>
-                        <a href="<?php echo URL; ?>login/index"><button type="submit" class="btn btn-default blue-btn">POKAŻ DANE KONTAKTOWE</button></a>
+                        <a href="<?php echo URL; ?>login/register">Załóż bezpłatne konto</a>, aby zobaczyć dane kontaktowe.
                         <?php } else {
-                            echo '<b>Telefon: </b><br />' . $this->user_info->phone;
+                            echo $this->user_info->phone;
                         }
                         ?>
 
