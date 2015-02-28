@@ -402,7 +402,7 @@
     <div class="col-md-5 col-sm-5 right-org pull-right padd-null">
     <h2>Najpopularniejszy post dnia</h2>
 
-<div class="fb-post" data-href="http://www.facebook.com/majsteriapl/posts/724045407710912:0" data-width="466" data-show-border="true">
+<div class="fb-post" data-href="http://www.facebook.com/majsteriapl/posts/724045407710912:0" data-width="250" data-show-border="true">
     <div class="fb-xfbml-parse-ignore"><a href="http://www.facebook.com/majsteriapl/posts/724045407710912:0">Post</a> by <a href="http://www.facebook.com/majsteriapl">Majsteria.pl</a>.</div></div>
   <?php /*
     <div class="fb-post" data-href="https://www.facebook.com/Majsteria/posts/724045407710912" 
