@@ -79,6 +79,8 @@ class Subcategory_View extends Controller
         $business_model = $this->loadModel('Business');
         $this->view->businesses = $business_model->getBusinessesWithPostCodeIds($this->view->subcategory->subcategory_id, $post_code_ids);
 
+        $this->meta_title = $this->subcategory->name . ' ' . ucfirst($this->city_url);
+
         $this->view->render('subcategory_view/directory');
     }
 
