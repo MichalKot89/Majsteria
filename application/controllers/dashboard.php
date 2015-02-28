@@ -36,9 +36,9 @@ class Dashboard extends Controller
         $admin_model = $this->loadModel('Admin');
         $this->view->isAdmin = $admin_model->isAdmin($_SESSION['user_id']);
 
-        if($this->view->isBusiness) {
+        if($this->view->isBusiness && $this->view->user_info) {
             //$this->view->business = $business_model->getBusiness($_SESSION['user_id']);
-            $this->view->matching_projects = $project_model->getMatchingProjects($_SESSION['user_id'], $user_info->post_code);
+            $this->view->matching_projects = $project_model->getMatchingProjects($_SESSION['user_id'], $this->view->user_info->post_code);
         }
 
         $this->view->render('dashboard/index');
