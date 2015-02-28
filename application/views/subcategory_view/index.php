@@ -29,6 +29,7 @@
           <?php echo $this->subcategory->content; ?>
 
           <div class="col-md-12 col-sm-12 category-shadow"> <img class="img-responsive" src="<?php echo URL; ?>public/images/shadow.png" alt=""> </div>
+          <a name="get_quotes"></a>
           <div class="col-md-12 col-sm-12 category-mid-sec padd-null">
         <div class="col-md-12 col-sm-12 category-head padd-null">
               <h1>Znalezienie <?php echo $this->subcategory->specialist_name; ?> nigdy nie było tak proste</h1>
@@ -144,7 +145,7 @@
                   2. Najlepiej pasujący wykonawcy z kategorii <?php echo $this->subcategory->name; ?> kontaktują się z Tobą <br />
                   3. Porównujesz oferty i wybierasz najlepszą, oszczędzając czas i pieniądze
                 </p> 
-                <a href="#get_quotes"><button class="btn btn-default navbar-btn get-quote-cat center-block" type="button">Wyceń koszty »</button></a>
+                <center><a href="#get_quotes"><button type="button" class="btn btn-default blue-btn">DODAJ ZLECENIE »</button></a></center>
             </div>
         </div>
         <!-- echo out the system feedback (error and success messages) -->
