@@ -3,7 +3,7 @@
 
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>
-    
+
     <table class="table">
     <?php
         if ($this->businesses) {
@@ -16,7 +16,7 @@
 
             }
         } else {
-            echo 'Nie szukaj fachowców, pozwól im znaleźć Ciebie! <a href="' . URL . 'get_quotes/index">Dodaj zlecenie</a> i wybierz z listy dostępnych specjalistów.';
+            echo 'Nie szukaj fachowców, pozwól im znaleźć siebie! <a href="' . URL . 'get_quotes/index">Dodaj zlecenie</a> i wybierz z listy dostępnych specjalistów.';
         }
     ?>
     </table>
