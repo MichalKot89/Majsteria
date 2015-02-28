@@ -222,9 +222,9 @@ class Login extends Controller
     {
         $login_model = $this->loadModel('Login');
 
-        // if we use Facebook: this is necessary as we need the facebook_register_url in the login form (in the view)
+        // if we use Facebook: this is necessary as we need the facebook_login_url in the login form (in the view)
         if (FACEBOOK_LOGIN == true) {
-            $this->view->facebook_register_url = $login_model->getFacebookRegisterUrl();
+            $this->view->facebook_login_url = $login_model->getFacebookLoginUrl();
         }
         $this->view->isCaptchaNeeded = $login_model->isCaptchaNeeded();
 
