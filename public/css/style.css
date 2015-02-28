@@ -486,6 +486,8 @@ ul.f-links{list-style:url(../images/arrow.png) !important; color:#fff;}
 
 .cat-mid-sec p, ul { font-family:'Conv_MyriadPro-Regular'; color:#333333; font-size:13px; float:left; line-height:20px; clear:both;}
 
+#digits { color:white; font-weight:bold;}
+
 #orange { color:#cd691e; font-weight:bold; margin-top:15px;}
 
 .top-inner-text { font-family:'Conv_MyriadPro-Regular'; font-size:13px; float:left; }
