@@ -11,6 +11,11 @@
     ?>
     </h1>
     <br /><br />
+    <?php 
+    if($this->isAdmin) {
+        echo '<a href="' . URL . 'subcategory/index' . '">Zarządzaj kategoriami</a>';
+    }
+    ?>
 
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>

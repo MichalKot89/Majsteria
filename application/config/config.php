@@ -25,7 +25,11 @@ ini_set("display_errors", 1);
 #define('URL', 'http://majsteri.vot.pl/');
 define('URL', 'http://localhost:8888/');
 
+# url for subcategories
 define('subcategory_SEO', 'znajdz');
+
+# contact_email
+define('CONTACT_EMAIL', 'a225.waldek@gmail.com');
 
 /**
  * Configuration for: Folders
@@ -298,3 +302,5 @@ define("PROJECT_CREATED", "Zlecenie zostało dodane pomyślnie. Oferty od fachow
 define("PROJECT_NOT_CREATED", "Dodanie zlecenia nie powiodło się");
 define("PROJECT_OFFER_CREATED", "Oferta została złożona pomyślnie");
 define("PROJECT_OFFER_NOT_CREATED", "Złożenie oferty nie powiodło się");
+define("CONTACT_EMAIL_SENT", "Twoja wiadomość została przesłana. Postaramy się odpowiedzieć w ciągu kilku najbliższych dni");
+define("CONTACT_EMAIL_NOT_SENT", "Wysłanie wiadomości nie powiodło się");

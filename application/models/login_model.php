@@ -264,6 +264,8 @@ class LoginModel
                                                    WHERE user_facebook_uid = :user_facebook_uid
                                                      AND user_provider_type = :provider_type");
                         $query->execute(array(':user_facebook_uid' => $facebook_user_data["id"], ':provider_type' => 'FACEBOOK'));
+                        $_SESSION['just_registered'] = 1;
+
                     }
                 }
 
