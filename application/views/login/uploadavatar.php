@@ -1,6 +1,9 @@
 <div class="container">
     <h1>Ustaw zdjęcie profilowe</h1>
 
+    Obecne zdjęcie:<br />
+    <?php echo '<img src="' . $this->avatar_file_path . '"/>'; ?>
+
     <!-- echo out the system feedback (error and success messages) -->
     <?php $this->renderFeedbackMessages(); ?>
 
