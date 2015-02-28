@@ -23,7 +23,7 @@ class UserInfoModel
     {
         $sql = "SELECT ui.first_name, ui.last_name, ui.phone, ui.post_code_id, pc.post_code, pc.city
             FROM user_info ui 
-            JOIN post_code pc ON pc.post_code_id = ui.post_code_id
+            LEFT JOIN post_code pc ON pc.post_code_id = ui.post_code_id
             WHERE ui.user_id = :user_id";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));

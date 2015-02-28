@@ -1,5 +1,15 @@
 <div class="container">
-    <h1>Dashboard</h1>
+    <h1>
+    
+    <?php 
+    if($this->user_info) {
+        echo 'Witaj ' . $this->user_info->first_name . '!';
+    }
+    else {
+        echo 'Dashboard';
+    }
+    ?>
+    </h1>
     <br /><br />
 
     <!-- echo out the system feedback (error and success messages) -->
