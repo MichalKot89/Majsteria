@@ -12,7 +12,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
-RewriteCond %{HTTP_HOST} ^majsteri.vot.pl [NC]
 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
-RewriteRule ^(.*)$ http://www.majsteri.vot.pl/$1 [R=301,L]
