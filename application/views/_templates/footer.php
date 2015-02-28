@@ -203,6 +203,17 @@
     
     <script src="<?php echo URL; ?>public/js/bootstrap.js"></script>
 
-    
+    <script type="text/javascript">
+/* <![CDATA[ */
+var dtLocal = {"passText":"To view this protected post, enter the password below:","moreButtonAllLoadedText":"Everything is loaded","moreButtonText":{"loading":"Loading..."},"postID":"10","ajaxurl":"http:\/\/localhost\/towelchamois\/wp-admin\/admin-ajax.php","contactNonce":"d334880406","ajaxNonce":"ccd1710c89","pageData":{"type":"page","template":"page","layout":null},"themeSettings":{"smoothScroll":"on","lazyLoading":false}};
+
+</script> 
+ 
+<script type="text/javascript" src="<?php echo URL; ?>public/jquery/plugins.js"></script> 
+<script type="text/javascript" src="<?php echo URL; ?>public/jquery/desktop-tablet.js"></script>
+<script type="text/javascript" src="<?php echo URL; ?>public/jquery/desktop.js"></script> 
+<script type="text/javascript" src="<?php echo URL; ?>public/jquery/main.js"></script>
+<script type="text/javascript" src="<?php echo URL; ?>public/jquery/js_composer_front.js"></script> 
+
   </body>
 </html>
