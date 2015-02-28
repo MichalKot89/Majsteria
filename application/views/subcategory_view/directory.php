@@ -16,7 +16,7 @@
 
             }
         } else {
-            echo 'Nie szukaj fachowców, pozwól im znaleźć siebie! <a href="' . URL . 'get_quotes/index">Dodaj zlecenie</a> i wybierz z listy dostępnych specjalistów.';
+            echo 'Nie szukaj fachowców, pozwól im znaleźć siebie! <a href="' . URL . 'zlecenia/dodaj">Dodaj zlecenie</a> i wybierz z listy dostępnych specjalistów.';
         }
     ?>
     </table>

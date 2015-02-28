@@ -10,7 +10,7 @@
     <br>
     <span class="org-sm">Dzwoń (000000)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
-    <a href="<?php echo URL; ?>get_quotes/index"><button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button></a>
+    <a href="<?php echo URL; ?>zlecenia/dodaj"><button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button></a>
     </div>
     
     <div class="col-md-4 col-sm-4 col-one">
@@ -26,7 +26,7 @@
     <br />
     <span class="org-sm">Dzwoń (000000)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
-    <a href="<?php echo URL; ?>business/index"><button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button></a>
+    <a href="<?php echo URL; ?>fachowcy"><button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button></a>
     </div> 
     </div>
     </div>
@@ -39,9 +39,9 @@
     <div class="col-md-2 col-sm-2 br-line">
     <h2>O nas</h2>
     <ul class="nav nav-pills links">
-    <li><a href="<?php echo URL; ?>about_us/index">» O Majsterii</a></li>
+    <li><a href="<?php echo URL; ?>o_nas">» O Majsterii</a></li>
     <li><a href="#">» Poznaj zespół Majsterii</a></li>
-    <li><a href="<?php echo URL; ?>contact/index">» Kontakt</a></li>
+    <li><a href="<?php echo URL; ?>kontakt">» Kontakt</a></li>
     <?php /* <li><a href="#">» Blog Majsterii</a></li>
     <li><a href="#">» Oferty pracy</a></li>
     <li><a href="#">» Dodaj swoją firmę</a></li>
@@ -52,7 +52,7 @@
     <div class="col-md-2 col-sm-2 br-line">
     <h2>Jak to działa?</h2>
     <ul class="nav nav-pills links">
-    <li><a href="<?php echo URL; ?>how_it_works/index">» Jak działa Majsteria.pl</a></li>
+    <li><a href="<?php echo URL; ?>jak_to_dziala">» Jak działa Majsteria.pl</a></li>
 
     <?php /* <!--<li><a href="#">» Inspiracje / Zdjęcia</a></li>
     <li><a href="#">» Licencje  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
@@ -64,16 +64,16 @@
     <div class="col-md-2 col-sm-2 br-line">
     <h2>Znajdź fachowca</h2>
     <ul class="nav nav-pills links">
-    <li><a href="<?php echo URL; ?>get_quotes/index">» Dodaj Zlecenie</a></li>
-    <li><a href="<?php echo URL; ?>get_quotes/index">» Zatrudnij Eksperta</a></li>
+    <li><a href="<?php echo URL; ?>zlecenia/dodaj">» Dodaj Zlecenie</a></li>
+    <li><a href="<?php echo URL; ?>zlecenia/dodaj">» Zatrudnij Eksperta</a></li>
     </ul>
     </div>
     
     <div class="col-md-2 col-sm-2 br-line">
     <h2>Zbieraj zlecenia</h2>
     <ul class="nav nav-pills links">
-    <li><a href="<?php echo URL; ?>business/index">» Dodaj swoją firmę</a></li>
-    <li><a href="<?php echo URL; ?>business/index">» Przeglądaj zlecenia</a></li>
+    <li><a href="<?php echo URL; ?>fachowcy">» Dodaj swoją firmę</a></li>
+    <li><a href="<?php echo URL; ?>fachowcy">» Przeglądaj zlecenia</a></li>
     </ul>
     </div>
     
@@ -195,7 +195,7 @@
         <?php /*
     <a href="#">Wyszukiwanie po nazwie...</a>  |  <a href="#">Wszyszukiwanie po nazwie firmy...</a>  |  <a href="#">Stowarzyszenia Branżowe</a><br>
     */ ?>
-    <a href="<?php echo URL; ?>contact/index">Reklama</a>  |  <a href="<?php echo URL; ?>contact/index">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>znajdz/all">Mapa Kategorii</a>
+    <a href="<?php echo URL; ?>kontakt">Reklama</a>  |  <a href="<?php echo URL; ?>kontakt">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>znajdz/all">Mapa Kategorii</a>
 	</div>
     </div>
     </div>

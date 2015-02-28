@@ -44,14 +44,14 @@ class Business extends Controller
     {
         Auth::handleLogin();
         if($_SESSION['user_id'] != $user_id) {
-            header('location: ' . URL . 'business/index');
+            header('location: ' . URL . 'fachowcy');
         }
         $this->view->isCaptchaNeeded = false;
 
         $business_model = $this->loadModel('Business');
         $this->view->isBusiness = $business_model->isBusiness($_SESSION['user_id']);
         if(!$this->view->isBusiness) {
-            header('location: ' . URL . 'business/index');
+            header('location: ' . URL . 'fachowcy');
         }
 
         $user_info_model = $this->loadModel('UserInfo');
@@ -85,7 +85,7 @@ class Business extends Controller
         $business_model = $this->loadModel('Business');
         $this->view->isBusiness = $business_model->isBusiness($user_id);
         if(!$this->view->isBusiness) {
-            header('location: ' . URL . 'get_quotes/index');
+            header('location: ' . URL . 'zlecenia/dodaj');
         }
 
         $overview_model = $this->loadModel('Overview');
@@ -185,7 +185,7 @@ class Business extends Controller
             header('location: ' . URL . 'business/edit/' . $user_id);
         
         } else {
-            header('location: ' . URL . 'business/index');
+            header('location: ' . URL . 'fachowcy');
         }
     }
 

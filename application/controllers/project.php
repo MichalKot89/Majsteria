@@ -39,6 +39,43 @@ class Project extends Controller
         $this->view->render('project/index');
     }
 
+
+    /**
+     * This method controls what happens when you move to /project/add in your app.
+     * Gets all projects (of the user).
+     */
+    public function add()
+    {
+        $login_model = $this->loadModel('Login');
+        $this->view->isCaptchaNeeded = $login_model->isCaptchaNeeded();
+
+        if(isset($_POST['post_code'])) {
+            $_SESSION['post_code'] = $_POST['post_code'];
+        }
+        if(isset($_POST['subcategory_id'])) {
+            $_SESSION['subcategory_id'] = $_POST['subcategory_id'];
+        }
+
+        if(isset($_SESSION['user_id'])) {
+            $user_info_model = $this->loadModel('UserInfo');
+            $this->view->userInfo = $user_info_model->getUserInfo($_SESSION['user_id']);
+
+            if (!isset($_SESSION['post_code']) AND $this->view->userInfo AND $this->view->userInfo->post_code) {
+                $_SESSION['post_code'] = $this->view->userInfo->post_code . ' ' . $this->view->userInfo->city;
+            }
+
+            if (!isset($_SESSION['user_phone']) AND $this->view->userInfo AND $this->view->userInfo->phone) {
+                $this->view->skip_phone = true;
+            }
+
+            if (!isset($_SESSION['first_name']) AND $this->view->userInfo AND $this->view->userInfo->first_name) {
+                $this->view->skip_name = true;
+            }
+        }
+
+        $this->view->render('project/add');
+    }
+
     /**
      * This method controls what happens when you move to /project/all in your app.
      * Gets all projects.
@@ -119,9 +156,9 @@ class Project extends Controller
             }
         }
 
-        // if still not logged in, come back to get quotes page
+        // if still not logged in, come back to add project page
         if (!isset($_SESSION['user_id'])) {
-            header('location: ' . URL . 'get_quotes/index');
+            header('location: ' . URL . 'zlecenia/dodaj');
             return;
         }
 
@@ -234,7 +271,7 @@ class Project extends Controller
                 $_SESSION['subcategory_id'] = $this->view->project->subcategory_id;
                 $_SESSION['timeline'] = $this->view->project->timeline;
                 $_SESSION['descr'] = $this->view->project->descr;
-                $this->view->render('get_quotes/index');
+                $this->view->render('project/add');
             }
         } else {
             header('location: ' . URL . 'project');

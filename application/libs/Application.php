@@ -42,6 +42,7 @@ class Application
 
                 // check for method: does such a method exist in the controller ?
                 if ($this->url_action) {
+                    $this->url_action = $this->translateAction($this->url_action);
                     if (method_exists($this->url_controller, $this->url_action)) {
 
                         // call the method and pass the arguments to it
@@ -117,8 +118,47 @@ class Application
             case subcategory_SEO:
                 return 'subcategory_view';
                 break;
+            case 'fachowcy':
+                return 'business';
+                break;
+            case 'zlecenia':
+                return 'project';
+                break;
+            case 'o_nas':
+                return 'about_us';
+                break;
+            case 'kontakt':
+                return 'contact';
+                break;
+            case 'jak_to_dziala':
+                return 'how_it_works';
+                break;
             default:
                 return $controller;
+                break;
+        }
+    }
+
+    /**
+     * Translate action
+     */
+    private function translateAction($action)
+    {
+        switch ($action) {
+            case 'dodaj':
+                return 'add';
+                break;
+            case 'edytuj':
+                return 'edit';
+                break;
+            case 'profil':
+                return 'profile';
+                break;
+            case 'podglad':
+                return 'view';
+                break;
+            default:
+                return $action;
                 break;
         }
     }

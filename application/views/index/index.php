@@ -24,7 +24,7 @@
     <li><span>3</span> Wybierz najlepszą ofertę</li>
     </ul>
 
-    <form action="<?php echo URL; ?>get_quotes/index" method="post" name="post_project_form">
+    <form action="<?php echo URL; ?>zlecenia/dodaj" method="post" name="post_project_form">
         <select class="form-control full-width drop input-text" name="subcategory_id" required>
             <option value>Wybierz kategorie</option>
             <?php
@@ -116,7 +116,7 @@
     Tutaj szybko uzyskasz pomoc przy pracach remontowych, budowlanych czy innych, wymagających specjalistycznej wiedzy. 
     Publikacja zlecenia jest niezobowiązująca i bezpłatna, nie ponosisz więc żadnego ryzyka. Majsteria oszczędza Twój czas i pieniądze!
     </span>
-    <button type="button" class="btn btn-default navbar-btn get-now">DODAJ ZLECENIE</button>
+    <a href="<?php echo URL; ?>zlecenia/dodaj"><button type="button" class="btn btn-default navbar-btn get-now">DODAJ ZLECENIE</button></a>
     </div>
     
     <div class="col-md-7 col-sm-7 recent">
@@ -322,53 +322,53 @@
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-6 col-sm-5 white-box">
     <div class="col-md-6 col-sm-6 font1">Malarze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/malarze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/malarze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Dacharze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/dacharze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/dacharze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Elektrycy</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/elektrycy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/elektrycy">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Geodeci</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/geodeci">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/geodeci">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Garaże</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/garaze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/garaze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Izolacje</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/izolacje">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/izolacje">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Szklarze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/szklarze">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/szklarze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Inteligentne domy</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/inteligentne_domy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/inteligentne_domy">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Sprzątacze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/sprzatanie">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/sprzatanie">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Ogrodnicy</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/ogrodnicy">Cennik</a> | <a href="<?php echo URL;?>get_quotes/index">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>znajdz/ogrodnicy">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     

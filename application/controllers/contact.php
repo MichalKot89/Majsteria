@@ -50,7 +50,7 @@ class Contact extends Controller
         $_SESSION['contact_msg'] = $_POST['contact_msg'];
         if (!isset($_POST["captcha"]) OR ($_POST["captcha"] != $_SESSION['captcha'])) {
             $_SESSION["feedback_negative"][] = FEEDBACK_CAPTCHA_WRONG;
-            header('location: ' . URL . 'contact/index');
+            header('location: ' . URL . 'kontakt');
             exit(1);
         }
 
@@ -93,11 +93,11 @@ class Contact extends Controller
                 header('location: ' . URL . 'dashboard/index');
             }
             else {
-                header('location: ' . URL . 'contact/index');
+                header('location: ' . URL . 'kontakt');
             }
         } else {
             $_SESSION["feedback_negative"][] = CONTACT_EMAIL_NOT_SENT . $mail->ErrorInfo;
-            header('location: ' . URL . 'contact/index');
+            header('location: ' . URL . 'kontakt');
         }
     }
 }

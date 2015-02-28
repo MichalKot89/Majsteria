@@ -204,8 +204,8 @@ return false;
     <div class="wf-td">
     <div class="col-md-6 col-sm-12 padd-null">
     <div class="col-md-12 col-sm-12 btn-group">
-    <button type="button" class="btn btn-default bgnone org blank" onclick="location.href='<?php echo URL; ?>get_quotes/index'"><div class="icon icon-comment-1 wht"></div> <a href="<?php echo URL; ?>get_quotes/index">Dodaj zlecenie</a></button>
-    <button type="button" class="btn btn-default bgnone org blank" onclick="location.href='<?php echo URL; ?>business/index'"><div class="icon icon-align-justify wht"></div> <a href="<?php echo URL; ?>business/index">Przeglądaj zlecenia</a></button>
+    <button type="button" class="btn btn-default bgnone org blank" onclick="location.href='<?php echo URL; ?>zlecenia/dodaj'"><div class="icon icon-comment-1 wht"></div> <a href="<?php echo URL; ?>zlecenia/dodaj">Dodaj zlecenie</a></button>
+    <button type="button" class="btn btn-default bgnone org blank" onclick="location.href='<?php echo URL; ?>fachowcy/'"><div class="icon icon-align-justify wht"></div> <a href="<?php echo URL; ?>fachowcy">Przeglądaj zlecenia</a></button>
     <button type="button" class="btn btn-default dropdown-toggle bgnone org blank2" data-toggle="dropdown">
     <div class="icon icon-flow-cascade wht">
     Kategorie
