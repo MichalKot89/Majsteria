@@ -195,7 +195,7 @@
         <?php /*
     <a href="#">Wyszukiwanie po nazwie...</a>  |  <a href="#">Wszyszukiwanie po nazwie firmy...</a>  |  <a href="#">Stowarzyszenia Branżowe</a><br>
     */ ?>
-    <a href="<?php echo URL; ?>kontakt">Reklama</a>  |  <a href="<?php echo URL; ?>kontakt">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>znajdz/all">Mapa Kategorii</a>
+    <a href="<?php echo URL; ?>kontakt">Reklama</a>  |  <a href="<?php echo URL; ?>kontakt">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>kategorie">Mapa Kategorii</a>
 	</div>
     </div>
     </div>

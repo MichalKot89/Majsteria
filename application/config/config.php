@@ -22,11 +22,12 @@ ini_set("display_errors", 1);
  * if you are using a (different) port, then put this in here, like http://mydomain:8888/subfolder/
  * Note: The trailing slash is important!
  */
-define('URL', 'http://www.majsteri.vot.pl/');
-#define('URL', 'http://localhost:8888/');
+#define('URL', 'http://www.majsteria.pl/');
+#define('URL', 'http://www.majsteri.vot.pl/');
+define('URL', 'http://localhost:8888/');
 
 # url for subcategories
-define('subcategory_SEO', 'znajdz');
+define('subcategory_SEO', 'kategorie');
 
 # contact_email
 define('CONTACT_EMAIL', 'kontakt@majsteria.pl');
@@ -85,8 +86,9 @@ define('AVATAR_DEFAULT_IMAGE', 'default.jpg');
 define('COOKIE_RUNTIME', 1209600);
 // the domain where the cookie is valid for, for local development ".127.0.0.1" and ".localhost" will work
 // IMPORTANT: always put a dot in front of the domain, like ".mydomain.com" !
-define('COOKIE_DOMAIN', '.www.majsteri.vot.pl');
-#define('COOKIE_DOMAIN', 'localhost');
+#define('COOKIE_DOMAIN', '.www.majsteria.pl');
+#define('COOKIE_DOMAIN', '.www.majsteri.vot.pl');
+define('COOKIE_DOMAIN', 'localhost');
 
 /**
  * Configuration for: Database
@@ -106,8 +108,8 @@ define('COOKIE_DOMAIN', '.www.majsteri.vot.pl');
  */
 
 define('DB_TYPE', 'mysql');
-define('DB_HOST', 'sql.s20.vdl.pl');
-#define('DB_HOST', 'localhost');
+#define('DB_HOST', 'sql.s20.vdl.pl');
+define('DB_HOST', 'localhost');
 define('DB_NAME', 'majsteri_main');
 define('DB_USER', 'majsteri_main');
 define('DB_PASS', 'ZwlTkzCk');

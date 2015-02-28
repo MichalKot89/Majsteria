@@ -7,7 +7,7 @@
     echo $category->name . '<br />';
     foreach($this->subcategories AS $subcategory) {
       if($subcategory->category_id == $category->category_id) {
-        echo '<a href="' . URL . 'znajdz/' . $subcategory->seo_url . '">' . $subcategory->name . '</a><br />';
+        echo '<a href="' . URL . 'kategorie/' . $subcategory->seo_url . '">' . $subcategory->name . '</a><br />';
       }
     }
   }
@@ -21,7 +21,7 @@ $letters = range('A', 'Z');
           echo '<h3>' . $letter . '</h3>';
           $post = false;
         }
-        echo '<a href="' . URL . 'znajdz/' . $subcategory->seo_url . '">' . $subcategory->name . '</a><br />';
+        echo '<a href="' . URL . 'kategorie/' . $subcategory->seo_url . '">' . $subcategory->name . '</a><br />';
       }
     }
   }

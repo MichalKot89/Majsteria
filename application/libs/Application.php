@@ -61,7 +61,7 @@ class Application
                         if (isset($this->url_parameter_1)) {
                             $this->url_controller->directory($this->url_action, $this->url_parameter_1);
                         } else {
-                            $this->url_controller->index($this->url_action);
+                            $this->url_controller->subcategory($this->url_action);
                         }
                     }
                       else {
@@ -116,6 +116,9 @@ class Application
     {
         switch ($controller) {
             case subcategory_SEO:
+                return 'subcategory_view';
+                break;
+            case 'kategorie':
                 return 'subcategory_view';
                 break;
             case 'fachowcy':

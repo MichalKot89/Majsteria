@@ -15,10 +15,21 @@ class Subcategory_View extends Controller
     }
 
     /**
+     * Shows all subcategories
+     */
+    public function index()
+    {
+        $subcategory_model = $this->loadModel('Subcategory');
+        $this->view->subcategories = $subcategory_model->getAllSubcategories();
+        $this->view->categories = $subcategory_model->getAllCategories();
+        $this->view->render('subcategory_view/all');
+    }
+
+    /**
      * This method controls what happens when you move to /find/seo_url in your app.
      * Render subcategory view page
      */
-    public function index($seo_url)
+    public function subcategory($seo_url)
     {
 
         $login_model = $this->loadModel('Login');
@@ -85,16 +96,5 @@ class Subcategory_View extends Controller
         $this->meta_title = $this->view->subcategory->name . ' ' . ucfirst($this->view->city_url);
 
         $this->view->render('subcategory_view/directory');
-    }
-
-    /**
-     * Shows all subcategories
-     */
-    public function all()
-    {
-        $subcategory_model = $this->loadModel('Subcategory');
-        $this->view->subcategories = $subcategory_model->getAllSubcategories();
-        $this->view->categories = $subcategory_model->getAllCategories();
-        $this->view->render('subcategory_view/all');
     }
 }
