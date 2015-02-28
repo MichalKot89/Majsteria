@@ -22,4 +22,10 @@ class Post_Code extends Controller
         $post_code_model = $this->loadModel('PostCode');
         return $post_code_model->getMatchingPostCodes($q);
     }
+
+    /*function oneOff()
+    {
+        $post_code_model = $this->loadModel('PostCode');
+        return $post_code_model->oneOff();
+    }*/
 }
