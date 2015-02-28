@@ -10,13 +10,13 @@
         echo '<title>' . $this->meta_title . '</title>';
     }
     else {
-        echo '<title>Majsteria.pl -- Źródło sprawdzonych fachowców</title>';
+        echo '<title>Źródło Sprawdzonych Fachowców - Majsteria.pl</title>';
     }
     if(isset($this->meta_descr)) {
         echo '<meta name="description" content="' . $this->meta_descr . '">';
     }
     else {
-        echo '<meta name="description" content="Bezpłatny katalog sprawdzonych fachowców z całej Polski.">';
+        echo '<meta name="description" content="Znajdź pomoc już teraz - powiedz czego potrzebujesz, a wykwalifikowani fachowcy sami Cię znajdą.Dzięki nam szybko i bezpłatnie znajdziesz pomoc eksperta. Dodanie zlecenia jest proste i zajmuje tylko kilka minut. Nasz zespół regularnie monitoruje jakość usług oferowanych w serwisie. Majsteria to również doskonały sposób na dodatkowy zarobek jeśli prowadzisz biznes lub sam wykonujesz specjalistyczne prace.">';
     }
     if(isset($this->meta_keywords)) {
         echo '<meta name="keywords" content="' . $this->meta_keywords . '">';
