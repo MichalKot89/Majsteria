@@ -42,10 +42,10 @@
     <li><a href="<?php echo URL; ?>about_us/index">» O Majsterii</a></li>
     <li><a href="#">» Poznaj zespół Majsterii</a></li>
     <li><a href="<?php echo URL; ?>contact/index">» Kontakt</a></li>
-    <!-- <li><a href="#">» Blog Majsterii</a></li>
+    <?php /* <li><a href="#">» Blog Majsterii</a></li>
     <li><a href="#">» Oferty pracy</a></li>
     <li><a href="#">» Dodaj swoją firmę</a></li>
-    -->
+    */ ?>
     </ul>
     </div>
     
@@ -54,10 +54,10 @@
     <ul class="nav nav-pills links">
     <li><a href="<?php echo URL; ?>how_it_works/index">» Jak działa Majsteria.pl</a></li>
 
-    <!--<li><a href="#">» Inspiracje / Zdjęcia</a></li>
+    <?php /* <!--<li><a href="#">» Inspiracje / Zdjęcia</a></li>
     <li><a href="#">» Licencje  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
     <li><a href="#">» Słowniczek</a></li>
-    <li><a href="#">» Regulacje Prawne</a></li>-->
+    <li><a href="#">» Regulacje Prawne</a></li>*/ ?>
     </ul>
     </div>
     
@@ -87,10 +87,6 @@
     
     </div>
     </div>
-<!--
-        <div class="col-md-12 col-sm-12 shadow">
-        <img class="img-responsive" alt="" src="<?php echo URL; ?>public/images/shadow.png">
-        </div> -->
     </div>
     
     

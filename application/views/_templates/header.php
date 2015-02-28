@@ -259,8 +259,8 @@ return false;
     </div>
     
     
-    
-    <!--<div class="container-fluid" id="top-bg">
+    <?php /*
+    <div class="container-fluid" id="top-bg">
     <div class="container">
     
     <div class="row">
@@ -307,7 +307,8 @@ return false;
     </div>
     </div>
     </div>
-    </div>-->
+    </div>
+    */ ?>
    
     
     <div class="container-fluid" id="light-grey">
@@ -318,7 +319,7 @@ return false;
     <div class="logo"><a href="<?php echo URL; ?>"><img src="<?php echo URL; ?>public/images/logo.png" alt="" class="img-responsive"></a></div>
     </div>
     
-    <!--
+    <?php /*
     <div class="col-md-8 col-sm-9 padd-null right-div">
     <form class="navbar-form navbar-left pull-right" role="search">
     <input type="text" class="form-control input-text input-text2" placeholder="Search by Service or Business Name">
@@ -329,7 +330,8 @@ return false;
     </div>
     <button type="submit" class="btn btn-default search-btn">SZUKAJ</button>
     </form>
-    </div>-->
+    </div>
+    */ ?>
     </div>
     </div>
     </div>

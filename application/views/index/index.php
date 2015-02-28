@@ -196,7 +196,7 @@
     </div>
     
     
-    <!--
+    <?php /*
     <div class="container padd-null wd-768">
     <div class="row featured">
     <div class="col-md-12 colsm-12 top">
@@ -306,7 +306,7 @@
     <img class="img-responsive" alt="" src="public/images/shadow.png">
     </div>
     </div>
-    -->
+    */ ?>
     
     <div class="row featured">
     <div class="col-md-12 colsm-12 top">

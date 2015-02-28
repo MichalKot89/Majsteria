@@ -6,7 +6,7 @@
         </div>
     </div>
 </div>
-<!-- TOP BANNER
+<?php /* TOP BANNER
 <div class="container">
   <div class="row">
       <div class="col-md-12 col-sm-12 cat-banner">
@@ -15,16 +15,16 @@
         </div>
     </div>
 </div>
-    -->
+    */ ?>
 <div class="container">
   <div class="row">
       <div class="col-md-9 col-sm-9">
-         <!--   <div class="col-md-12 col-sm-12 padd-null category-top">
+         <?php /*   <div class="col-md-12 col-sm-12 padd-null category-top">
           <hr>
           <h1> Wszystko co musisz wiedzieć o zatrudnieniu 
                 <?php echo $this->subcategory->specialist_name; ?> </h1>
           <hr>
-        </div>-->
+        </div> */ ?>
  
           <?php echo $this->subcategory->content; ?>
 
@@ -62,7 +62,7 @@
         </div>
         
       <div class="col-md-3 col-sm-3 padd-null">
-        <!--
+        <?php /*
             <div class="col-md-12 col-sm-12 padd-null right-pannel-first">
             <div class="col-md-12 col-sm-12 padd-null pannel-inner">
                   <h3> Use our directory to find local Air Conditioning Installers </h3>
@@ -133,7 +133,7 @@
                     <li><a href="#">» How Does Solar Air Conditioning Work?</a></li>
                   </ul>
           </div>
-            -->
+            */ ?>
           <div class="col-md-12 col-sm-12 padd-null right-pannel-last">
               <div class="col-md-12 col-sm-12 padd-null pannel-last">
                       <h3>Otrzymaj bezpłatne wyceny od <?php echo $this->subcategory->specialist_name; ?> </h3>
