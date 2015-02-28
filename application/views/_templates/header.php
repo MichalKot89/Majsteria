@@ -10,7 +10,7 @@
         echo '<title>' . $this->meta_title . '</title>';
     }
     else {
-        echo '<title>Źródło Sprawdzonych Fachowców - Majsteria.pl</title>';
+        echo '<title>Źródło sprawdzonych fachowców - Majsteria.pl</title>';
     }
     if(isset($this->meta_descr)) {
         echo '<meta name="description" content="' . $this->meta_descr . '">';
