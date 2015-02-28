@@ -65,6 +65,9 @@ class Subcategory_View extends Controller
         $subcategory_model = $this->loadModel('Subcategory');
         $this->view->seo_url = $seo_url;
         $this->view->subcategory = $subcategory_model->getSubcategoryByName($seo_url);
+        if(!$this->view->subcategory) {
+            header('location: ' . URL .subcategory_SEO . '/all');
+        } 
 
         $post_code_model = $this->loadModel('PostCode');
         $post_codes = $post_code_model->findPostCodesByCityUrl($city_url);

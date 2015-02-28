@@ -115,7 +115,7 @@
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
     <li><a href="<?php echo URL . subcategory_SEO;?>/projektanci_mebli/warszawa">Projektanci Mebli Warszawa</a></li>
-    <li><a href="<?php echo URL . subcategory_SEO;?>/oswietlenia/rzeszow">Oświetlenia Rzeszów</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/oswietlenie/rzeszow">Oświetlenia Rzeszów</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/sprzatanie/lublin">Firmy sprzątające Lublin</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/elektrycy/lodz">Elektrycy Łódź</a></li>
     </ul>
@@ -141,7 +141,7 @@
     
     <div class="col-md-3 col-sm-3 links-fot">
     <ul class="nav nav-pills f-links">
-    <li><a href="<?php echo URL . subcategory_SEO;?>/oswietlenia/warszawa">Oświetlenia Warszawa</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/oswietlenie/warszawa">Oświetlenia Warszawa</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/ogrodnicy/poznan">Ogrodnicy Poznań</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/malarze/krakow">Malarze Kraków</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/marmur/wroclaw">Marmur Wrocław</a></li>
@@ -159,7 +159,7 @@
     <a href="<?php echo URL . subcategory_SEO;?>/rynny/lodz">Łódź</a> » 
     <a href="<?php echo URL . subcategory_SEO;?>/rusztowania/krakow">Kraków</a> » 
     <a href="<?php echo URL . subcategory_SEO;?>/nawadnianie/lublin">Lublin</a> » 
-    <a href="<?php echo URL . subcategory_SEO;?>/inspektorzy/gdansk">Gdańsk</a> » 
+    <a href="<?php echo URL . subcategory_SEO;?>/inspektorzy_budowlani/gdansk">Gdańsk</a> » 
     <a href="<?php echo URL . subcategory_SEO;?>/rolety/bydgoszcz">Bydgoszcz</a>
     </div>
     
