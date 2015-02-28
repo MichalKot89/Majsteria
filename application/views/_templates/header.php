@@ -5,7 +5,26 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Majsteria.pl -- Źródło sprawdzonych fachowców</title>
+    <?php
+    if(isset($this->meta_title)) {
+        echo '<title>' . $this->meta_title . '</title>';
+    }
+    else {
+        echo '<title>Majsteria.pl -- Źródło sprawdzonych fachowców</title>';
+    }
+    if(isset($this->meta_descr)) {
+        echo '<meta name="description" content="' . $this->meta_descr . '">';
+    }
+    else {
+        echo '<meta name="description" content="Bezpłatny katalog sprawdzonych fachowców z całej Polski.">';
+    }
+    if(isset($this->meta_keywords)) {
+        echo '<meta name="keywords" content="' . $this->meta_keywords . '">';
+    }
+    else {
+        echo '<meta name="keywords" content="Hydraulicy, Ogrodnicy, Szklarze, Stolarze, Mechanicy, Elektrycy, Dacharze">';
+    }
+    ?>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">

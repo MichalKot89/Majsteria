@@ -66,7 +66,7 @@ class SubcategoryModel
      */
     public function getSubcategoryByName($seo_url)
     {
-        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_keywords, content FROM subcategory WHERE seo_url = :seo_url";
+        $sql = "SELECT subcategory_id, category_id, name, specialist_name, seo_url, meta_title, meta_descr, meta_keywords, content FROM subcategory WHERE seo_url = :seo_url";
         $query = $this->db->prepare($sql);
         $query->execute(array(':seo_url' => $seo_url));
 

@@ -47,6 +47,9 @@ class Subcategory_View extends Controller
         if(!$this->view->subcategory) {
             header('location: ' . URL .subcategory_SEO . '/all');
         }
+        $this->view->meta_title = $this->view->subcategory->meta_title;
+        $this->view->meta_descr = $this->view->subcategory->meta_descr;
+        $this->view->meta_keywords = $this->view->subcategory->meta_keywords;
         $this->view->render('subcategory_view/index');
     }
 
