@@ -147,7 +147,8 @@
                 <a href="#get_quotes"><button class="btn btn-default navbar-btn get-quote-cat center-block" type="button">Wyceń koszty »</button></a>
             </div>
         </div>
-      
+        <!-- echo out the system feedback (error and success messages) -->
+        <?php $this->renderFeedbackMessages(); ?>
         <?php require VIEWS_PATH . '_templates/add_project_form.php'; ?>
         </div>
     </div>

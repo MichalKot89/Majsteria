@@ -106,9 +106,11 @@ class ProjectOfferModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION["feedback_positive"][] = PROJECT_OFFER_CREATED;
             return true;
         }
         // default return
+        $_SESSION["feedback_negative"][] = PROJECT_OFFER_NOT_CREATED;
         return false;
     }
 
@@ -127,9 +129,11 @@ class ProjectOfferModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
             return true;
         }
         // default return
+        $_SESSION["feedback_negative"][] = FEEDBACK_EDIT_UNSUCCESSFUL;
         return false;
     }
 

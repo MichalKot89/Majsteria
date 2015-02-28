@@ -263,7 +263,7 @@ define("FEEDBACK_PASSWORD_RESET_TOKEN_FAIL", "Nie udało się zapisać tokena do
 define("FEEDBACK_PASSWORD_RESET_TOKEN_MISSING", "Brak tokenu resetowania hasła");
 define("FEEDBACK_PASSWORD_RESET_MAIL_SENDING_ERROR", "Link resetujący hasło nie został wysłany z powodu: ");
 define("FEEDBACK_PASSWORD_RESET_MAIL_SENDING_SUCCESSFUL", "Wiadomość resetująca hasło została wysłana na Twój adres email");
-define("FEEDBACK_PASSWORD_RESET_LINK_EXPIRED", "Link resetujący hasło stracił ważność. Link jest ważny przez godzinę od momentu otrzymania.");
+define("FEEDBACK_PASSWORD_RESET_LINK_EXPIRED", "Link resetujący hasło stracił ważność. Link jest ważny przez godzinę od momentu otrzymania");
 define("FEEDBACK_PASSWORD_RESET_COMBINATION_DOES_NOT_EXIST", "Użytkownik/Kod weryfikacyjny nie istnieje");
 define("FEEDBACK_PASSWORD_RESET_LINK_VALID", "Link resetujący hasło jest aktywny. Proszę zmienić hasło teraz");
 define("FEEDBACK_PASSWORD_CHANGE_SUCCESSFUL", "Zmiana hasła powiodła się");
@@ -278,7 +278,7 @@ define("FEEDBACK_NOTE_DELETION_FAILED", "Usuwanie notatki nie powiodło się");
 define("FEEDBACK_COOKIE_INVALID", "Zapamiętane hasło jest nieprawidłowe");
 define("FEEDBACK_COOKIE_LOGIN_SUCCESSFUL", "Logowanie z użyciem zapamiętanego hasła powiodło się");
 define("FEEDBACK_FACEBOOK_LOGIN_NOT_REGISTERED", "Nie masz jeszcze konta na Majsterii. Zarejestruj się teraz");
-define("FEEDBACK_FACEBOOK_EMAIL_NEEDED", "Musisz podac swój adres e-mail, aby się zarejestrowac");
+define("FEEDBACK_FACEBOOK_EMAIL_NEEDED", "Musisz podac swój adres e-mail, aby się zarejestrować");
 define("FEEDBACK_FACEBOOK_UID_ALREADY_EXISTS", "Numer ID Twojego konta Facebook istnieje już w naszej bazie");
 define("FEEDBACK_FACEBOOK_DATA_NOT_AVAILABLE", "Brak dostępu. Prosimy potwierdzić dostęp w oknie autoryzacyjnym facebooka");
 define("FEEDBACK_FACEBOOK_EMAIL_ALREADY_EXISTS", "Adres e-mail powiązany z Twoim kontem Facebook istnieje juz w naszej bazie");
@@ -286,5 +286,11 @@ define("FEEDBACK_FACEBOOK_USERNAME_ALREADY_EXISTS", "Nazwa użytkownika powiąza
 define("FEEDBACK_FACEBOOK_REGISTER_SUCCESSFUL", "Rejestracja konta z Facebookiem zakończona pomyślnie");
 define("FEEDBACK_FACEBOOK_OFFLINE", "Nie możemy połączyć się z serwerami Facebooka. Możliwe, że Facebook jest chwilowo offline..");
 define("MEMBERSHIP_UPGRADE_FAILED", "Upgrade członkostwa nie powiódł się");
-
-define("FEEDBACK_EDIT_SUCCESSFUL", "Twoje zmiany zostały zapisane.");
+define("FEEDBACK_EDIT_SUCCESSFUL", "Twoje zmiany zostały zapisane");
+define("FEEDBACK_EDIT_UNSUCCESSFUL", "Zapisanie zmian nie powiodło się");
+define("BUSINESS_CREATED", "Biznes został dodany pomyślnie. Możesz teraz składać oferty na zlecenia");
+define("BUSINESS_NOT_CREATED", "Dodanie biznesu nie powiodło się");
+define("PROJECT_CREATED", "Zlecenie zostało dodane pomyślnie. Oferty od fachowców powinny pojawić się wkrótce");
+define("PROJECT_NOT_CREATED", "Dodanie zlecenia nie powiodło się");
+define("PROJECT_OFFER_CREATED", "Oferta została złożona pomyślnie");
+define("PROJECT_OFFER_NOT_CREATED", "Złożenie oferty nie powiodło się");

@@ -1,6 +1,9 @@
 <div class="container">
     <h1><?php echo $this->headline; ?></h1>
 
+    <!-- echo out the system feedback (error and success messages) -->
+    <?php $this->renderFeedbackMessages(); ?>
+
     <table id="project_listing" class="table">
     <?php
         if ($this->projects) {

@@ -1,6 +1,9 @@
 <div class="container">
     <h1><?php echo $this->subcategory->name . ' ' . ucfirst($this->city_url); ?></h1>
 
+    <!-- echo out the system feedback (error and success messages) -->
+    <?php $this->renderFeedbackMessages(); ?>
+    
     <table class="table">
     <?php
         if ($this->businesses) {

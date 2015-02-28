@@ -118,8 +118,12 @@ class BusinessModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
-            return $this->add_subcategories($this->db->lastInsertId('business_id'), $subcategories);
+            if($this->add_subcategories($this->db->lastInsertId('business_id'), $subcategories)) {
+                $_SESSION["feedback_positive"][] = BUSINESS_CREATED;
+                return true;
+            }
         }
+        $_SESSION["feedback_negative"][] = BUSINESS_NOT_CREATED;
         // default return
         return false;
     }
@@ -173,9 +177,11 @@ class BusinessModel
 
         $count =  $query->rowCount();
         if ($count == 1 OR $update_successful) {
+            $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
             return true;
         }
         // default return
+        $_SESSION["feedbac_negative"][] = FEEDBACK_EDIT_UNSUCCESSFUL;
         return false;
     }
 

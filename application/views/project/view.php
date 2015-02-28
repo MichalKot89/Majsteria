@@ -1,11 +1,15 @@
 <div class="container">
     <?php 
-        if($this->project) {
-            echo '<h1>' . $this->project->subcategory_name . ' ' . $this->project->city . '</h1>';
-            echo '<b>Data dodania:</b> ' . $this->displayDate($this->project->submit_date) . '<br />';
-            echo '<b>Opis zlecenia: </b><br />' . $this->project->descr;
-        }
+        echo '<h1>' . $this->project->subcategory_name . ' ' . $this->project->city . '</h1>';
     ?>
+    <!-- echo out the system feedback (error and success messages) -->
+    <?php $this->renderFeedbackMessages(); ?>
+    
+    <?php
+        echo '<b>Data dodania:</b> ' . $this->displayDate($this->project->submit_date) . '<br />';
+        echo '<b>Opis zlecenia: </b><br />' . $this->project->descr;
+    ?>
+
     <div style="margin-top: 50px;">
     <?php
     	// If not logged in, prompt to log in.

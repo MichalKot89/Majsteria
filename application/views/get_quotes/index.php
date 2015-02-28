@@ -1,9 +1,5 @@
     <div class="container">
 
-
-    <!-- echo out the system feedback (error and success messages) -->
-    <?php $this->renderFeedbackMessages(); ?>
-
     	<div class="row">
         	<div class="col-md-12 col-sm-12">
             	<div class="col-md-12 col-sm-12 quotes-head">
@@ -50,6 +46,8 @@
                 <div class="col-md-12 col-sm-12">
            	    	<img src="<?php echo URL; ?>public/images/quote-shadow.png" class="center-block img-responsive" alt="quote-shadow"> 
                 </div>
+              <!-- echo out the system feedback (error and success messages) -->
+              <?php $this->renderFeedbackMessages(); ?>
 <?php require VIEWS_PATH . '_templates/add_project_form.php'; ?>
           </div>
     	</div>	

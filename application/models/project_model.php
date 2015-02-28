@@ -109,9 +109,11 @@ class ProjectModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION["feedback_positive"][] = PROJECT_CREATED;
             return true;
         }
         // default return
+        $_SESSION["feedback_negative"][] = PROJECT_NOT_CREATED;
         return false;
     }
 
@@ -130,9 +132,11 @@ class ProjectModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
             return true;
         }
         // default return
+        $_SESSION["feedback_negative"][] = FEEDBACK_EDIT_UNSUCCESSFUL;
         return false;
     }
 
@@ -149,9 +153,11 @@ class ProjectModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
             return true;
         }
         // default return
+        $_SESSION["feedback_negative"][] = FEEDBACK_EDIT_UNSUCCESSFUL;
         return false;
     }
 
@@ -169,9 +175,11 @@ class ProjectModel
 
         $count =  $query->rowCount();
         if ($count == 1) {
+            $_SESSION["feedback_positive"][] = FEEDBACK_EDIT_SUCCESSFUL;
             return true;
         }
         // default return
+        $_SESSION["feedback_negative"][] = FEEDBACK_EDIT_UNSUCCESSFUL;
         return false;
     }
 }
