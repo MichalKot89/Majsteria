@@ -72,8 +72,8 @@
     <div class="col-md-2 col-sm-2 br-line">
     <h2>Zbieraj zlecenia</h2>
     <ul class="nav nav-pills links">
-    <li><a href="<?php echo URL; ?>add_business/index">» Dodaj swoją firmę</a></li>
-    <li><a href="<?php echo URL; ?>add_business/index">» Przeglądaj zlecenia</a></li>
+    <li><a href="<?php echo URL; ?>business/index">» Dodaj swoją firmę</a></li>
+    <li><a href="<?php echo URL; ?>business/index">» Przeglądaj zlecenia</a></li>
     </ul>
     </div>
     
@@ -195,7 +195,7 @@
         <?php /*
     <a href="#">Wyszukiwanie po nazwie...</a>  |  <a href="#">Wszyszukiwanie po nazwie firmy...</a>  |  <a href="#">Stowarzyszenia Branżowe</a><br>
     */ ?>
-    <a href="#">Reklama</a>  |  <a href="#">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>znajdz/all">Mapa Kategorii</a>
+    <a href="<?php echo URL; ?>contact/index">Reklama</a>  |  <a href="<?php echo URL; ?>contact/index">Zgłoś błąd</a> |  <a href="<?php echo URL; ?>znajdz/all">Mapa Kategorii</a>
 	</div>
     </div>
     </div>
