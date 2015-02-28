@@ -739,6 +739,24 @@ class LoginModel
             return false;
         }
     }
+    /**
+     * Create an avatar picture from facebook id url
+     * @param string facebook user id
+     */
+    public function createAvatarFromFacebook($facebook_user_id, $user_id) 
+    {
+        $img = file_get_contents('https://graph.facebook.com/' . $facebook_user_id . '/picture?type=large');
+        $im = imagecreatefromstring($img);
+        $width = imagesx($im);
+        $height = imagesy($im);
+        $newwidth = AVATAR_SIZE;
+        $newheight = AVATAR_SIZE;
+        $thumb = imagecreatetruecolor($newwidth, $newheight);
+        imagecopyresized($thumb, $im, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+        imagejpeg($thumb, 'public/avatars/' . $user_id . '.jpg'); //save image as jpg
+        imagedestroy($thumb); 
+        imagedestroy($im);
+    }
 
     /**
      * Resize avatar image (while keeping aspect ratio and cropping it off sexy)
@@ -1326,12 +1344,16 @@ class LoginModel
 
         $count = $query->rowCount();
         if ($count == 1) {
-            $query = $this->db->prepare("SELECT user_id, user_name, user_email, user_account_type, user_provider_type
+            $query = $this->db->prepare("SELECT user_id, user_name, user_email, user_account_type, user_provider_type, user_facebook_uid
                                          FROM   users
                                          WHERE  user_name = :user_name AND user_provider_type = :provider_type");
             $query->execute(array(':user_name' => $clean_user_name_from_facebook, ':provider_type' => 'FACEBOOK'));
             $count_from_select_statement = $query->rowCount();
             if ($count_from_select_statement == 1) {
+                $user = $query->fetch();
+                $this->createAvatarFromFacebook($user->user_facebook_uid, $user->user_id);
+                $_POST['first_name'] = $facebook_user_data["first_name"];
+                $_POST['last_name'] = $facebook_user_data["last_name"];
                 // registration successful
                 return true;
             }

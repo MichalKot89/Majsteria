@@ -45,8 +45,12 @@ define('AVATAR_PATH', 'public/avatars/');
  * authenticated via Facebook. Leave it like that unless you know exactly what you do.
  */
 define('FACEBOOK_LOGIN', true);
-define('FACEBOOK_LOGIN_APP_ID', '1554442274815536');
-define('FACEBOOK_LOGIN_APP_SECRET', '7759d24f2d818033b0e49e0cbd11cf9a');
+//live
+//define('FACEBOOK_LOGIN_APP_ID', '1554442274815536');
+//define('FACEBOOK_LOGIN_APP_SECRET', '7759d24f2d818033b0e49e0cbd11cf9a');
+// localhost
+define('FACEBOOK_LOGIN_APP_ID', '599337976843978');
+define('FACEBOOK_LOGIN_APP_SECRET', '2fd56a608708bc93b09b92af26c55adc');
 define('FACEBOOK_LOGIN_PATH', 'login/loginWithFacebook');
 define('FACEBOOK_REGISTER_PATH', 'login/registerWithFacebook');
 

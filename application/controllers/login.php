@@ -64,6 +64,8 @@ class Login extends Controller
 
         // check login status
         if ($login_successful) {
+            $user_info_model = $this->loadModel('UserInfo');
+            $user_info_model->createUserInfo($_SESSION['user_id'], NULL);
             // if YES, then move user to dashboard/index (this is a browser-redirection, not a rendered view)
             header('location: ' . URL . 'dashboard/index');
         } else {
