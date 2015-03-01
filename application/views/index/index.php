@@ -326,8 +326,8 @@
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Dacharze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/dacharze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Dekarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/dekarze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
