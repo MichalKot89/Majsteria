@@ -126,7 +126,7 @@
     <li><a href="<?php echo URL . subcategory_SEO;?>/przeprowadzki/krakow">Przeprowadzki Kraków</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/posadzkarze/szczecin">Posadzkarze Szczecin</a></li>
     <li><a href="<?php echo URL . subcategory_SEO;?>/izolacje/gdansk">Izolacje Gdańsk</a></li>
-    <li><a href="<?php echo URL . subcategory_SEO;?>/dacharze/wroclaw">Dacharze Wrocław</a></li>
+    <li><a href="<?php echo URL . subcategory_SEO;?>/dekarze/wroclaw">Dekarze Wrocław</a></li>
     </ul>
     </div>
     
