@@ -32,7 +32,7 @@
           <a name="dodaj_zlecenie"></a>
           <div class="col-md-12 col-sm-12 category-mid-sec padd-null">
         <div class="col-md-12 col-sm-12 category-head padd-null">
-              <h1>Znalezienie ofert spośród kategorii <?php echo $this->subcategory->name; ?> nigdy nie było tak proste</h1>
+              <h1>Znalezienie ofert spośród kategorii <?php echo strtolower($this->subcategory->name); ?> nigdy nie było tak proste</h1>
             </div>
         <div class="col-md-4 col-sm-4 padd-null category-mid">
               <div class="center-block shape-no1">
@@ -137,7 +137,7 @@
             */ ?>
           <div class="col-md-12 col-sm-12 padd-null right-pannel-last">
               <div class="col-md-12 col-sm-12 padd-null pannel-last">
-                      <h3>Otrzymaj bezpłatne wyceny spośród kategorii <?php echo $this->subcategory->name; ?></h3>
+                      <h3>Otrzymaj bezpłatne wyceny spośród kategorii <?php echo strtolower($this->subcategory->name); ?></h3>
                 </div>
               <img src="<?php echo URL; ?>public/images/hand.png" class="center-block right-pannel-last-img" width="58" height="79" alt="hand">
                 <p>
