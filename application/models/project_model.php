@@ -24,7 +24,8 @@ class ProjectModel
                 p.subcategory_id, p.subsubcategory_id, p.active, p.deleted, pc.post_code, s.name AS subcategory_name
             FROM project p
             JOIN subcategory s ON s.subcategory_id = p.subcategory_id
-            JOIN post_code pc ON pc.post_code_id = p.post_code_id";
+            JOIN post_code pc ON pc.post_code_id = p.post_code_id
+            WHERE deleted = 0";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -46,6 +47,7 @@ class ProjectModel
             JOIN business b ON b.business_id = bs.business_id
             JOIN post_code pc ON pc.post_code_id = p.post_code_id
             WHERE b.user_id = :user_id AND p.user_id <> :user_id AND pc.post_code LIKE :post_code
+                AND deleted = 0
             LIMIT 20";
         $query = $this->db->prepare($sql);
 
@@ -68,7 +70,7 @@ class ProjectModel
             FROM project p
             JOIN subcategory s ON s.subcategory_id = p.subcategory_id
             JOIN post_code pc ON pc.post_code_id = p.post_code_id 
-            WHERE p.project_id = :project_id";
+            WHERE p.project_id = :project_id AND deleted = 0";
         $query = $this->db->prepare($sql);
         $query->execute(array(':project_id' => $project_id));
 
@@ -88,7 +90,7 @@ class ProjectModel
             FROM project p
             JOIN subcategory s ON s.subcategory_id = p.subcategory_id 
             JOIN post_code pc ON pc.post_code_id = p.post_code_id
-            WHERE user_id = :user_id";
+            WHERE user_id = :user_id AND deleted = 0";
         $query = $this->db->prepare($sql);
         $query->execute(array(':user_id' => $user_id));
 
