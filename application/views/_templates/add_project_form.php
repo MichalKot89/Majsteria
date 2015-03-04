@@ -9,7 +9,7 @@
                         }
                         echo '" method="post" name="post_project_form">'; ?>
                           <div class="form-group">
-                            <label>Jakiego rodzaju fachowca poszukujesz?</label>
+                            <label>Jaka kategoria najbardziej oddaje rodzaj poszukiwanego fachowca bądź usługi?</label>
                             <select class="form-control" name="subcategory_id" required>
                               <option value>Wybierz kategorie</option>
                               <?php
