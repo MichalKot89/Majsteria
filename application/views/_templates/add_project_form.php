@@ -11,7 +11,7 @@
                           <div class="form-group">
                             <label>Jaka kategoria najbardziej oddaje rodzaj poszukiwanego fachowca bądź usługi?</label>
                             <select class="form-control" name="subcategory_id" required>
-                              <option value>Wybierz kategorie</option>
+                              <option value>Wybierz kategorię</option>
                               <?php
                                   $sid = isset($_SESSION['subcategory_id'])?$_SESSION['subcategory_id']:NULL;
                                   foreach($this->getAllSubcategories() as $subcategory) {
