@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /application/ajax/
 
 Sitemap: http://www.majsteria.pl/sitemap.xml
