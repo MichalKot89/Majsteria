@@ -609,12 +609,13 @@ class LoginModel
         $mail->AddAddress($user_email);
         $mail->Subject = EMAIL_VERIFICATION_SUBJECT;
         $mail->IsHTML(true);
+        $link = EMAIL_VERIFICATION_URL . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
         if($password == NULL) {
-            $mail->Body = THANKS_FOR_SIGNING_UP . '<br />' . EMAIL_VERIFICATION_CONTENT . EMAIL_VERIFICATION_URL . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
+            $mail->Body = THANKS_FOR_SIGNING_UP . '<br />' . EMAIL_VERIFICATION_CONTENT . '<a href="' . $link . '">' . $link . '</a>';
         }
         else {
             $mail->Body = THANKS_FOR_SIGNING_UP . '<br />' . WE_GENERATED_RANDOM_PASSWORD_FOR_YOU . '<br />' . YOUR_PASSWORD_IS . $password . '<br /><br />';
-            $mail->Body .= EMAIL_VERIFICATION_CONTENT . EMAIL_VERIFICATION_URL . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
+            $mail->Body .= EMAIL_VERIFICATION_CONTENT . '<a href="' . $link . '">' . $link . '</a>';
         }
 
         // final sending and check
