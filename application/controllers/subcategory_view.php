@@ -56,7 +56,7 @@ class Subcategory_View extends Controller
         $this->view->seo_url = $seo_url;
         $this->view->subcategory = $subcategory_model->getSubcategoryByName($seo_url);
         if(!$this->view->subcategory) {
-            header('location: ' . URL .subcategory_SEO . '/all');
+            header('location: ' . URL .subcategory_SEO . '/');
         }
         $this->view->meta_title = $this->view->subcategory->meta_title;
         $this->view->meta_descr = $this->view->subcategory->meta_descr;
@@ -77,7 +77,7 @@ class Subcategory_View extends Controller
         $this->view->seo_url = $seo_url;
         $this->view->subcategory = $subcategory_model->getSubcategoryByName($seo_url);
         if(!$this->view->subcategory) {
-            header('location: ' . URL .subcategory_SEO . '/all');
+            header('location: ' . URL .subcategory_SEO . '/');
         } 
 
         $post_code_model = $this->loadModel('PostCode');
