@@ -96,6 +96,11 @@ class Login extends Controller
         $login_model = $this->loadModel('Login');
         $login_successful = $login_model->loginWithCookie();
 
+        if(!$login_successful) {
+            $login_model->deleteCookie();
+        }
+
+/*
         if ($login_successful) {
             header('location: ' . URL . 'dashboard/index');
         } else {
@@ -103,7 +108,7 @@ class Login extends Controller
             $login_model->deleteCookie();
             // if NO, then move user to login/index (login form) (this is a browser-redirection, not a rendered view)
             header('location: ' . URL . 'login/index');
-        }
+        }*/
     }
 
     /**
