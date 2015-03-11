@@ -603,6 +603,7 @@ class LoginModel
         }
 
         // fill mail with data
+        $mail->CharSet = 'UTF-8';
         $mail->From = EMAIL_VERIFICATION_FROM_EMAIL;
         $mail->FromName = EMAIL_VERIFICATION_FROM_NAME;
         $mail->AddAddress($user_email);
