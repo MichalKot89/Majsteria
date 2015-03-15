@@ -66,7 +66,7 @@ class Application
                     }
                       else {
                         // redirect user to error page (there's a controller for that)
-                        header('location: ' . URL . 'error/index');
+                        header('location: ' . URL . 'blad');
                     }
                 } else {
                     // default/fallback: call the index() method of a selected controller
@@ -75,7 +75,7 @@ class Application
             // obviously mistyped controller name, therefore show 404
             } else {
                 // redirect user to error page (there's a controller for that)
-                header('location: ' . URL . 'error/index');
+                header('location: ' . URL . 'blad');
             }
         // if url_controller is empty, simply show the main page (index/index)
         } else {
@@ -135,6 +135,9 @@ class Application
                 break;
             case 'jak_to_dziala':
                 return 'how_it_works';
+                break;
+            case 'blad':
+                return 'error';
                 break;
             default:
                 return $controller;
