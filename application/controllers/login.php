@@ -92,13 +92,14 @@ class Login extends Controller
      */
     function loginWithCookie()
     {
+        /*
         // run the loginWithCookie() method in the login-model, put the result in $login_successful (true or false)
         $login_model = $this->loadModel('Login');
         $login_successful = $login_model->loginWithCookie();
 
         if(!$login_successful) {
             $login_model->deleteCookie();
-        }
+        }*/
 
 /*
         if ($login_successful) {

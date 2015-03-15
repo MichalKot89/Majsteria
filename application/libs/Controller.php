@@ -14,11 +14,6 @@ class Controller
     {
         Session::init();
 
-        // user has remember-me-cookie ? then try to login with cookie ("remember me" feature)
-        if (!isset($_SESSION['user_logged_in']) && isset($_COOKIE['rememberme'])) {
-            header('location: ' . URL . 'login/loginWithCookie');
-        }
-
         // create database connection
         try {
             $this->db = new Database();
@@ -26,6 +21,16 @@ class Controller
             die('Database connection could not be established.');
         }
 
+        // user has remember-me-cookie ? then try to login with cookie ("remember me" feature)
+        if (!isset($_SESSION['user_logged_in']) && isset($_COOKIE['rememberme'])) {
+            // run the loginWithCookie() method in the login-model, put the result in $login_successful (true or false)
+            $login_model = $this->loadModel('Login');
+            $login_successful = $login_model->loginWithCookie();
+
+            if(!$login_successful) {
+                $login_model->deleteCookie();
+            }
+        }
         // create a view object (that does nothing, but provides the view render() method)
         $this->view = new View();
     }
