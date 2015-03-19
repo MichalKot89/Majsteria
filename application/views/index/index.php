@@ -111,11 +111,11 @@
     <h3>Witaj na Majsterii</h3>
     <img src="public/images/about-img.png" alt="fachowiec szybko" class="img-responsive">
 
-    <span>
+    <p>
     Majsteria to serwis skupiający ekspertów z różnych dziedzin, na terenie całej Polski. 
     Tutaj szybko uzyskasz pomoc przy pracach remontowych, budowlanych czy innych, wymagających specjalistycznej wiedzy. 
     Publikacja zlecenia jest niezobowiązująca i bezpłatna, nie ponosisz więc żadnego ryzyka. Majsteria oszczędza Twój czas i pieniądze!
-    </span>
+    </p>
     <a href="<?php echo URL; ?>zlecenia/dodaj"><button type="button" class="btn btn-default navbar-btn get-now">DODAJ ZLECENIE</button></a>
     </div>
     
