@@ -8,7 +8,7 @@
     <h2>Dodaj zlecenie za darmo</h2>
     <p>Znajdź pomoc już teraz - powiedz czego potrzebujesz, a wykwalifikowani fachowcy sami Cię znajdą. Masz pytania?
     <br>
-    <span class="org-sm">Dzwoń (000000)</span><br />
+    <span class="org-sm">Dzwoń (+48 791 872 666)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
     <a href="<?php echo URL; ?>zlecenia/dodaj"><button type="button" class="btn btn-default navbar-btn btn-blue">Dodaj zlecenie</button></a>
     </div>
@@ -24,7 +24,7 @@
     <h2>Reklamuj sie z nami!</h2>
     <p>Regularnie otrzymujemy zapytania o fachowców z Twojej branży! Stwórz swój profil, a my będziemy podsyłać Ci pasujące zlecenia z okolicy. Wszystko bezpłatnie!
     <br />
-    <span class="org-sm">Dzwoń (000000)</span><br />
+    <span class="org-sm">Dzwoń (+48 791 872 666)</span><br />
     <span class="sm1">Pn-Nd 9:00-22:00</span></p>
     <a href="<?php echo URL; ?>fachowcy"><button type="button" class="btn btn-default navbar-btn btn-blk">Dodaj swoją firmę</button></a>
     </div> 

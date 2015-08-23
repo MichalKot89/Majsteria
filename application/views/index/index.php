@@ -14,17 +14,18 @@
     <div class="row">
     <div class="col-md-5 col-sm-5 form-bg pull-right">
     <div class="org-div">
-    <h2>Poszukujesz fachowca?</h2>
+    <h2>POTRZEBUJESZ ZLECEŃ?</h2>
     </div>
    
     <div class="col-md-12 col-sm-12">
     <ul class="nav nav-pills nav-stacked list-style">
-    <li><span>1</span> Powiedz nam czego potrzebujesz</li>
-    <li><span>2</span> Poczekaj na błyskawiczną wycenę</li>
-    <li><span>3</span> Wybierz najlepszą ofertę</li>
+    <li><span>1</span> Bezpłatnie dodaj swoją firmę</li>
+    <li><span>2</span> Pozwól klientom się odnaleźć</li>
+    <li><span>3</span> Zwiększaj przychody swojego biznesu</li>
     </ul>
 
-    <form action="<?php echo URL; ?>zlecenia/dodaj" method="post" name="post_project_form">
+    <form action="<?php echo URL; ?>fachowcy" method="post" name="post_project_form">
+<?php /*
         <select class="form-control full-width drop input-text" name="subcategory_id" required>
             <option value>Wybierz kategorie</option>
             <?php
@@ -33,7 +34,7 @@
                 } 
             ?>
         </select>
-<?php /*
+
         <div class="dropdown">
         <button class="btn btn-default dropdown-toggle drop" type="button" id="dropdownMenu1" data-toggle="dropdown">Wybierz kategorię
         <span class="caret pull-right mrg-top"></span>
@@ -46,9 +47,10 @@
         ?>
         </ul>
         </div>
-     */ ?>   
+       
         <input type="name" class="form-control input-text enter" id="post_code" name="post_code"  placeholder="Podaj swój kod pocztowy">
-        <button type="submit" class="btn btn-default blue-btn">DODAJ ZLECENIE</button>
+*/ ?> 
+        <button type="submit" class="btn btn-default blue-btn">DODAJ SWOJĄ FIRMĘ</button>
     </form>
     </div>
     </div>
@@ -116,7 +118,7 @@
     Tutaj szybko uzyskasz pomoc przy pracach remontowych, budowlanych czy innych, wymagających specjalistycznej wiedzy. 
     Publikacja zlecenia jest niezobowiązująca i bezpłatna, nie ponosisz więc żadnego ryzyka. Majsteria oszczędza Twój czas i pieniądze!
     </p>
-    <a href="<?php echo URL; ?>zlecenia/dodaj"><button type="button" class="btn btn-default navbar-btn get-now">DODAJ ZLECENIE</button></a>
+    <a href="<?php echo URL; ?>fachowcy"><button type="button" class="btn btn-default navbar-btn get-now">DODAJ FIRMĘ</button></a>
     </div>
     
     <div class="col-md-7 col-sm-7 recent">
@@ -321,54 +323,54 @@
     <div class="row left-mr1">
     <div class="col-md-12 col-sm-12 padd-null">
     <div class="col-md-6 col-sm-5 white-box">
-    <div class="col-md-6 col-sm-6 font1">Malarze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/malarze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Betoniarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/betoniarze">Zlecenia betoniarskie</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Dekarze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/dekarze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Posadzkarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/posadzkarze">Zlecenia posadzkarskie</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Elektrycy</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/elektrycy">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/elektrycy">Zlecenia dla elektryków</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Geodeci</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/geodeci">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/geodeci">Zlecenia dla geodetów</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Garaże</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/garaze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Brukarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/brukarze">Zlecenia brukarskie</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Izolacje</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/izolacje">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Instalacje grzewcze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/izolacje">Zlecenia grzewcze</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
     <div class="col-md-6 col-sm-6 font1">Szklarze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/szklarze">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/szklarze">Zlecenia szklarskie</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Inteligentne domy</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/inteligentne_domy">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Stolarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/stolarze">Zlecenia stolarskie</a></div>
     </div>
     
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Sprzątacze</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/sprzatanie">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Malarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/malarze">Zlecenia malarskie</a></div>
     </div>
     
     <div class="col-md-6 col-sm-6 white-box">
-    <div class="col-md-6 col-sm-6 font1">Ogrodnicy</div>
-    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/ogrodnicy">Cennik</a> | <a href="<?php echo URL;?>zlecenia/dodaj">Wyceń koszty</a></div>
+    <div class="col-md-6 col-sm-6 font1">Dekarze</div>
+    <div class="col-md-5 col-sm-5 pull-right org-font"><a href="<?php echo URL;?>kategorie/dekarze">Zlecenia dekarskie</a></div>
     </div>
     
     
@@ -381,7 +383,7 @@
     </div>
     </div>
     
-    
+    <?php /*
     <div class="container-fluid org-bg">
     <div class="container">
     <div class="row padd-null">
@@ -406,9 +408,10 @@
     <div class="fb-xfbml-parse-ignore"><a href="http://www.facebook.com/majsteriapl/posts/724045407710912:0">Post</a> by <a href="http://www.facebook.com/majsteriapl">Majsteria.pl</a>.</div></div>
   <?php /*
     <div class="fb-post" data-href="https://www.facebook.com/Majsteria/posts/724045407710912" 
-        data-width="500" data-show-border="true"></div>*/ ?>
+        data-width="500" data-show-border="true"></div>
     </div>
     </div>
     </div>
     </div>
     </div>
+    */ ?>

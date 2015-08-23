@@ -27,7 +27,7 @@
         </div> */ ?>
  
           <?php echo $this->subcategory->content; ?>
-
+<?php /*
           <div class="col-md-12 col-sm-12 category-shadow"> <img class="img-responsive" src="<?php echo URL; ?>public/images/shadow.png" alt=""> </div>
           <a name="dodaj_zlecenie"></a>
           <div class="col-md-12 col-sm-12 category-mid-sec padd-null">
@@ -60,8 +60,9 @@
             </div>
       </div>
           <div class="col-md-12 col-sm-12 category-shadow"> <img class="img-responsive" src="<?php echo URL; ?>public/images/shadow.png" alt=""> </div>
+          */ ?>
         </div>
-        
+     
       <div class="col-md-3 col-sm-3 padd-null">
         <?php /*
             <div class="col-md-12 col-sm-12 padd-null right-pannel-first">
@@ -137,20 +138,20 @@
             */ ?>
           <div class="col-md-12 col-sm-12 padd-null right-pannel-last">
               <div class="col-md-12 col-sm-12 padd-null pannel-last">
-                      <h3>Otrzymaj bezpłatne wyceny spośród kategorii <?php echo strtolower($this->subcategory->name); ?></h3>
+                      <h3>Jesteś specjalistą w kategorii <?php echo strtolower($this->subcategory->name); ?>?</h3>
                 </div>
               <img src="<?php echo URL; ?>public/images/hand.png" class="center-block right-pannel-last-img" width="58" height="79" alt="hand">
                 <p>
-                  1. Powiedz nam czego potrzebujesz w kategorii <?php echo $this->subcategory->specialist_name; ?> <br />
-                  2. Najlepiej pasujący wykonawcy z kategorii <?php echo strtolower($this->subcategory->name); ?> kontaktują się z Tobą <br />
-                  3. Porównujesz oferty i wybierasz najlepszą, oszczędzając czas i pieniądze
+                  1. Bezpłatnie dodaj swoją firmę <br />
+                  2. Pozwól klientom się odnaleźć <br />
+                  3. Zwiększaj przychody swojego biznesu
                 </p> 
-                <center><a href="#dodaj_zlecenie"><button type="button" class="btn btn-default blue-btn">DODAJ ZLECENIE »</button></a></center>
+                <center><a href="/fachowcy"><button type="button" class="btn btn-default blue-btn">DODAJ FIRMĘ »</button></a></center>
             </div>
         </div>
         <!-- echo out the system feedback (error and success messages) -->
         <?php $this->renderFeedbackMessages(); ?>
-        <?php require VIEWS_PATH . '_templates/add_project_form.php'; ?>
+        <?php /* require VIEWS_PATH . '_templates/add_project_form.php'; */ ?>
         </div>
     </div>
 </div>
